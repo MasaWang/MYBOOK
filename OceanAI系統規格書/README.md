@@ -1,4 +1,4 @@
-# 系統規格書｜System Specification v1.0
+# OceanAI系統規格書｜System Specification v1.0
 
 OceanAI / Artibird 系統架構、Runtime 與整合規格書(中英對照)。共 19 章。
 
