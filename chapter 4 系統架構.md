@@ -1,0 +1,269 @@
+# 4. System Architecture
+
+# 4. 系統架構
+
+## 4.1 Purpose
+
+## 4.1 目的
+
+**EN**  
+This section describes the layered architecture of the OceanAI / Artibird system and defines the relationship between cloud, edge, local runtime, device access, interaction, sensing, execution, and device layers.
+
+**ZH-TW**  
+本章描述 OceanAI / Artibird 系統的分層架構，並定義雲端、邊緣、本地 Runtime、設備接入、互動、感知、執行與設備層之間的關係。
+
+---
+
+## 4.2 Architecture Definition
+
+## 4.2 架構定義
+
+**EN**  
+The OceanAI / Artibird system architecture is a layered system structure designed to coordinate physical devices, runtime services, cloud services, edge intelligence, user interaction, sensing, and execution within supported intelligent environments.
+
+The architecture is organized so that each layer has a defined system responsibility. OceanAI provides the system-level coordinated intelligence architecture. Artibird provides the product and physical device layer. ArtiOS and Artibird Hub provide the local runtime structure. Artibird Gate provides device access. OceanAI Cloud and OceanAI Edge extend the system through remote services and AI-assisted local intelligence.
+
+**ZH-TW**  
+OceanAI / Artibird 系統架構是一種分層系統結構，用於在受支援智慧環境中協同實體設備、Runtime 服務、雲端服務、邊緣智慧、用戶互動、感知與執行。
+
+此架構使每一層具備明確的系統責任。OceanAI 提供系統級協同智慧架構。Artibird 提供產品與實體設備層。ArtiOS 與 Artibird Hub 提供本地 Runtime 結構。Artibird Gate 提供設備接入。OceanAI Cloud 與 OceanAI Edge 透過遠端服務與 AI 輔助本地智慧擴展系統能力。
+
+---
+
+## 4.3 Layered Architecture
+
+## 4.3 分層架構
+
+## English Table
+
+|Layer|Component|Role|
+|---|---|---|
+|Cloud Layer|OceanAI Cloud|Remote access, account management, synchronization, lifecycle management|
+|Edge Intelligence Layer|OceanAI Edge|Local AI-assisted analysis, visual understanding, intelligent optimization|
+|Local Runtime Layer|Artibird Hub / ArtiOS|Local coordination, device state, automation, data flow|
+|Device Access Layer|Artibird Gate|Device onboarding, local network participation, gateway communication|
+|Interaction Layer|Switch / Panel / App|User intention, scene control, room interface|
+|Sensing Layer|Sense / Vision|Environmental and visual context|
+|Execution Layer|Act / Switch Relay / Sync|Electrical execution, appliance synchronization, controlled actions|
+|Device Layer|Artibird Devices|Physical devices participating in the runtime system|
+
+## 中文表
+
+|層級|組件|角色|
+|---|---|---|
+|雲端層|OceanAI Cloud|遠端存取、帳號管理、同步、生命週期管理|
+|邊緣智慧層|OceanAI Edge|本地 AI 輔助分析、視覺理解、智慧優化|
+|本地 Runtime 層|Artibird Hub / ArtiOS|本地協同、設備狀態、自動化、數據流|
+|設備接入層|Artibird Gate|設備入網、本地網路參與、網關通訊|
+|互動層|Switch / Panel / App|用戶意圖、場景控制、房間介面|
+|感知層|Sense / Vision|環境與視覺上下文|
+|執行層|Act / Switch Relay / Sync|電力執行、家電同步、受控動作|
+|設備層|Artibird 設備|參與 Runtime 系統的實體設備|
+
+---
+
+## 4.4 Architecture Description
+
+## 4.4 架構描述
+
+**EN**  
+The architecture is designed to support local-first operation while allowing cloud and edge services to enhance the system. The local runtime layer should remain responsible for core coordination where the required components are present. Cloud services extend remote management and synchronization. Edge services provide AI-assisted interpretation but do not replace deterministic runtime behavior.
+
+**ZH-TW**  
+此架構設計用於支援本地優先運作，同時允許雲端與邊緣服務增強系統能力。在所需元件具備時，本地 Runtime 層應負責核心協同。雲端服務擴展遠端管理與同步。邊緣服務提供 AI 輔助解讀，但不取代確定性的 Runtime 行為。
+
+---
+
+## 4.5 Cloud Layer
+
+## 4.5 雲端層
+
+**EN**  
+The Cloud Layer is represented by OceanAI Cloud. It provides remote access, account management, device binding, synchronization, lifecycle management, alerts, historical data, and multi-site support where applicable.
+
+The Cloud Layer enhances system operation but should not be treated as the mandatory execution path for every core local behavior.
+
+**ZH-TW**  
+雲端層由 OceanAI Cloud 表示。它在適用條件下提供遠端存取、帳號管理、設備綁定、同步、生命週期管理、警報、歷史數據與多站點支援。
+
+雲端層增強系統運作，但不應被視為所有核心本地行為的必要執行路徑。
+
+---
+
+## 4.6 Edge Intelligence Layer
+
+## 4.6 邊緣智慧層
+
+**EN**  
+The Edge Intelligence Layer is represented by OceanAI Edge. It provides local AI-assisted analysis, visual understanding, sensor fusion, intelligent optimization, and contextual interpretation where deployed.
+
+Edge intelligence may inform runtime behavior, but it should not replace defined runtime rules, safety behavior, or validated control boundaries.
+
+**ZH-TW**  
+邊緣智慧層由 OceanAI Edge 表示。它在部署條件下提供本地 AI 輔助分析、視覺理解、感測融合、智慧優化與上下文解讀。
+
+邊緣智慧可以影響 Runtime 行為，但不應取代已定義的 Runtime 規則、安全行為或已驗證控制邊界。
+
+---
+
+## 4.7 Local Runtime Layer
+
+## 4.7 本地 Runtime 層
+
+**EN**  
+The Local Runtime Layer is represented by Artibird Hub and ArtiOS. This layer manages local coordination, device state, scene execution, automation, command routing, event handling, local data flow, and supported offline behavior.
+
+This layer is the primary execution foundation for supported local behavior when the required local components are available.
+
+**ZH-TW**  
+本地 Runtime 層由 Artibird Hub 與 ArtiOS 表示。此層管理本地協同、設備狀態、場景執行、自動化、指令路由、事件處理、本地數據流與受支援離線行為。
+
+當所需本地元件具備時，此層是受支援本地行為的主要執行基礎。
+
+---
+
+## 4.8 Device Access Layer
+
+## 4.8 設備接入層
+
+**EN**  
+The Device Access Layer is represented by Artibird Gate. It provides device onboarding, local communication, gateway participation, network participation, and protocol-related access for supported Artibird devices.
+
+Artibird Gate should be understood as a system device access gateway, not as a simple Wi-Fi accessory.
+
+**ZH-TW**  
+設備接入層由 Artibird Gate 表示。它為受支援 Artibird 設備提供設備入網、本地通訊、網關參與、網路參與與協議相關接入能力。
+
+Artibird Gate 應被理解為系統設備接入網關，而不是簡單 Wi-Fi 配件。
+
+---
+
+## 4.9 Interaction Layer
+
+## 4.9 互動層
+
+**EN**  
+The Interaction Layer is represented by Artibird Switch, Artibird Panel, and Artibird App. This layer captures user intention through touch events, room-level interface actions, App commands, scene triggers, local control, and remote access where supported.
+
+Interaction events are converted into commands, scene actions, automation triggers, or runtime state changes according to system configuration.
+
+**ZH-TW**  
+互動層由 Artibird Switch、Artibird Panel 與 Artibird App 表示。此層透過觸控事件、房間級介面操作、App 指令、場景觸發、本地控制與受支援遠端存取來捕捉用戶意圖。
+
+互動事件會依據系統配置轉化為指令、場景動作、自動化觸發或 Runtime 狀態變化。
+
+---
+
+## 4.10 Sensing Layer
+
+## 4.10 感知層
+
+**EN**  
+The Sensing Layer is represented by Artibird Sense and Artibird Vision. This layer provides environmental context, visual context, device status signals, sensor readings, and event signals used by runtime logic, automation, alerts, and edge-assisted interpretation.
+
+Sensor and vision behavior must be described according to supported product variants, installation conditions, and validation results.
+
+**ZH-TW**  
+感知層由 Artibird Sense 與 Artibird Vision 表示。此層提供環境上下文、視覺上下文、設備狀態信號、感測讀數與事件信號，供 Runtime 邏輯、自動化、警報與 Edge 輔助解讀使用。
+
+感測與視覺行為必須依受支援產品版本、安裝條件與驗證結果進行描述。
+
+---
+
+## 4.11 Execution Layer
+
+## 4.11 執行層
+
+**EN**  
+The Execution Layer is represented by Artibird Act, Switch relay variants, and Artibird Sync. This layer turns system commands, scenes, automations, and runtime decisions into controlled physical actions.
+
+Execution behavior includes electrical execution, relay control, plug control, appliance synchronization, IR / RF commands, and selected load or appliance actions where supported.
+
+**ZH-TW**  
+執行層由 Artibird Act、Switch 繼電器版本與 Artibird Sync 表示。此層將系統指令、場景、自動化與 Runtime 決策轉化為受控實體動作。
+
+執行行為包括電力執行、繼電器控制、插座控制、家電同步、IR / RF 指令，以及受支援條件下的特定負載或家電動作。
+
+---
+
+## 4.12 Device Layer
+
+## 4.12 設備層
+
+**EN**  
+The Device Layer includes all supported Artibird physical devices that participate in the runtime system. These devices may provide interaction, sensing, execution, synchronization, visual perception, communication, or local participation functions.
+
+Each device must be defined by product type, model number, firmware version, hardware version, capability, connectivity, security identity, and health status.
+
+**ZH-TW**  
+設備層包含所有參與 Runtime 系統的受支援 Artibird 實體設備。這些設備可提供互動、感知、執行、同步、視覺感知、通訊或本地參與功能。
+
+每個設備都必須依產品類型、型號、韌體版本、硬體版本、能力、連接方式、安全身份與健康狀態進行定義。
+
+---
+
+## 4.13 Layer Relationship
+
+## 4.13 層級關係
+
+**EN**  
+The layers of the OceanAI / Artibird system operate through defined relationships. Devices generate events, sensing data, state changes, and execution responses. Gate provides device access. Hub and ArtiOS process events, maintain state, execute scenes, and route commands. Cloud provides remote services and synchronization. Edge provides AI-assisted interpretation where deployed.
+
+**ZH-TW**  
+OceanAI / Artibird 系統的各層透過明確關係運作。設備產生事件、感測數據、狀態變化與執行回應。Gate 提供設備接入。Hub 與 ArtiOS 處理事件、維護狀態、執行場景並路由指令。Cloud 提供遠端服務與同步。Edge 在部署條件下提供 AI 輔助解讀。
+
+---
+
+## English Table
+
+|Relationship|Description|
+|---|---|
+|Device → Gate|Devices connect to the local system through supported access paths|
+|Gate → Hub / ArtiOS|Device events and communication are passed into local runtime services|
+|Hub / ArtiOS → Device|Commands, scenes, and automation actions are routed back to devices|
+|Hub / ArtiOS ↔ Cloud|State, configuration, lifecycle data, and remote commands may synchronize|
+|Sense / Vision → Hub / Edge|Environmental and visual context may support runtime logic or edge-assisted interpretation|
+|Edge → Hub / ArtiOS|Edge interpretation may inform local runtime behavior where deployed|
+|App / Panel / Switch → Hub / ArtiOS|User actions become commands, scene triggers, or automation inputs|
+|Act / Sync / Relay → Environment|Execution nodes turn system logic into physical action|
+
+## 中文表
+
+|關係|說明|
+|---|---|
+|Device → Gate|設備透過受支援接入路徑連接至本地系統|
+|Gate → Hub / ArtiOS|設備事件與通訊進入本地 Runtime 服務|
+|Hub / ArtiOS → Device|指令、場景與自動化動作被路由回設備|
+|Hub / ArtiOS ↔ Cloud|狀態、配置、生命週期數據與遠端指令可進行同步|
+|Sense / Vision → Hub / Edge|環境與視覺上下文可支援 Runtime 邏輯或 Edge 輔助解讀|
+|Edge → Hub / ArtiOS|部署 Edge 時，Edge 解讀可影響本地 Runtime 行為|
+|App / Panel / Switch → Hub / ArtiOS|用戶動作轉化為指令、場景觸發或自動化輸入|
+|Act / Sync / Relay → Environment|執行節點將系統邏輯轉化為實體動作|
+
+---
+
+## 4.14 Architecture Boundary
+
+## 4.14 架構邊界
+
+**EN**  
+This architecture defines supported system relationships and responsibilities. It does not imply universal compatibility with all devices, all protocols, all appliances, all network environments, or all third-party platforms.
+
+Each layer and component must operate within supported hardware, firmware, software, network, cloud, edge, and validation conditions.
+
+**ZH-TW**  
+本架構定義受支援的系統關係與責任。它不表示與所有設備、所有協議、所有家電、所有網路環境或所有第三方平台具備通用相容性。
+
+每一層與每個組件都必須在受支援硬體、韌體、軟體、網路、雲端、邊緣與驗證條件下運作。
+
+---
+
+## 4.15 Chapter Conclusion
+
+## 4.15 章節結論
+
+**EN**  
+This chapter defines the system architecture of the OceanAI / Artibird system as a layered structure composed of cloud, edge, local runtime, device access, interaction, sensing, execution, and device layers. It establishes how supported components participate in the runtime system and how each layer contributes to coordinated intelligent environment behavior.
+
+**ZH-TW**  
+本章將 OceanAI / Artibird 系統架構定義為由雲端、邊緣、本地 Runtime、設備接入、互動、感知、執行與設備層組成的分層結構。它確立受支援組件如何參與 Runtime 系統，以及每一層如何共同構成協同智慧空間行為。

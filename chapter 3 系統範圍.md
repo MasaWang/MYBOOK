@@ -1,0 +1,249 @@
+# 3. System Scope
+
+# 3. 系統範圍
+
+## 3.1 Purpose
+
+## 3.1 目的
+
+**EN**  
+This section defines what is included in the system specification and what remains outside its scope. It prevents confusion between system-level architecture, product-level engineering, commercial claims, and unsupported third-party assumptions.
+
+**ZH-TW**  
+本章定義系統規格書包含哪些內容，以及哪些內容不屬於本文件範圍。它用於避免系統級架構、產品級工程、商業宣稱與未支援第三方假設之間的混淆。
+
+---
+
+## 3.2 Scope Definition
+
+## 3.2 範圍定義
+
+**EN**  
+The OceanAI / Artibird System Specification v1.0 covers the system-level architecture and runtime relationship among OceanAI, Artibird, ArtiOS, OceanAI Cloud, OceanAI Edge, Artibird Hub, Artibird Gate, Artibird App, and supported Artibird device nodes.
+
+This document defines how supported components participate in the coordinated intelligent environment system. It does not replace individual product engineering specifications, installation manuals, certification reports, software implementation documents, or commercial sales materials.
+
+**ZH-TW**  
+《OceanAI / Artibird 系統規格書 v1.0》涵蓋 OceanAI、Artibird、ArtiOS、OceanAI Cloud、OceanAI Edge、Artibird Hub、Artibird Gate、Artibird App 與受支援 Artibird 設備節點之間的系統級架構與 Runtime 關係。
+
+本文件定義受支援組件如何參與協同智慧空間系統。它不取代各單品工程規格書、安裝手冊、認證報告、軟體實作文件或商業銷售材料。
+
+---
+
+## 3.3 In-Scope System Areas
+
+## 3.3 包含的系統範圍
+
+**EN**  
+The following system areas are included in this specification:
+
+- Local runtime structure
+    
+- Device access and onboarding
+    
+- User interaction through Switch, Panel, and App
+    
+- Environmental and visual sensing
+    
+- Electrical execution and appliance synchronization
+    
+- Cloud participation and remote management
+    
+- Edge-assisted local intelligence
+    
+- System-level security and privacy boundaries
+    
+- Reliability and failure behavior
+    
+- Deployment models
+    
+- Capacity and validation requirements
+    
+- Commercial and claim boundaries
+    
+
+**ZH-TW**  
+本規格書包含以下系統範圍：
+
+- 本地 Runtime 結構
+    
+- 設備接入與設備入網
+    
+- 透過 Switch、Panel 與 App 進行用戶互動
+    
+- 環境與視覺感知
+    
+- 電力執行與家電同步
+    
+- 雲端參與與遠端管理
+    
+- Edge 輔助本地智慧
+    
+- 系統級安全與隱私邊界
+    
+- 可靠性與故障行為
+    
+- 部署模型
+    
+- 容量與驗證要求
+    
+- 商業與宣稱邊界
+    
+
+---
+
+## 3.4 Out-of-Scope Areas
+
+## 3.4 不包含的範圍
+
+**EN**  
+The following areas are outside the scope of this system specification unless explicitly defined in related documents:
+
+- Complete hardware circuit design for each product
+    
+- Full firmware source code
+    
+- Full cloud backend implementation
+    
+- Full mobile App source code
+    
+- Certification test reports
+    
+- Manufacturing process documentation
+    
+- Final installation manuals
+    
+- Retail packaging artwork
+    
+- Commercial advertising copy
+    
+- Unsupported third-party device compatibility
+    
+- Universal smart home platform replacement claims
+    
+- Fully autonomous AI decision-making claims
+    
+
+**ZH-TW**  
+除非在關聯文件中另行明確定義，以下內容不屬於本系統規格書範圍：
+
+- 各單品完整硬體電路設計
+    
+- 完整韌體原始碼
+    
+- 完整雲端後端實作
+    
+- 完整行動 App 原始碼
+    
+- 認證測試報告
+    
+- 製造流程文件
+    
+- 最終安裝手冊
+    
+- 零售包裝設計稿
+    
+- 商業廣告文案
+    
+- 未支援第三方設備相容性
+    
+- 通用智慧家居平台替代宣稱
+    
+- 完全自主 AI 決策宣稱
+    
+
+---
+
+## 3.5 System Scope Table
+
+## 3.5 系統範圍表
+
+## English Table
+
+|Scope Area|Included|Excluded / Boundary|
+|---|---|---|
+|Local Runtime|ArtiOS, Hub services, local coordination|Third-party full platform replacement unless integrated|
+|Device Access|Gate, supported device onboarding, network participation|Unsupported generic devices|
+|User Interaction|Switch, Panel, App interaction|Unvalidated third-party UI systems|
+|Sensing|Sense, Vision, selected device status|Unvalidated environmental assumptions|
+|Execution|Act, Switch relay variants, Sync commands|Unsupported loads or appliances|
+|Cloud|Remote management, synchronization, account services|Unverified cloud-only claims|
+|Edge|OceanAI Edge AI-assisted analysis|Undefined autonomous decision claims|
+|Integration|Supported Artibird product family|Universal compatibility claims|
+|Security|Device identity, access control, secure communication|Unsupported security guarantees|
+|Validation|System-level test requirements and capacity boundaries|Claims without test evidence|
+
+## 中文表
+
+|範圍項目|包含內容|不包含 / 邊界|
+|---|---|---|
+|本地 Runtime|ArtiOS、Hub 服務、本地協同|未整合的第三方完整平台替代|
+|設備接入|Gate、受支援設備入網、網路參與|未支援通用設備|
+|用戶互動|Switch、Panel、App 互動|未驗證第三方 UI 系統|
+|感知|Sense、Vision、特定設備狀態|未驗證環境假設|
+|執行|Act、Switch 繼電器版本、Sync 指令|未支援負載或家電|
+|雲端|遠端管理、同步、帳號服務|未驗證純雲端宣稱|
+|邊緣|OceanAI Edge AI 輔助分析|未定義自主決策宣稱|
+|整合|受支援 Artibird 產品家族|通用相容性宣稱|
+|安全|設備身份、存取控制、安全通訊|未支援安全保證|
+|驗證|系統級測試要求與容量邊界|無測試證據的宣稱|
+
+---
+
+## 3.6 Boundary Principle
+
+## 3.6 邊界原則
+
+**EN**  
+Any system capability must be described according to supported hardware, firmware, software version, local network condition, cloud availability, edge deployment status, and validated test conditions.
+
+**ZH-TW**  
+任何系統能力都必須依據受支援硬體、韌體、軟體版本、本地網路條件、雲端可用性、Edge 部署狀態與已驗證測試條件來描述。
+
+---
+
+## 3.7 Engineering Boundary
+
+## 3.7 工程邊界
+
+**EN**  
+This specification defines system-level engineering boundaries. Product-specific electrical design, PCB layout, antenna design, enclosure structure, firmware implementation, certification details, and manufacturing requirements must be defined in the corresponding product engineering specifications.
+
+**ZH-TW**  
+本規格書定義系統級工程邊界。單品相關的電氣設計、PCB 佈局、天線設計、外殼結構、韌體實作、認證細節與製造要求，必須在對應產品工程規格書中定義。
+
+---
+
+## 3.8 Commercial Boundary
+
+## 3.8 商業邊界
+
+**EN**  
+This specification defines system-level claim boundaries. Commercial descriptions, sales materials, website copy, Amazon listings, channel documents, and product catalogs must remain aligned with the system capabilities and validation boundaries defined in this document.
+
+**ZH-TW**  
+本規格書定義系統級宣稱邊界。商業描述、銷售資料、官網文案、Amazon 上架文案、渠道文件與產品型錄，必須與本文件定義的系統能力與驗證邊界保持一致。
+
+---
+
+## 3.9 Validation Boundary
+
+## 3.9 驗證邊界
+
+**EN**  
+Any claim involving capacity, latency, reliability, connectivity, AI-assisted analysis, security, privacy, compatibility, offline operation, or cloud-enhanced behavior must be supported by validation evidence under defined conditions.
+
+**ZH-TW**  
+任何涉及容量、延遲、可靠性、連接能力、AI 輔助分析、安全、隱私、相容性、離線運作或雲端增強行為的宣稱，都必須在明確條件下具備驗證證據支持。
+
+---
+
+## 3.10 Chapter Conclusion
+
+## 3.10 章節結論
+
+**EN**  
+This chapter defines the scope of the OceanAI / Artibird System Specification v1.0. It clarifies what the document includes, what remains outside its scope, and how system capabilities must be bounded by supported components, validated conditions, engineering evidence, and commercial claim control.
+
+**ZH-TW**  
+本章定義了《OceanAI / Artibird 系統規格書 v1.0》的範圍。它釐清本文件包含哪些內容、哪些內容不屬於本文件範圍，以及系統能力必須如何受到受支援組件、已驗證條件、工程證據與商業宣稱管控的約束。

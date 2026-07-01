@@ -1,0 +1,327 @@
+# 5. Core System Components
+
+# 5. 核心系統組件
+
+## 5.1 Purpose
+
+## 5.1 目的
+
+**EN**  
+This section defines each major system component and its role in the overall architecture.
+
+**ZH-TW**  
+本章定義每個主要系統組件及其在整體架構中的角色。
+
+---
+
+## 5.2 Component Definition
+
+## 5.2 組件定義
+
+**EN**  
+The OceanAI / Artibird system is composed of cloud services, edge intelligence, local runtime services, device access gateways, user interaction interfaces, sensing nodes, execution nodes, synchronization nodes, visual perception nodes, and the Artibird App.
+
+Each component has a defined system role. These components operate together through runtime behavior, data flow, events, commands, synchronization, and supported deployment models.
+
+**ZH-TW**  
+OceanAI / Artibird 系統由雲端服務、邊緣智慧、本地 Runtime 服務、設備接入網關、用戶互動介面、感知節點、執行節點、同步節點、視覺感知節點與 Artibird App 組成。
+
+每個組件都有明確的系統角色。這些組件透過 Runtime 行為、數據流、事件、指令、同步與受支援部署模型共同運作。
+
+---
+
+## 5.3 Core Component Table
+
+## 5.3 核心組件表
+
+## English Table
+
+|Component|Role|Primary Responsibility|
+|---|---|---|
+|OceanAI Cloud|Cloud service layer|Remote access, account binding, synchronization, multi-site management, lifecycle services, analytics|
+|OceanAI Edge|Edge intelligence layer|Jetson-based local AI inference, SLM / VLM-assisted analysis, visual understanding, sensor fusion|
+|ArtiOS|Local runtime platform|Rules, scenes, state management, command routing, local coordination|
+|Artibird Hub|Local runtime center|Hosts local services, MQTT broker, state management, automation, web services, ArtiOS modules|
+|Artibird Gate|Device access gateway|ESP32-C6-based gateway for device onboarding, local communication, Wi-Fi / Ethernet / BLE Mesh support depending on variant|
+|Artibird Switch|Interaction and event node|Touch events, scene triggers, relay control depending on variant|
+|Artibird Panel|Room interaction interface|Room-level scene control, device groups, shared user interface|
+|Artibird Act|Electrical execution node|Relay, plug, load control, optional energy measurement|
+|Artibird Sense|Environmental context node|Temperature, humidity, light, occupancy, environmental signals|
+|Artibird Sync|Appliance synchronization node|IR / RF appliance control and synchronization|
+|Artibird Vision|Visual perception node|Visual events, local recording, security awareness, AI-assisted visual context|
+|Artibird App|User access interface|Setup, configuration, local control, remote control, device and scene management|
+
+## 中文表
+
+|組件|角色|主要責任|
+|---|---|---|
+|OceanAI Cloud|雲端服務層|遠端存取、帳號綁定、同步、多站點管理、生命週期服務、分析|
+|OceanAI Edge|邊緣智慧層|基於 Jetson 的本地 AI 推理、SLM / VLM 輔助分析、視覺理解、感測融合|
+|ArtiOS|本地 Runtime 平台|規則、場景、狀態管理、指令路由、本地協同|
+|Artibird Hub|本地 Runtime 中心|承載本地服務、MQTT Broker、狀態管理、自動化、Web 服務、ArtiOS 模組|
+|Artibird Gate|設備接入網關|基於 ESP32-C6 的設備入網、本地通訊，依版本支援 Wi-Fi / Ethernet / BLE Mesh|
+|Artibird Switch|互動與事件節點|觸控事件、場景觸發，依版本支援繼電器控制|
+|Artibird Panel|房間互動介面|房間級場景控制、設備群組、共享用戶介面|
+|Artibird Act|電力執行節點|繼電器、插座、負載控制、可選電能計量|
+|Artibird Sense|環境上下文節點|溫度、濕度、光照、人在、環境信號|
+|Artibird Sync|家電同步節點|IR / RF 家電控制與同步|
+|Artibird Vision|視覺感知節點|視覺事件、本地錄影、安全感知、AI 輔助視覺上下文|
+|Artibird App|用戶存取介面|設定、配置、本地控制、遠端控制、設備與場景管理|
+
+---
+
+## 5.4 OceanAI Cloud
+
+## 5.4 OceanAI Cloud
+
+**EN**  
+OceanAI Cloud is the cloud service layer of the system. It provides remote access, account binding, synchronization, lifecycle services, historical data, alerts, analytics, multi-site management, and commercial service support where applicable.
+
+OceanAI Cloud enhances the system but should not be treated as the required execution path for all core local behavior.
+
+**ZH-TW**  
+OceanAI Cloud 是系統的雲端服務層。它在適用條件下提供遠端存取、帳號綁定、同步、生命週期服務、歷史數據、警報、分析、多站點管理與商業服務支援。
+
+OceanAI Cloud 增強系統能力，但不應被視為所有核心本地行為的必要執行路徑。
+
+---
+
+## 5.5 OceanAI Edge
+
+## 5.5 OceanAI Edge
+
+**EN**  
+OceanAI Edge is the edge intelligence layer of the system. It provides Jetson-based local AI inference, SLM / VLM-assisted analysis, visual understanding, sensor fusion, and AI-assisted optimization where deployed.
+
+OceanAI Edge may inform local runtime behavior, but it should remain within defined AI, privacy, safety, and validation boundaries.
+
+**ZH-TW**  
+OceanAI Edge 是系統的邊緣智慧層。它在部署條件下提供基於 Jetson 的本地 AI 推理、SLM / VLM 輔助分析、視覺理解、感測融合與 AI 輔助優化。
+
+OceanAI Edge 可影響本地 Runtime 行為，但必須保持在已定義 AI、隱私、安全與驗證邊界內。
+
+---
+
+## 5.6 ArtiOS
+
+## 5.6 ArtiOS
+
+**EN**  
+ArtiOS is the local runtime platform of the OceanAI / Artibird system. It defines the local operating structure for rules, scenes, state management, command routing, event handling, automation, data flow, and local coordination.
+
+ArtiOS provides the runtime logic through which supported components participate in coordinated system behavior.
+
+**ZH-TW**  
+ArtiOS 是 OceanAI / Artibird 系統的本地 Runtime 平台。它定義規則、場景、狀態管理、指令路由、事件處理、自動化、數據流與本地協同的本地運作結構。
+
+ArtiOS 提供 Runtime 邏輯，使受支援組件能夠參與協同系統行為。
+
+---
+
+## 5.7 Artibird Hub
+
+## 5.7 Artibird Hub
+
+**EN**  
+Artibird Hub is the local runtime center of the system. It hosts local services, MQTT broker, state management, automation modules, web services, and ArtiOS modules.
+
+Artibird Hub supports local coordination and helps maintain supported system behavior when local components are available.
+
+**ZH-TW**  
+Artibird Hub 是系統的本地 Runtime 中心。它承載本地服務、MQTT Broker、狀態管理、自動化模組、Web 服務與 ArtiOS 模組。
+
+Artibird Hub 支援本地協同，並在本地元件具備時幫助維持受支援系統行為。
+
+---
+
+## 5.8 Artibird Gate
+
+## 5.8 Artibird Gate
+
+**EN**  
+Artibird Gate is the device access gateway of the system. It is based on ESP32-C6 and provides device onboarding, local communication, network participation, gateway communication, and Wi-Fi / Ethernet / BLE Mesh support depending on variant.
+
+Artibird Gate should be treated as a system gateway for supported Artibird devices, not as a simple Wi-Fi accessory.
+
+**ZH-TW**  
+Artibird Gate 是系統的設備接入網關。它基於 ESP32-C6，依版本提供設備入網、本地通訊、網路參與、網關通訊，以及 Wi-Fi / Ethernet / BLE Mesh 支援。
+
+Artibird Gate 應被視為受支援 Artibird 設備的系統網關，而不是簡單 Wi-Fi 配件。
+
+---
+
+## 5.9 Artibird Switch
+
+## 5.9 Artibird Switch
+
+**EN**  
+Artibird Switch is an interaction and event node. Depending on product variant, it may provide touch events, scene triggers, relay control, local automation participation, battery-powered event transmission, or load-control behavior.
+
+Artibird Switch converts physical user interaction into system events, commands, scene triggers, or execution behavior.
+
+**ZH-TW**  
+Artibird Switch 是互動與事件節點。依產品版本不同，它可提供觸控事件、場景觸發、繼電器控制、本地自動化參與、電池事件發射或負載控制行為。
+
+Artibird Switch 將實體用戶互動轉化為系統事件、指令、場景觸發或執行行為。
+
+---
+
+## 5.10 Artibird Panel
+
+## 5.10 Artibird Panel
+
+**EN**  
+Artibird Panel is the room interaction interface of the system. It provides room-level scene control, device group interaction, shared user interface, status display, and local control where supported.
+
+Artibird Panel allows users to operate rooms, scenes, devices, and local runtime actions through a dedicated interaction surface.
+
+**ZH-TW**  
+Artibird Panel 是系統的房間互動介面。它在支援條件下提供房間級場景控制、設備群組互動、共享用戶介面、狀態顯示與本地控制。
+
+Artibird Panel 允許用戶透過專用互動介面操作房間、場景、設備與本地 Runtime 動作。
+
+---
+
+## 5.11 Artibird Act
+
+## 5.11 Artibird Act
+
+**EN**  
+Artibird Act is the electrical execution node of the system. It provides relay control, plug control, load control, controlled electrical execution, and optional energy measurement depending on product variant.
+
+Artibird Act turns supported commands, scenes, automations, and runtime decisions into controlled electrical action.
+
+**ZH-TW**  
+Artibird Act 是系統的電力執行節點。依產品版本不同，它提供繼電器控制、插座控制、負載控制、受控電力執行與可選電能計量。
+
+Artibird Act 將受支援指令、場景、自動化與 Runtime 決策轉化為受控電力動作。
+
+---
+
+## 5.12 Artibird Sense
+
+## 5.12 Artibird Sense
+
+**EN**  
+Artibird Sense is the environmental context node of the system. It provides environmental signals such as temperature, humidity, light, occupancy, and other sensor data depending on product variant.
+
+Artibird Sense supplies runtime logic, automation, alerts, cloud analysis, and edge-assisted interpretation with environmental context.
+
+**ZH-TW**  
+Artibird Sense 是系統的環境上下文節點。依產品版本不同，它提供溫度、濕度、光照、人在與其他感測數據等環境信號。
+
+Artibird Sense 為 Runtime 邏輯、自動化、警報、雲端分析與 Edge 輔助解讀提供環境上下文。
+
+---
+
+## 5.13 Artibird Sync
+
+## 5.13 Artibird Sync
+
+**EN**  
+Artibird Sync is the appliance synchronization node of the system. It provides IR / RF appliance control and synchronization for supported appliances and selected RF devices.
+
+Artibird Sync allows supported legacy appliances to participate in scenes, automation, and coordinated system behavior.
+
+**ZH-TW**  
+Artibird Sync 是系統的家電同步節點。它為受支援家電與特定 RF 設備提供 IR / RF 家電控制與同步能力。
+
+Artibird Sync 使受支援傳統家電能夠參與場景、自動化與協同系統行為。
+
+---
+
+## 5.14 Artibird Vision
+
+## 5.14 Artibird Vision
+
+**EN**  
+Artibird Vision is the visual perception node of the system. It provides visual events, local recording, security awareness, visual context, and AI-assisted visual interpretation where supported.
+
+Artibird Vision supports alerts, automation, room-state understanding, cloud monitoring, and edge-assisted visual analysis depending on product variant and deployment model.
+
+**ZH-TW**  
+Artibird Vision 是系統的視覺感知節點。它在支援條件下提供視覺事件、本地錄影、安全感知、視覺上下文與 AI 輔助視覺解讀。
+
+Artibird Vision 依產品版本與部署模型支援警報、自動化、房間狀態理解、雲端監測與 Edge 輔助視覺分析。
+
+---
+
+## 5.15 Artibird App
+
+## 5.15 Artibird App
+
+**EN**  
+Artibird App is the user access interface of the system. It provides setup, configuration, local control, remote control, device management, room management, scene management, automation configuration, account access, and status visibility where supported.
+
+Artibird App may operate through local network access, cloud access, or supported hybrid access depending on deployment configuration.
+
+**ZH-TW**  
+Artibird App 是系統的用戶存取介面。它在支援條件下提供設定、配置、本地控制、遠端控制、設備管理、房間管理、場景管理、自動化配置、帳號存取與狀態可視化。
+
+Artibird App 可依部署配置透過本地網路存取、雲端存取或受支援混合存取方式運作。
+
+---
+
+## 5.16 Component Relationship
+
+## 5.16 組件關係
+
+**EN**  
+Core system components operate through defined relationships. Artibird devices generate events, states, commands, telemetry, execution responses, or visual / environmental context. Artibird Gate provides supported access paths. Artibird Hub and ArtiOS process runtime behavior. OceanAI Cloud extends remote services. OceanAI Edge provides AI-assisted local interpretation where deployed.
+
+**ZH-TW**  
+核心系統組件透過明確關係運作。Artibird 設備產生事件、狀態、指令、遙測、執行回應或視覺 / 環境上下文。Artibird Gate 提供受支援接入路徑。Artibird Hub 與 ArtiOS 處理 Runtime 行為。OceanAI Cloud 擴展遠端服務。OceanAI Edge 在部署條件下提供 AI 輔助本地解讀。
+
+---
+
+## English Table
+
+|Relationship|Description|
+|---|---|
+|App / Switch / Panel → Hub / ArtiOS|User actions enter the local runtime as commands or events|
+|Sense / Vision → Hub / ArtiOS|Environmental and visual context enters runtime logic|
+|Device → Gate|Supported devices access the local system through Gate|
+|Gate → Hub / ArtiOS|Device communication enters local runtime services|
+|Hub / ArtiOS → Act / Sync / Switch Relay|Runtime decisions are converted into execution actions|
+|Hub / ArtiOS ↔ Cloud|State, configuration, lifecycle data, and remote commands may synchronize|
+|Sense / Vision → Edge|Environmental and visual context may support AI-assisted interpretation|
+|Edge → Hub / ArtiOS|Edge-assisted interpretation may inform runtime behavior where deployed|
+|Cloud → App / Hub|Remote access, account services, alerts, and synchronization are supported where available|
+
+## 中文表
+
+|關係|說明|
+|---|---|
+|App / Switch / Panel → Hub / ArtiOS|用戶動作作為指令或事件進入本地 Runtime|
+|Sense / Vision → Hub / ArtiOS|環境與視覺上下文進入 Runtime 邏輯|
+|Device → Gate|受支援設備透過 Gate 接入本地系統|
+|Gate → Hub / ArtiOS|設備通訊進入本地 Runtime 服務|
+|Hub / ArtiOS → Act / Sync / Switch Relay|Runtime 決策被轉化為執行動作|
+|Hub / ArtiOS ↔ Cloud|狀態、配置、生命週期數據與遠端指令可同步|
+|Sense / Vision → Edge|環境與視覺上下文可支援 AI 輔助解讀|
+|Edge → Hub / ArtiOS|部署 Edge 時，Edge 輔助解讀可影響 Runtime 行為|
+|Cloud → App / Hub|在可用條件下支援遠端存取、帳號服務、警報與同步|
+
+---
+
+## 5.17 Component Boundary
+
+## 5.17 組件邊界
+
+**EN**  
+Each component must operate within supported hardware, firmware, software, network, deployment, security, privacy, and validation conditions. A component role defined in this section does not imply universal compatibility, unlimited capacity, unrestricted AI behavior, or support for all third-party devices or platforms.
+
+**ZH-TW**  
+每個組件都必須在受支援硬體、韌體、軟體、網路、部署、安全、隱私與驗證條件下運作。本章定義的組件角色不表示通用相容、無限制容量、不受限制 AI 行為，或支援所有第三方設備或平台。
+
+---
+
+## 5.18 Chapter Conclusion
+
+## 5.18 章節結論
+
+**EN**  
+This chapter defines the core system components of the OceanAI / Artibird system. It establishes the role and responsibility of OceanAI Cloud, OceanAI Edge, ArtiOS, Artibird Hub, Gate, Switch, Panel, Act, Sense, Sync, Vision, and App within the overall architecture.
+
+**ZH-TW**  
+本章定義了 OceanAI / Artibird 系統的核心系統組件。它確立了 OceanAI Cloud、OceanAI Edge、ArtiOS、Artibird Hub、Gate、Switch、Panel、Act、Sense、Sync、Vision 與 App 在整體架構中的角色與責任。
