@@ -1,4 +1,4 @@
-# Artibird 產品商業格書
+# Artibird 產品商業規格書
 
 Artibird 全系列產品商業規格書集合（中英對照）。
 
