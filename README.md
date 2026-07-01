@@ -6,7 +6,7 @@
 
 | 文件 | 說明 | 入口 |
 |------|------|------|
-| **artibird系統規格書** | Artibird 系統規格書章節稿（第 1–8 章 + 前置文件套件）,中英對照 | [artibird系統規格書/README.md](artibird系統規格書/README.md) |
+| **Artibird系統規格書** | Artibird 系統規格書章節稿（第 1–8 章 + 前置文件套件）,中英對照 | [Artibird系統規格書/README.md](Artibird系統規格書/README.md) |
 | **Artibird產品規格書工程版** | Artibird 全系列產品工程規格書（Gate–Vision）,中英對照 | [Artibird產品規格書工程版/README.md](Artibird產品規格書工程版/README.md) |
 | **Artibird產品規格書商業版** | Artibird 全系列產品商業規格書（Gate–Vision）,中英對照 | [Artibird產品規格書商業版/README.md](Artibird產品規格書商業版/README.md) |
 | **Artibird產品型錄** | Artibird 產品型錄 v1.0,產品層與應用組合,中英對照 | [Artibird產品型錄/README.md](Artibird產品型錄/README.md) |
