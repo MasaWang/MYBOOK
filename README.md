@@ -7,8 +7,8 @@
 | 文件 | 說明 | 入口 |
 |------|------|------|
 | **Artibird系統規格書** | Artibird 系統規格書章節稿（第 1–8 章 + 前置文件套件）,中英對照 | [Artibird系統規格書/README.md](Artibird系統規格書/README.md) |
-| **Artibird產品規格書工程版** | Artibird 全系列產品工程規格書（Gate–Vision）,中英對照 | [Artibird產品規格書工程版/README.md](Artibird產品規格書工程版/README.md) |
-| **Artibird產品規格書商業版** | Artibird 全系列產品商業規格書（Gate–Vision）,中英對照 | [Artibird產品規格書商業版/README.md](Artibird產品規格書商業版/README.md) |
+| **Artibird產品工程規格書** | Artibird 全系列產品工程規格書（Gate–Vision）,中英對照 | [Artibird產品工程規格書/README.md](Artibird產品工程規格書/README.md) |
+| **Artibird產品商業格書** | Artibird 全系列產品商業規格書（Gate–Vision）,中英對照 | [Artibird產品商業格書/README.md](Artibird產品商業格書/README.md) |
 | **Artibird產品型錄** | Artibird 產品型錄 v1.0,產品層與應用組合,中英對照 | [Artibird產品型錄/README.md](Artibird產品型錄/README.md) |
 | **Artibird SKU與型號命名規範** | SKU 結構、型號命名與治理規範 v1.0,中英對照 | [Artibird SKU與型號命名規範/README.md](Artibird%20SKU與型號命名規範/README.md) |
 | **OceanAI系統架構規格書** | 系統架構、Runtime 與治理規格書 v1.1,架構層,中英對照 | [OceanAI系統架構規格書/README.md](OceanAI系統架構規格書/README.md) |
