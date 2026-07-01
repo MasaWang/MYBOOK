@@ -448,35 +448,13 @@ Commercial claims should be translated from engineering claims through approved 
 
 ---
 
-## English Table
+## EN
 
-|Restricted Commercial Claim|Preferred Language|
-|---|---|
-|Works with everything|Works with supported and validated devices or components|
-|Unlimited devices|Supports validated capacity under defined conditions|
-|Always works offline|Supports defined local functions when required local components are present|
-|Fully autonomous AI|AI-assisted behavior under defined governance and validation boundaries|
-|Perfect detection|Supports defined detection or interpretation under validated conditions|
-|Guaranteed energy savings|Supports energy-aware workflows where validated|
-|Completely secure|Designed with implemented security controls|
-|Fully private|Supports privacy-aware data handling under defined settings|
-|Certified safe|Use only after certification is completed and approved|
-|Never fails|Supports defined reliability and failure behavior|
+The canonical **Restricted Commercial Claim** reference table is maintained in **[Appendix F — Claim Boundary Reference](../D附錄/F%20—%20宣稱邊界參考.md)** (Section F.5 Commercial Claim Boundary). Do not duplicate that table here.
 
-## 中文表
+## ZH-TW
 
-|限制商業宣稱|建議語言|
-|---|---|
-|支援所有設備|支援受支援且已驗證設備或組件|
-|無限制設備|在明確條件下支援已驗證容量|
-|永遠離線可用|當所需本地組件具備時，支援已定義本地功能|
-|完全自主 AI|在已定義治理與驗證邊界下的 AI 輔助行為|
-|完美偵測|在已驗證條件下支援已定義偵測或解讀|
-|保證節能|在已驗證條件下支援能源感知工作流|
-|完全安全|具備已實作安全控制的設計|
-|完全私密|在已定義設定下支援隱私導向數據處理|
-|已認證安全|僅在認證完成並核准後使用|
-|永不故障|支援已定義可靠性與故障行為|
+**限制商業宣稱**與建議邊界語言之正本參考表維護於 **[附錄 F — 宣稱邊界參考](../D附錄/F%20—%20宣稱邊界參考.md)**（F.5 商業宣稱邊界）。請勿在此重複收錄該表。
 
 ---
 
@@ -588,9 +566,27 @@ Audit and traceability support engineering quality, security review, privacy rev
 
 ---
 
-## 14.12 Chapter Conclusion
+## 14.12 Appendix Cross-Reference
 
-## 14.12 章節結論
+## 14.12 附錄對照
+
+## EN
+
+Chapter 14 defines **normative** governance and claim-boundary architecture. **[Appendix F — Claim Boundary Reference](../D附錄/F%20—%20宣稱邊界參考.md)** provides expanded claim classification, engineering/commercial/certification boundary tables, and approved language references (including F.5 Commercial Claim Boundary).
+
+Do not duplicate Appendix F tables in downstream commercial or sales materials; reference Appendix F as the canonical claim-boundary source.
+
+## ZH-TW
+
+第 14 章定義**規範性**治理與宣稱邊界架構。**[附錄 F — 宣稱邊界參考](../D附錄/F%20—%20宣稱邊界參考.md)** 展開宣稱分類、工程／商業／認證邊界表與已核准語言參考（含 F.5 商業宣稱邊界）。
+
+請勿在下游商業或銷售材料中重複收錄附錄 F 表格；以附錄 F 為宣稱邊界正本來源。
+
+---
+
+## 14.13 Chapter Conclusion
+
+## 14.13 章節結論
 
 ## EN
 

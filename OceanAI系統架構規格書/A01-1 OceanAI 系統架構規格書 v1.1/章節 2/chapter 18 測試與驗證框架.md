@@ -576,39 +576,13 @@ Claim validation protects OceanAI from overstating capability, especially in are
 
 ---
 
-## English Table
+## EN
 
-|Claim Type|Required Validation|
-|---|---|
-|Architecture claim|Must match approved architecture definition|
-|Runtime claim|Must be supported by runtime behavior tests|
-|Local-first claim|Must define which functions work locally and under what conditions|
-|Cloud claim|Must define implemented cloud service scope and availability boundary|
-|Edge / AI claim|Must distinguish interpretation, recommendation, alert, optimization, and control input|
-|Capacity claim|Must be based on measured load and defined conditions|
-|Reliability claim|Must include failure, degraded, and recovery evidence|
-|Security claim|Must reflect implemented and validated security controls|
-|Privacy claim|Must reflect actual data behavior and policy boundaries|
-|Energy claim|Must be based on measured data and validated comparison conditions|
-|Certification claim|Must be supported by formal certification, listing, or test evidence|
-|Commercial claim|Must translate validated engineering evidence into approved boundary language|
+This section defines normative claim-validation requirements. For validation checklists (E.5–E.11), the validation-to-claim matrix (E.15), and evidence record templates (E.12), see **[Appendix E — Validation Framework](../D附錄/E%20—%20驗證框架.md)**.
 
-## 中文表
+## ZH-TW
 
-|宣稱類型|必須驗證內容|
-|---|---|
-|架構宣稱|必須符合已核准架構定義|
-|Runtime 宣稱|必須由 Runtime 行為測試支持|
-|本地優先宣稱|必須定義哪些功能在什麼條件下本地可用|
-|雲端宣稱|必須定義已實作雲端服務範圍與可用性邊界|
-|Edge / AI 宣稱|必須區分解讀、建議、警報、優化與控制輸入|
-|容量宣稱|必須基於量測負載與明確條件|
-|可靠性宣稱|必須包含故障、降級與恢復證據|
-|安全宣稱|必須反映已實作並驗證的安全控制|
-|隱私宣稱|必須反映實際數據行為與政策邊界|
-|能源宣稱|必須基於量測數據與已驗證比較條件|
-|認證宣稱|必須由正式認證、Listed 或測試證據支持|
-|商業宣稱|必須將已驗證工程證據轉化為已核准邊界語言|
+本節定義宣稱驗證的規範性要求。驗證清單（E.5–E.11）、驗證—宣稱矩陣（E.15）與證據記錄模板（E.12）見 **[附錄 E — 驗證框架](../D附錄/E%20—%20驗證框架.md)**。
 
 ---
 
@@ -631,6 +605,16 @@ Validation evidence must remain tied to versions and conditions. Evidence from o
 證據可包括測試報告、日誌、量測結果、截圖、視頻、認證文件、配置記錄、版本記錄、部署記錄、診斷記錄、隱私審查記錄、安全審查記錄與宣稱核准記錄。
 
 驗證證據必須與版本與條件綁定。來自某一版本、某一部署、某一設備型號或某一測試環境的證據，不應在未經審查的情況下自動適用於其他情況。
+
+---
+
+## EN
+
+Field-level evidence record templates are maintained in **[Appendix E — Validation Framework](../D附錄/E%20—%20驗證框架.md)** (Section E.12 Validation Evidence Record Template). Use E.12 for operational records; this section defines architecture-level evidence requirements.
+
+## ZH-TW
+
+欄位級證據記錄模板維護於 **[附錄 E — 驗證框架](../D附錄/E%20—%20驗證框架.md)**（E.12 驗證證據記錄模板）。實務記錄請用 E.12；本節定義架構級證據要求。
 
 ---
 
@@ -724,9 +708,27 @@ Validation boundaries prevent evidence from being overused or misrepresented.
 
 ---
 
-## 18.14 Chapter Conclusion
+## 18.14 Appendix Cross-Reference
 
-## 18.14 章節結論
+## 18.14 附錄對照
+
+## EN
+
+Chapter 18 defines the **normative** Testing and Validation Framework. **[Appendix E — Validation Framework](../D附錄/E%20—%20驗證框架.md)** provides validation checklists (E.5–E.11), evidence record templates (E.12), validation-to-claim matrix (E.15), and boundary statement templates (E.16).
+
+Do not duplicate Appendix E checklists in separate test plans without linking back to the appendix version.
+
+## ZH-TW
+
+第 18 章定義**規範性**測試與驗證框架。**[附錄 E — 驗證框架](../D附錄/E%20—%20驗證框架.md)** 提供驗證清單（E.5–E.11）、證據記錄模板（E.12）、驗證—宣稱矩陣（E.15）與邊界聲明模板（E.16）。
+
+請勿在未連回附錄版本的情況下，於獨立測試計劃中重複收錄附錄 E 清單。
+
+---
+
+## 18.15 Chapter Conclusion
+
+## 18.15 章節結論
 
 ## EN
 

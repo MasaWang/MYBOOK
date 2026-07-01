@@ -590,9 +590,27 @@ Any data model claim must remain aligned with supported services, privacy polici
 
 ---
 
-## 7.12 Chapter Conclusion
+## 7.12 Appendix Cross-Reference
 
-## 7.12 章節結論
+## 7.12 附錄對照
+
+## EN
+
+Chapter 7 defines the **normative** System Data Model at architecture level (entities, principles, and boundaries). **[Appendix D — Data Model Reference](../D附錄/D%20—%20數據模型參考.md)** expands field-level reference tables for devices, spaces, users, events, commands, states, telemetry, scenes, cloud sync, Edge outputs, health, validation, and claim evidence.
+
+Do not duplicate Appendix D reference tables in product or implementation documents; link to Appendix D for detailed field definitions.
+
+## ZH-TW
+
+第 7 章在架構層定義**規範性**系統數據模型（實體、原則與邊界）。**[附錄 D — 數據模型參考](../D附錄/D%20—%20數據模型參考.md)** 展開設備、空間、用戶、事件、指令、狀態、遙測、場景、雲端同步、Edge 輸出、健康、驗證與宣稱證據的欄位級參考表。
+
+請勿在產品或實作文件中重複收錄附錄 D 參考表；詳細欄位定義請連結至附錄 D。
+
+---
+
+## 7.13 Chapter Conclusion
+
+## 7.13 章節結論
 
 ## EN
 
