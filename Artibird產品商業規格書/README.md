@@ -1,6 +1,6 @@
 # Artibird 產品商業規格書
 
-Artibird 全系列產品商業規格書集合（中英對照）。
+Artibird 全系列**產品**商業規格書集合（中英對照）。**Artibird 無系統規格書** — 系統層見 [OceanAI系統工程規格書](../OceanAI系統工程規格書/README.md)。
 
 ## 文件
 

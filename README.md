@@ -15,9 +15,9 @@
 | 文件 | 說明 | 入口 |
 |------|------|------|
 | **OceanAI系統工程規格書** | 系統工程規格書 v1.0,系統架構 + Runtime + 整合,19 章,中英對照 | [OceanAI系統工程規格書/README.md](OceanAI系統工程規格書/README.md) |
-| **Artibird系統規格書** | Artibird 系統規格書章節稿（第 1–8 章 + 前置文件套件）,中英對照 | [Artibird系統規格書/README.md](Artibird系統規格書/README.md) |
+| **OceanAI系統工程規格書章節草稿** | v1.0 早期章節草稿（1–8 章）,非正本 | [OceanAI系統工程規格書章節草稿/README.md](OceanAI系統工程規格書章節草稿/README.md) |
 
-### 產品層
+### 產品層（Artibird｜僅產品規格書）
 
 | 文件 | 說明 | 入口 |
 |------|------|------|
@@ -40,16 +40,25 @@
 
 ```
 L1  架構規格    OceanAI系統架構規格書 v1.1
-L2  工程規格    OceanAI系統工程規格書 v1.0  ← Artibird系統規格書（章節草稿 1–8）
-L3  產品規格    Artibird產品工程／商業規格書、型錄、SKU 規範
+L2  工程規格    OceanAI系統工程規格書 v1.0
+L3  產品規格    Artibird 產品工程／商業規格書、型錄、SKU 規範（無 Artibird 系統規格書）
 L4  敘事書稿    OceanAI系統、OceanAI系統架構、智慧之海
 ```
+
+**文件線分工**
+
+| 品牌 | 系統規格書 | 產品規格書 |
+|------|-----------|-----------|
+| **OceanAI** | 架構規格書 v1.1、工程規格書 v1.0 | — |
+| **Artibird** | **無** | 產品工程規格書、產品商業規格書、型錄、SKU 規範 |
+
+> 工程規格書正式標題含「OceanAI / Artibird」，表示**系統如何整合 Artibird 產品**；該冊仍屬 **OceanAI 系統工程規格**，不是 Artibird 系統規格書。
 
 | 資料夾 | 正式名稱 | 層級 | 類型 | 版本 | 上游依賴 | 下游／關聯 | 用途 |
 |--------|----------|------|------|------|----------|------------|------|
 | [OceanAI系統架構規格書](OceanAI系統架構規格書/README.md) | OceanAI 系統架構規格書 | L1 架構 | 規格書 | v1.1 | — | L2 工程規格、L3 產品規格 | 架構原則、模型、治理、驗證框架 |
-| [OceanAI系統工程規格書](OceanAI系統工程規格書/README.md) | OceanAI / Artibird 系統規格書 | L2 工程 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格 | 系統—產品整合、Runtime、設備模型、測試 |
-| [Artibird系統規格書](Artibird系統規格書/README.md) | （章節草稿） | L2 工程 | 草稿 | 1–8 章 | L2 v1.0 同源 | 已被工程規格書 v1.0 取代 | 早期章節稿；**非正本** |
+| [OceanAI系統工程規格書](OceanAI系統工程規格書/README.md) | OceanAI 系統工程規格書（正式標題含 Artibird 整合語意） | L2 工程 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格 | 系統—產品整合、Runtime、設備模型、測試 |
+| [OceanAI系統工程規格書章節草稿](OceanAI系統工程規格書章節草稿/README.md) | v1.0 章節草稿 | L2 工程 | 草稿 | 1–8 章 | L2 v1.0 同源 | 已併入正本 | 歷史參考；**非正本** |
 | [Artibird產品工程規格書](Artibird產品工程規格書/README.md) | Artibird 產品工程規格書 | L3 產品 | 規格書 | 各產品 v1.0 | L1、L2 | 型錄、商業規格 | 單品硬體／韌體／連接／測試 |
 | [Artibird產品商業規格書](Artibird產品商業規格書/README.md) | Artibird 產品商業規格書 | L3 產品 | 規格書 | 各產品 v1.0 | L2、L3 工程 | 型錄、對外文案 | 面向客戶語言（受宣稱邊界約束） |
 | [Artibird產品型錄](Artibird產品型錄/README.md) | Artibird 產品型錄 | L3 產品 | 型錄 | v1.0 | L3 工程／商業 | 銷售、渠道 | 產品組合與應用場景 |
@@ -65,7 +74,8 @@ L4  敘事書稿    OceanAI系統、OceanAI系統架構、智慧之海
 | OceanAI系統架構規格書 | OceanAI系統架構 | 規格 v1.1 ≠ 敘事書稿 |
 | OceanAI系統工程規格書 | OceanAI系統 | 工程規格 v1.0 ≠ 敘事整合版 |
 | OceanAI系統架構規格書 v1.1 | OceanAI系統工程規格書 v1.0 | 架構層在上；工程層展開整合與 Runtime |
-| Artibird系統規格書 | OceanAI系統工程規格書 | 草稿 1–8 章；正本為工程規格書 19 章 |
+| Artibird | 系統規格書 | **Artibird 無系統規格書**；僅產品規格書 |
+| OceanAI系統工程規格書章節草稿 | OceanAI系統工程規格書 | 草稿 1–8 章；正本 19 章 |
 
 ## 結構說明
 
