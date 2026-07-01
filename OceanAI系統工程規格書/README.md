@@ -1,6 +1,8 @@
-# OceanAI系統規格書｜System Specification v1.0
+# OceanAI系統工程規格書｜System Specification v1.0
 
-OceanAI / Artibird 系統架構、Runtime 與整合規格書(中英對照)。共 19 章。
+OceanAI / Artibird 系統架構、Runtime 與整合**工程規格書**（中英對照）。共 19 章。
+
+正式文件標題仍為 **《OceanAI / Artibird 系統規格書 v1.0》**；本資料夾為庫內導航名，定位於 [OceanAI系統架構規格書](../OceanAI系統架構規格書/README.md) v1.1（架構層）之下、[Artibird產品工程規格書](../Artibird產品工程規格書/README.md)（產品層）之上。
 
 ## 章節目錄
 

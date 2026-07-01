@@ -12,4 +12,4 @@ OceanAI 系統級智慧架構**規格文件**（中英對照）。**不是**《O
 
 | 文件 | 說明 | 入口 |
 |------|------|------|
-| **A01-1 OceanAI 系統架構規格書 v1.1** | 系統架構、Runtime 與治理規格書 v1.1（架構層，高於系統規格書 v1.0） | [A01-1 OceanAI 系統架構規格書 v1.1/README.md](A01-1%20OceanAI%20系統架構規格書%20v1.1/README.md) |
+| **A01-1 OceanAI 系統架構規格書 v1.1** | 系統架構、Runtime 與治理規格書 v1.1（架構層，高於 [系統工程規格書 v1.0](../OceanAI系統工程規格書/README.md)） | [A01-1 OceanAI 系統架構規格書 v1.1/README.md](A01-1%20OceanAI%20系統架構規格書%20v1.1/README.md) |
