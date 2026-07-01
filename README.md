@@ -15,7 +15,7 @@
 | **OceanAI系統架構規格書** | 系統架構、Runtime 與治理規格書 v1.1,架構層,中英對照 | [OceanAI系統架構規格書/README.md](OceanAI系統架構規格書/README.md) |
 | **OceanAI系統規格書** | 技術規格書 v1.0,系統架構 + Runtime + 整合,19 章,中英對照 | [OceanAI系統規格書/README.md](OceanAI系統規格書/README.md) |
 | **智慧之海** | 哲學與架構專書《The Architecture of Intelligence》,六篇 ~20 章,中英對照 | [智慧之海/README.md](智慧之海/README.md) |
-| **整合版** | 工程敘事整合版《讓空間協同為一 / Make spaces work as one》 | [整合版/README.md](整合版/README.md) |
+| **OceanAI系統** | 《OceanAI 系統》工程敘事整合版《讓空間協同為一 / Make spaces work as one》 | [OceanAI系統/README.md](OceanAI系統/README.md) |
 
 ## 結構說明
 
