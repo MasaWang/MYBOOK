@@ -1,57 +1,61 @@
 # Artibird SKU 與型號命名規範 v1.0
 
-Artibird 產品身份、SKU 結構、型號命名與治理規範（中英對照）。
+Artibird 產品身份、SKU 結構、型號命名與治理規範（中英對照）。共 36 章。
 
-## 規劃與附錄
+## 規劃文件
 
-- [標準目錄與撰寫計劃](第一部分｜/標準目錄與撰寫計劃.md)
-- [最終目錄與文件組裝方案](最終目錄與文件組裝方案.md)
-- [最終附錄套件](最終附錄套件.md)
+- [標準目錄與撰寫計劃](planning/標準目錄與撰寫計劃.md)
+- [最終目錄與文件組裝方案](planning/最終目錄與文件組裝方案.md)
+- [最終附錄套件](planning/最終附錄套件.md)
 
-## 第一部分｜命名基礎
+## Part I｜命名基礎（第 1–10 章）
 
-- [Chapter 1 文件資訊](第一部分｜/Chapter%201%20文件資訊.md)
-- [chapter 2 命名原則](第一部分｜/chapter%202%20命名原則.md)
-- [chapter 3 面向客戶名稱、內部型號與 SKU 的區別](第一部分｜/chapter%203%20面向客戶名稱、內部型號與%20SKU%20的區別.md)
-- [chapter 4 產品線代碼](第一部分｜/chapter%204%20產品線代碼.md)
-- [chapter 5 世代代碼](第一部分｜/chapter%205%20世代代碼.md)
-- [chapter 6 區域代碼](第一部分｜/chapter%206%20區域代碼.md)
-- [chapter 7 連接代碼](第一部分｜/chapter%207%20連接代碼.md)
-- [chapter 8 供電代碼](第一部分｜/chapter%208%20供電代碼.md)
-- [chapter 9 版本代碼](第一部分｜/chapter%209%20版本代碼.md)
-- [chapter 10 包裝代碼](第一部分｜/chapter%2010%20包裝代碼.md)
+- [01 文件資訊](chapters/01_文件資訊.md)
+- [02 命名原則](chapters/02_命名原則.md)
+- [03 面向客戶名稱、內部型號與 SKU 的區別](chapters/03_面向客戶名稱、內部型號與SKU的區別.md)
+- [04 產品線代碼](chapters/04_產品線代碼.md)
+- [05 世代代碼](chapters/05_世代代碼.md)
+- [06 區域代碼](chapters/06_區域代碼.md)
+- [07 連接代碼](chapters/07_連接代碼.md)
+- [08 供電代碼](chapters/08_供電代碼.md)
+- [09 版本代碼](chapters/09_版本代碼.md)
+- [10 包裝代碼](chapters/10_包裝代碼.md)
 
-## 第二部分｜SKU 結構
+## Part II｜SKU 結構（第 11–16 章）
 
-- [chapter 11 建議 SKU 格式](第二部分｜SKU%20結構/chapter%2011%20建議%20SKU%20格式.md)
-- [chapter 12 SKU 欄位定義](第二部分｜SKU%20結構/chapter%2012%20SKU%20欄位定義.md)
-- [Chapter 13 各產品線 SKU 示例](第二部分｜SKU%20結構/Chapter%2013%20各產品線%20SKU%20示例.md)
-- [chapter 14 SKU 治理規則](第二部分｜SKU%20結構/chapter%2014%20SKU%20治理規則.md)
-- [chapter 15 SKU 發布狀態](第二部分｜SKU%20結構/chapter%2015%20SKU%20發布狀態.md)
-- [chapter 16 SKU 退市與版本控制](第二部分｜SKU%20結構/chapter%2016%20SKU%20退市與版本控制.md)
+- [11 建議 SKU 格式](chapters/11_建議SKU格式.md)
+- [12 SKU 欄位定義](chapters/12_SKU欄位定義.md)
+- [13 各產品線 SKU 示例](chapters/13_各產品線SKU示例.md)
+- [14 SKU 治理規則](chapters/14_SKU治理規則.md)
+- [15 SKU 發布狀態](chapters/15_SKU發布狀態.md)
+- [16 SKU 退市與版本控制](chapters/16_SKU退市與版本控制.md)
 
-## 第三部分｜型號命名系統
+## Part III｜型號命名系統（第 17–23 章）
 
-- [chapter 17 面向客戶型號名稱](第三部分｜型號命名系統/chapter%2017%20面向客戶型號名稱.md)
-- [chapter 18 內部型號](第三部分｜型號命名系統/chapter%2018%20內部型號.md)
-- [chapter 19 工程型號](第三部分｜型號命名系統/chapter%2019%20工程型號.md)
-- [chapter 20 認證型號](第三部分｜型號命名系統/chapter%2020%20認證型號.md)
-- [chapter 21 生產型號](第三部分｜型號命名系統/chapter%2021%20生產型號.md)
-- [chapter 22 包裝型號名稱](第三部分｜型號命名系統/chapter%2022%20包裝型號名稱.md)
-- [chapter 23 型號名稱核准規則](第三部分｜型號命名系統/chapter%2023%20型號名稱核准規則.md)
+- [17 面向客戶型號名稱](chapters/17_面向客戶型號名稱.md)
+- [18 內部型號](chapters/18_內部型號.md)
+- [19 工程型號](chapters/19_工程型號.md)
+- [20 認證型號](chapters/20_認證型號.md)
+- [21 生產型號](chapters/21_生產型號.md)
+- [22 包裝型號名稱](chapters/22_包裝型號名稱.md)
+- [23 型號名稱核准規則](chapters/23_型號名稱核准規則.md)
 
-## 第四部分｜SKU 主表模板
+## Part IV｜SKU 主表模板（第 24–36 章）
 
-- [chapter 24 SKU 主記錄模板](第四部分｜SKU%20主表模板/chapter%2024%20SKU%20主記錄模板.md)
-- [chapter 25 SKU 主表示例](第四部分｜SKU%20主表模板/chapter%2025%20SKU%20主表示例.md)
-- [chapter 26 產品線主表](第四部分｜SKU%20主表模板/chapter%2026%20產品線主表.md)
-- [chapter 27 區域與市場主表](第四部分｜SKU%20主表模板/chapter%2027%20區域與市場主表.md)
-- [chapter 28 連接方式主表](第四部分｜SKU%20主表模板/chapter%2028%20連接方式主表.md)
-- [chapter 29 供電架構主表](第四部分｜SKU%20主表模板/chapter%2029%20供電架構主表.md)
-- [chapter 30 版本與功能主表](第四部分｜SKU%20主表模板/chapter%2030%20版本與功能主表.md)
-- [chapter 31 包裝代碼主表](第四部分｜SKU%20主表模板/chapter%2031%20包裝代碼主表.md)
-- [chapter 32 認證與合規映射表](第四部分｜SKU%20主表模板/chapter%2032%20認證與合規映射表.md)
-- [chapter 33 生命週期與發布狀態主表](第四部分｜SKU%20主表模板/chapter%2033%20生命週期與發布狀態主表.md)
-- [chapter 34 變更記錄與版本管控表](第四部分｜SKU%20主表模板/chapter%2034%20變更記錄與版本管控表.md)
-- [chapter 35 文件關聯與記錄索引](第四部分｜SKU%20主表模板/chapter%2035%20文件關聯與記錄索引.md)
-- [chapter 36 最終 SKU 治理檢查清單](第四部分｜SKU%20主表模板/chapter%2036%20最終%20SKU%20治理檢查清單.md)
+- [24 SKU 主記錄模板](chapters/24_SKU主記錄模板.md)
+- [25 SKU 主表示例](chapters/25_SKU主表示例.md)
+- [26 產品線主表](chapters/26_產品線主表.md)
+- [27 區域與市場主表](chapters/27_區域與市場主表.md)
+- [28 連接方式主表](chapters/28_連接方式主表.md)
+- [29 供電架構主表](chapters/29_供電架構主表.md)
+- [30 版本與功能主表](chapters/30_版本與功能主表.md)
+- [31 包裝代碼主表](chapters/31_包裝代碼主表.md)
+- [32 認證與合規映射表](chapters/32_認證與合規映射表.md)
+- [33 生命週期與發布狀態主表](chapters/33_生命週期與發布狀態主表.md)
+- [34 變更記錄與版本管控表](chapters/34_變更記錄與版本管控表.md)
+- [35 文件關聯與記錄索引](chapters/35_文件關聯與記錄索引.md)
+- [36 最終 SKU 治理檢查清單](chapters/36_最終SKU治理檢查清單.md)
+
+## 其他
+
+- [完整版.md](完整版.md) — 全書單一檔案
