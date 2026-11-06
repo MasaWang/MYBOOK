@@ -1,11 +1,11 @@
-# Artibird Gate Commercial Specification v1.1-Final
+# Artibird Gate Commercial Specification v1.2-Candidate
 
-# Artibird Gate 商業規格書 v1.1-Final
+# Artibird Gate 商業規格書 v1.2-Candidate
 
 **Commercial + Marketing + Channel Enablement Edition**  
 **商業、行銷與渠道賦能版本**
 
-**Version Date**: 2026-05-08  
+**Version Date**: 2026-11-06  
 **Document Type**: Commercial Specification  
 **Product Family**: Artibird Series  
 **Product Category**: Localized Network Gateway / Device Access Node  
@@ -13,7 +13,7 @@
 **Runtime Ecosystem**: ArtiOS / Artibird Hub / OceanAI Edge / OceanAI Cloud  
 **Hardware Foundation**: ESP32-C6
 
-**版本日期**：2026-05-08  
+**版本日期**：2026-11-06  
 **文件類型**：商業規格書  
 **產品家族**：Artibird 系列  
 **產品類別**：本地化網路網關 / 設備接入節點  
@@ -32,7 +32,7 @@
 |Item|Description|
 |---|---|
 |Document Name|Artibird Gate Commercial Specification|
-|Version|v1.1-Final|
+|Version|v1.2-Candidate|
 |Document Type|Commercial + Marketing + Channel Specification|
 |Product Name|Artibird Gate|
 |Product Category|Localized Network Gateway / Device Access Node|
@@ -40,17 +40,17 @@
 |Hardware Foundation|ESP32-C6|
 |System Architecture|OceanAI Coordinated Intelligence Architecture|
 |Runtime Ecosystem|ArtiOS / Artibird Hub / OceanAI Edge / OceanAI Cloud|
-|Related Engineering Specification|Artibird Gate Product Engineering Specification v1.0.1|
+|Related Engineering Specification|Artibird Gate Product Engineering Specification v1.1-Candidate|
 |Intended Audience|Sales, Marketing, Channel Partners, Retail Teams, System Integrators, Business Development Teams|
-|Release Date|2026-05-08|
-|Approval Status|Released Candidate / Final Commercial Draft|
+|Revision Date|2026-11-06|
+|Document Status|Revised candidate; product availability and validation remain unverified|
 
 ## 中文表
 
 |項目|說明|
 |---|---|
 |文件名稱|Artibird Gate 商業規格書|
-|文件版本|v1.1-Final|
+|文件版本|v1.2-Candidate|
 |文件類型|商業、行銷與渠道規格書|
 |產品名稱|Artibird Gate|
 |產品類別|本地化網路網關 / 設備接入節點|
@@ -58,10 +58,15 @@
 |硬體基礎|ESP32-C6|
 |系統架構|OceanAI 協同智慧架構|
 |Runtime 生態|ArtiOS / Artibird Hub / OceanAI Edge / OceanAI Cloud|
-|對應工程規格書|Artibird Gate 產品工程規格書 v1.0.1|
+|對應工程規格書|Artibird Gate 產品工程規格書 v1.1-Candidate|
 |適用對象|銷售、行銷、渠道合作夥伴、零售團隊、系統整合商、商務拓展團隊|
-|發布日期|2026-05-08|
-|核准狀態|發布候選版 / 最終商業草案|
+|修訂日期|2026-11-06|
+|文件狀態|修訂候選稿；產品供貨與驗證狀態仍未確認|
+
+**Status note｜狀態說明**  
+Approval of this document revision does not establish hardware validation, certification, or commercial availability. Each public capability must identify a product model, firmware version, operating profile, and evidence reference. Design intent in this document is not proof of implementation.
+
+本次文件修訂獲准不代表硬體已驗證、已認證或已供貨。每項公開能力均須對應產品型號、韌體版本、運行配置與證據引用。本文設計方向不作已實作證明。
 
 ---
 
@@ -69,63 +74,29 @@
 
 # 2. 商業定位
 
-## 2.1 Hero Tagline
-
-## 2.1 主標語
+## 2.1 Product Role｜產品角色
 
 **EN**  
-Local-first connectivity. Stable coordination. Intelligent device access.
+Artibird Gate connects supported Artibird devices to OceanAI Runtime services. It provides device onboarding, command delivery, event forwarding, and connection health reporting through the protocols and network links supported by each model.
 
 **ZH-TW**  
-本地優先．穩定協同．智慧接入。
+Artibird Gate 將受支援的 Artibird 設備接入 OceanAI Runtime 服務。它透過各型號支援的協議與網路鏈路，提供設備入網、指令傳遞、事件轉發及連接健康回報。
 
----
-
-## 2.2 Primary Positioning
-
-## 2.2 主要定位
+## 2.2 Customer Value｜客戶價值
 
 **EN**  
-Artibird Gate is the localized network gateway of the Artibird ecosystem, designed for spaces that require reliable device access, local coordination, and scalable system participation.
+Gate is intended to make device access easier to deploy, observe, and maintain. Customers select it by supported device models, installation conditions, upstream connection, required runtime services, and validated operating limits.
 
 **ZH-TW**  
-Artibird Gate 是 Artibird 生態中的本地化網路網關，專為需要可靠設備接入、本地協同與可擴展系統參與的空間而設計。
+Gate 旨在讓設備接入更易部署、觀察與維護。客戶應依受支援設備型號、安裝條件、上行連接、所需 Runtime 服務及已驗證運行限制選型。
 
----
-
-## 2.3 Short Positioning Line
-
-## 2.3 簡短定位語
+## 2.3 Role Boundary｜責任範圍
 
 **EN**  
-Connect supported Artibird devices into one coordinated local system.
+Gate handles device access and transport. The configured Hub / ArtiOS or Cloud Runtime handles system state, scenes, automation, and command policy. OceanAI Edge is an optional enhancement. The deployment profile must identify the authoritative Runtime and must not imply automatic Hub-to-Cloud failover.
 
 **ZH-TW**  
-將受支援 Artibird 設備連接為一個協同本地系統。
-
----
-
-## 2.4 Core Value Proposition
-
-## 2.4 核心價值主張
-
-**EN**  
-Artibird Gate provides local-first device access for distributed Artibird devices, helping them participate in the OceanAI coordinated intelligence system with greater local reliability, structured connectivity, and cloud-enhanced scalability.
-
-**ZH-TW**  
-Artibird Gate 為分布式 Artibird 設備提供本地優先的設備接入能力，幫助它們以更高本地可靠性、結構化連接能力與雲端增強擴展性，參與 OceanAI 協同智慧系統。
-
----
-
-## 2.5 Differentiation
-
-## 2.5 差異化
-
-**EN**  
-Unlike generic Wi-Fi accessories or simple repeaters, Artibird Gate is designed as a system-level network node focused on local runtime participation, device coordination, validated capacity management, and ecosystem integration.
-
-**ZH-TW**  
-不同於普通 Wi-Fi 配件或簡單中繼器，Artibird Gate 被設計為系統級網路節點，專注於本地 Runtime 參與、設備協同、已驗證容量管理與生態整合。
+Gate 負責設備接入與傳遞。已配置的 Hub / ArtiOS 或 Cloud Runtime 負責系統狀態、場景、自動化及指令策略。OceanAI Edge 為選配增強。部署配置必須指明權威 Runtime，不暗示 Hub 與 Cloud 會自動接管彼此。
 
 ---
 
@@ -135,23 +106,19 @@ Unlike generic Wi-Fi accessories or simple repeaters, Artibird Gate is designed 
 
 ## EN
 
-Artibird Gate is a localized network gateway built on ESP32-C6 for the Artibird product ecosystem. It provides reliable device access and communication support for distributed Artibird products such as switches, sensors, panels, execution nodes, and other supported device categories.
+Artibird Gate is a device access gateway built on the ESP32-C6 baseline. Its device-side protocol and upstream network link are specified separately. For example, a validated BLE Mesh profile may carry switch and sensor events upstream over Wi-Fi or an implemented Ethernet interface.
 
-In residential, classroom, office, campus, and commercial building environments, Artibird Gate helps maintain local device connectivity and supports the event flow required for scenes, automation, and system coordination. When paired with Artibird Hub and ArtiOS, Gate becomes part of a local runtime structure that allows devices to operate as coordinated participants rather than isolated smart products.
+Gate participates in local operation when the required local Runtime, network, device configuration, and credentials are available. Cloud-managed deployments use their configured Cloud Runtime path. Internet loss, Hub loss, and Cloud loss have different effects and must be described for each supported configuration.
 
-Artibird Gate follows a local-first, cloud-enhanced model. Supported local functions are designed to remain available within the local environment when the required local system components are present. When connected to OceanAI Cloud, the system may gain remote monitoring, lifecycle management, multi-site visibility, synchronization, and cloud-assisted system enhancement.
-
-Artibird Gate is therefore not a generic wireless accessory. It is a foundational network access node for building coordinated intelligent environments.
+Before purchase or project quotation, the model data sheet must identify supported devices, upstream interface, power input, installation conditions, firmware compatibility, tested capacity, package contents, and support terms. These values remain unverified until backed by the model record and test evidence.
 
 ## ZH-TW
 
-Artibird Gate 是一款基於 ESP32-C6、面向 Artibird 產品生態設計的本地化網路網關。它為分布式 Artibird 產品提供可靠的設備接入與通訊支援，例如開關、感測器、面板、執行節點與其他受支援設備類別。
+Artibird Gate 是以 ESP32-C6 為現有基準的設備接入網關。設備側協議與上行網路鏈路分開列示。例如，經驗證的 BLE Mesh 配置可透過 Wi-Fi 或已實作的 Ethernet 介面，向上傳遞開關與感測事件。
 
-在住宅、教室、辦公室、校園與商業建築環境中，Artibird Gate 幫助維持本地設備連接，並支援場景、自動化與系統協同所需的事件流。當它與 Artibird Hub 和 ArtiOS 配合使用時，Gate 成為本地 Runtime 結構的一部分，使設備不再只是孤立智慧產品，而是協同系統中的參與節點。
+當所需本地 Runtime、網路、設備配置與憑證可用時，Gate 參與本地運作。雲端管理部署採其已配置的 Cloud Runtime 路徑。Internet、Hub 與 Cloud 中斷的影響不同，須按每種受支援配置說明。
 
-Artibird Gate 採用本地優先、雲端增強模式。在所需本地系統元件具備的條件下，受支援本地功能設計為可在本地環境中保持可用。當接入 OceanAI Cloud 後，系統可進一步獲得遠端監測、生命週期管理、多站點可視化、同步與雲端輔助系統增強能力。
-
-因此，Artibird Gate 不是普通無線配件，而是構建協同智慧空間的基礎網路接入節點。
+採購或項目報價前，型號資料表須列出受支援設備、上行介面、供電輸入、安裝條件、韌體相容性、已測容量、包裝內容與支援條款。未具備型號記錄及測試證據前，這些數值仍屬未確認。
 
 ---
 
@@ -159,47 +126,29 @@ Artibird Gate 採用本地優先、雲端增強模式。在所需本地系統元
 
 # 4. 銷售文案模組
 
-## 4.1 One-Line Description
-
-## 4.1 一句話描述
+## 4.1 One-Line Description｜一句話描述
 
 **EN**  
-Artibird Gate is a local-first ESP32-C6 gateway that connects supported Artibird devices into a coordinated intelligent environment.
+Artibird Gate connects supported devices to OceanAI Runtime services and makes their connection status visible.
 
 **ZH-TW**  
-Artibird Gate 是一款本地優先的 ESP32-C6 網關，用於將受支援 Artibird 設備接入協同智慧環境。
+Artibird Gate 將受支援設備接入 OceanAI Runtime 服務，並呈現設備連接狀態。
 
----
-
-## 4.2 Short Description
-
-## 4.2 簡短描述
+## 4.2 Short Description｜簡短描述
 
 **EN**  
-Artibird Gate provides localized device access for the Artibird ecosystem. Built on ESP32-C6, it helps supported Artibird devices connect, report, and participate in local runtime coordination, while cloud services may extend the system with remote monitoring, lifecycle management, and multi-site visibility.
+Artibird Gate provides device onboarding, event forwarding, command delivery, and connection diagnostics for supported Artibird deployments. Each model specifies its device protocols, upstream link, required runtime services, and tested operating conditions.
 
 **ZH-TW**  
-Artibird Gate 為 Artibird 生態提供本地化設備接入能力。它基於 ESP32-C6，幫助受支援 Artibird 設備連接、回報並參與本地 Runtime 協同；雲端服務則可進一步擴展遠端監測、生命週期管理與多站點可視化能力。
+Artibird Gate 為受支援的 Artibird 部署提供設備入網、事件轉發、指令傳遞與連接診斷。各型號分別列明設備協議、上行鏈路、所需 Runtime 服務及已測運行條件。
 
----
-
-## 4.3 Long Description
-
-## 4.3 長描述
+## 4.3 Publication Conditions｜發布條件
 
 **EN**  
-Artibird Gate is designed for users, installers, and organizations that need reliable local device access rather than isolated device control. As a localized network gateway built on ESP32-C6, it enables supported Artibird devices—such as switches, sensors, panels, execution nodes, and other compatible devices—to participate in a coordinated runtime environment.
-
-In a complete Artibird system, Gate works with Artibird Hub, ArtiOS, OceanAI Edge, and OceanAI Cloud to support local event flow, device onboarding, system coordination, remote monitoring, and lifecycle management. It is suitable for homes, classrooms, offices, campuses, smart buildings, and project-based deployments where device reliability and system continuity matter.
-
-Artibird Gate does not make unlimited connection or universal compatibility claims. Device capacity, wireless range, protocol support, and large-scale deployment performance must be validated under defined conditions. This makes Gate suitable for commercial deployments that require clear boundaries, dependable planning, and controlled system growth.
+These descriptions are candidate copy. Publish only the functions implemented and validated for the named model. Keep planned protocols, capacity targets, and untested recovery behavior in the roadmap or engineering targets.
 
 **ZH-TW**  
-Artibird Gate 面向需要可靠本地設備接入，而非孤立設備控制的用戶、安裝商與機構而設計。作為基於 ESP32-C6 的本地化網路網關，它使受支援 Artibird 設備——例如開關、感測器、面板、執行節點與其他相容設備——能夠參與協同 Runtime 環境。
-
-在完整 Artibird 系統中，Gate 與 Artibird Hub、ArtiOS、OceanAI Edge 和 OceanAI Cloud 協同，支援本地事件流、設備入網、系統協同、遠端監測與生命週期管理。它適用於住宅、教室、辦公室、校園、智慧建築與項目型部署，尤其適合重視設備可靠性與系統連續性的場景。
-
-Artibird Gate 不宣稱無限制連接或通用相容性。設備容量、無線距離、協議支援與大規模部署性能，均必須在明確條件下完成驗證。這使 Gate 更適合需要清晰邊界、可靠規劃與受控系統成長的商業部署。
+以上為候選文案。對外僅發布具名型號已實作並驗證的功能。規劃協議、容量目標與未測恢復行為保留於路線圖或工程目標。
 
 ---
 
@@ -207,31 +156,27 @@ Artibird Gate 不宣稱無限制連接或通用相容性。設備容量、無線
 
 # 5. 核心賣點與客戶收益
 
-## English Table
-
-|Selling Point|Customer Benefit|Key Advantage|
+|Candidate value|Customer benefit|Evidence required before publication|
 |---|---|---|
-|Local-First Architecture|Supported core functions can remain available within the local environment|More reliable system experience under defined local conditions|
-|ESP32-C6 Hardware Foundation|Provides a modern wireless foundation for gateway-class product development|Supports scalable gateway product architecture|
-|Multi-Device Access Support|Helps supported Artibird devices connect and participate in system coordination|Enables structured ecosystem growth|
-|Deep OceanAI Integration|Works with Artibird Hub, ArtiOS, OceanAI Edge, and OceanAI Cloud|Supports long-term system expansion|
-|Guided Device Onboarding|Helps users and installers add supported devices through defined setup workflows|Easier installation and maintenance|
-|Capacity-Aware Design|Connection capacity is treated as a validated system boundary|Better for project planning and commercial deployment|
-|Cloud-Enhanced Capabilities|Cloud may add remote monitoring, synchronization, analytics, and lifecycle services|Extends local systems into managed intelligent environments|
-|Secure System Participation|Designed for authenticated access, controlled management, and protected device participation where implemented|Supports safer ecosystem deployment|
+|Guided onboarding|Repeatable installation|Device / firmware compatibility and onboarding results|
+|Connection visibility|Identify device, upstream, and Runtime access faults|Health fields, fault codes, and diagnostic tests|
+|Defined local operation|Continue supported local functions during Internet loss|Local dependency matrix and outage tests|
+|Controlled recovery|Make reconnection and replacement predictable|Recovery and replacement procedure with test results|
+|Capacity-aware deployment|Plan a room or site from tested limits|Named profile, workload, latency, and capacity report|
+|Optional remote services|Manage supported deployments off-site|Cloud profile, permissions, service availability, and tests|
 
-## 中文表
-
-|賣點|客戶收益|核心優勢|
+|候選價值|客戶收益|發布前所需證據|
 |---|---|---|
-|本地優先架構|受支援核心功能可在本地環境中保持可用|在明確本地條件下提供更可靠的系統體驗|
-|ESP32-C6 硬體基礎|為網關級產品開發提供現代無線基礎|支援可擴展網關產品架構|
-|多設備接入支援|幫助受支援 Artibird 設備連接並參與系統協同|支援結構化生態擴展|
-|深度 OceanAI 整合|與 Artibird Hub、ArtiOS、OceanAI Edge 和 OceanAI Cloud 協同|支援長期系統擴展|
-|引導式設備入網|幫助用戶與安裝商透過明確流程添加受支援設備|降低安裝與維護難度|
-|容量感知設計|將連接容量視為需要驗證的系統邊界|更適合項目規劃與商業部署|
-|雲端增強能力|雲端可增加遠端監測、同步、分析與生命週期服務|將本地系統擴展為可管理智慧環境|
-|安全系統參與|在已實作條件下支援身份認證、受控管理與受保護設備參與|支援更安全的生態部署|
+|引導式入網|可重複的安裝流程|設備／韌體相容性及入網結果|
+|連接狀態可見|定位設備、上行與 Runtime 存取故障|健康欄位、故障碼及診斷測試|
+|明確本地運行|Internet 中斷時維持受支援本地功能|本地依賴矩陣及斷網測試|
+|受控恢復|讓重連與替換行為可預期|恢復及替換流程與實測|
+|依容量部署|按已測限制規劃房間或站點|具名配置、負載、延遲及容量報告|
+|選配遠端服務|在站點外管理受支援部署|雲端配置、權限、服務可用性及測試|
+
+ESP32-C6 is the hardware baseline, not a validated customer benefit by itself. All rows are candidate values until supported by the actual model record.
+
+ESP32-C6 為硬體基準，其本身不構成已驗證客戶收益。以上各項在取得實際型號記錄前均屬候選價值。
 
 ---
 
@@ -239,33 +184,27 @@ Artibird Gate 不宣稱無限制連接或通用相容性。設備容量、無線
 
 # 6. 本地、雲端與遠端能力
 
-## English Table
+|Function|Execution location / dependencies|Internet or Cloud loss|Hub unavailable|
+|---|---|---|---|
+|Device-side transport|Gate and configured device protocol|May continue in a validated local profile|Transport may remain active; system coordination is profile-dependent|
+|Onboarding / binding|Gate plus configured installer interface, credentials, and authority|Available only if the setup profile supports local authorization|No general claim; identify provisioning authority|
+|Scenes / automation|Configured Hub / ArtiOS or Cloud Runtime|Local Runtime profile may continue|Only preconfigured, validated binding / fallback; no full-scene claim|
+|Health / diagnostics|Gate plus a reachable local or remote interface|Local diagnostics may remain available|Report Hub loss through available interface; buffering is bounded|
+|Remote control / fleet service|Cloud Runtime / services, network, account, permissions|Unavailable through the affected cloud path|Cloud-managed profile only; no automatic takeover implied|
+|OTA / replacement|Named update / recovery profile and authorized credentials|Local maintenance only where implemented and validated|Follow model-specific recovery procedure|
 
-|Capability|Local-First|Cloud-Enhanced|Remote Access|Notes|
-|---|---|---|---|---|
-|Device Connection|Yes|Enhanced|Partial / Yes|Supports validated device categories and capacity|
-|Device Onboarding|Yes|Enhanced|Partial|Requires App / Hub / supported setup workflow|
-|Basic Automation Support|Yes / Partial|Enhanced|Partial|Automation logic depends on Hub / ArtiOS|
-|Scene & Control Support|Yes / Partial|Enhanced|Partial / Yes|Scene execution typically requires Hub support|
-|Monitoring & Alerts|Partial|Yes|Yes|Remote alerts require Cloud connectivity|
-|Gateway Health Reporting|Yes / Partial|Yes|Yes|Depends on firmware, Hub, and Cloud support|
-|Firmware Updates|Partial|Yes|Partial / Yes|OTA path depends on product configuration|
-|Multi-Site Management|Limited|Yes|Yes|Requires OceanAI Cloud and site/account structure|
-|Capacity Management|Yes|Enhanced|Partial|Requires validated connection capacity report|
+|功能|執行位置／依賴|Internet 或 Cloud 中斷|Hub 不可用|
+|---|---|---|---|
+|設備側傳遞|Gate 及已配置設備協議|經驗證本地配置可繼續|傳遞可能持續；系統協同依配置而定|
+|入網／綁定|Gate、安裝介面、憑證及配置權威|僅在設定配置支援本地授權時可用|不得泛稱可用；須指明入網權威|
+|場景／自動化|已配置 Hub / ArtiOS 或 Cloud Runtime|本地 Runtime 配置可繼續|僅限預先配置且已驗證的綁定／回退；不宣稱完整場景可用|
+|健康／診斷|Gate 及可達本地或遠端介面|本地診斷可依配置保持|由可用介面回報 Hub 中斷；緩衝有界|
+|遠端控制／機群服務|Cloud Runtime／服務、網路、帳號、權限|受影響雲端路徑不可用|僅限雲端管理配置；不暗示自動接管|
+|OTA／替換|具名更新／恢復配置及授權憑證|僅限已實作並驗證的本地維護|依型號恢復流程執行|
 
-## 中文表
+Each model must supply firmware versions, evidence references, and supported / unsupported results for this matrix before commercial release.
 
-|能力|本地優先|雲端增強|遠端存取|備註|
-|---|---|---|---|---|
-|設備連接|是|增強|部分 / 是|支援已驗證設備類別與容量|
-|設備入網|是|增強|部分|需要 App / Hub / 受支援設定流程|
-|基礎自動化支援|是 / 部分|增強|部分|自動化邏輯依賴 Hub / ArtiOS|
-|場景與控制支援|是 / 部分|增強|部分 / 是|場景執行通常需要 Hub 支援|
-|監測與警報|部分|是|是|遠端警報需要 Cloud 連接|
-|網關健康回報|是 / 部分|是|是|取決於韌體、Hub 與 Cloud 支援|
-|韌體更新|部分|是|部分 / 是|OTA 路徑取決於產品配置|
-|多站點管理|有限|是|是|需要 OceanAI Cloud 與站點 / 帳號結構|
-|容量管理|是|增強|部分|需要已驗證連接容量報告|
+商業發布前，各型號須為本矩陣補齊韌體版本、證據引用及支援／不支援結果。
 
 ---
 
@@ -340,7 +279,7 @@ Artibird Gate 不宣稱無限制連接或通用相容性。設備容量、無線
 |OceanAI Edge|May provide device context for Edge-assisted intelligence|Depends on deployment architecture|
 |OceanAI Cloud|May support remote monitoring, lifecycle, synchronization, and multi-site visibility|Requires Cloud connectivity and account binding|
 |Artibird App|Supports setup, binding, and status visibility where implemented|iOS / Android versions must be defined|
-|Artibird Devices|Designed for supported Artibird Switch, Sense, Panel, Act, Sync, and Vision devices|Compatibility matrix required|
+|Artibird Devices|Only named device models and protocol paths in the validated compatibility matrix|Compatibility matrix required|
 |Wi-Fi Routers|Can operate with standard Wi-Fi infrastructure where configured correctly|Router compatibility and network conditions affect performance|
 
 ## 中文表
@@ -352,8 +291,15 @@ Artibird Gate 不宣稱無限制連接或通用相容性。設備容量、無線
 |OceanAI Edge|可為 Edge 輔助智慧提供設備上下文|取決於部署架構|
 |OceanAI Cloud|可支援遠端監測、生命週期、同步與多站點可視化|需要 Cloud 連接與帳號綁定|
 |Artibird App|在已實作條件下支援設定、綁定與狀態可視化|必須定義 iOS / Android 版本|
-|Artibird 設備|面向受支援 Artibird Switch、Sense、Panel、Act、Sync 與 Vision 設備設計|需要相容性矩陣|
+|Artibird 設備|僅限已驗證相容性矩陣內的設備型號與協議路徑|需要相容性矩陣|
 |Wi-Fi 路由器|在正確配置條件下可與標準 Wi-Fi 基礎設施配合使用|路由器相容性與網路條件會影響性能|
+
+---
+
+**Compatibility record｜相容性記錄**  
+Record device model, device protocol / model identifiers, device firmware, Gate firmware, Runtime version, onboarding method, supported commands / events, limitations, and test reference. A Wi-Fi device may connect directly to the Runtime through the site AP. Vision media follows its specified IP path; listing Vision in the ecosystem does not imply video transport through Gate.
+
+記錄設備型號、設備協議／Model 識別、設備韌體、Gate 韌體、Runtime 版本、入網方式、受支援指令／事件、限制及測試引用。Wi-Fi 設備可依架構經站點 AP 直連 Runtime。Vision 媒體依指定 IP 路徑傳輸；列為生態產品不代表視訊經由 Gate 傳遞。
 
 ---
 
@@ -366,7 +312,7 @@ Artibird Gate 不宣稱無限制連接或通用相容性。設備容量、無線
 |Item|Description|
 |---|---|
 |Product Name|Artibird Gate|
-|SKU Name|Artibird Gate ESP32-C6|
+|SKU Name|Artibird Gate + approved model / configuration; unassigned|
 |SKU Code|TBD|
 |Model Number|TBD|
 |Hardware Foundation|ESP32-C6|
@@ -381,7 +327,7 @@ Artibird Gate 不宣稱無限制連接或通用相容性。設備容量、無線
 |項目|說明|
 |---|---|
 |產品名稱|Artibird Gate|
-|SKU 名稱|Artibird Gate ESP32-C6|
+|SKU 名稱|Artibird Gate ＋已核准型號／配置；尚未指派|
 |SKU 編碼|TBD|
 |型號|TBD|
 |硬體基礎|ESP32-C6|
@@ -390,6 +336,13 @@ Artibird Gate 不宣稱無限制連接或通用相容性。設備容量、無線
 |零售渠道|Amazon、OceanAI 官網、分銷渠道、安裝商渠道、B2B 項目渠道|
 |保固|依地區與渠道待定|
 |可選套裝|Hub + Gate 入門套裝；Gate + Switch 套裝；Gate + Sense 套裝；教室入門套裝|
+
+---
+
+**Required model data｜型號必填資料**  
+Device-side protocol and roles; upstream interface; power voltage / current and adapter inclusion; enclosure / mounting and environment; Gate / device / Runtime firmware compatibility; validated workload and capacity; package contents; warranty and support. Values are unverified / unassigned until backed by the model record. Outdoor and agriculture use requires a separately validated environmental configuration.
+
+設備側協議及角色；上行介面；供電電壓／電流及是否附變壓器；外殼／固定與環境；Gate／設備／Runtime 韌體相容性；已驗證負載及容量；包裝內容；保固及支援。取得型號記錄前，各值仍未確認／未指派。戶外及農業用途須另有已驗證環境配置。
 
 ---
 
@@ -482,6 +435,7 @@ Capacity-related claims must reference validated test conditions and official va
 |v1.0|2026-05-08|Initial Artibird Gate Commercial Specification|
 |v1.1|2026-05-08|Optimized structure, enhanced bilingual commercial language, improved marketing flow, strengthened capacity claim control, and refined channel enablement|
 |v1.1-Final|2026-05-08|Finalized commercial specification version for customer-facing, marketing-facing, retail-facing, and channel-facing reference|
+|v1.2-Candidate|2026-11-06|Align engineering reference; clarify device access, dependencies, compatibility, model data, and evidence status|
 
 ## 中文表
 
@@ -490,6 +444,7 @@ Capacity-related claims must reference validated test conditions and official va
 |v1.0|2026-05-08|建立 Artibird Gate 初始商業規格書|
 |v1.1|2026-05-08|優化章節結構，強化雙語商業語言，提升行銷敘事流暢度，加強容量宣稱控制，並完善渠道賦能內容|
 |v1.1-Final|2026-05-08|完成最終商業規格版本，可供客戶、行銷、零售與渠道參考使用|
+|v1.2-Candidate|2026-11-06|對齊工程引用，釐清設備接入、依賴、相容性、型號資料及證據狀態|
 
 ---
 
@@ -499,11 +454,11 @@ Capacity-related claims must reference validated test conditions and official va
 
 ## EN
 
-This Artibird Gate Commercial Specification v1.1-Final defines Artibird Gate as the localized network gateway and device access node of the Artibird ecosystem. It presents Gate in customer-facing, marketing-facing, retail-facing, and channel-facing language while preserving engineering boundaries, local-first positioning, cloud-enhanced capability, ESP32-C6 hardware identity, ecosystem compatibility, and validated commercial claim control.
+This Artibird Gate Commercial Specification v1.2-Candidate describes Artibird Gate as the localized network gateway and device access node of the Artibird ecosystem. It presents Gate in customer-facing, marketing-facing, retail-facing, and channel-facing language while preserving engineering boundaries, local-first positioning, cloud-enhanced capability, ESP32-C6 hardware identity, ecosystem compatibility, and validated commercial claim control.
 
 ## ZH-TW
 
-本《Artibird Gate 商業規格書 v1.1-Final》將 Artibird Gate 定義為 Artibird 生態中的本地化網路網關與設備接入節點。它以面向客戶、行銷、零售與渠道的語言呈現 Gate，同時保留工程邊界、本地優先定位、雲端增強能力、ESP32-C6 硬體身份、生態相容性與已驗證商業宣稱控制。
+本《Artibird Gate 商業規格書 v1.2-Candidate》將 Artibird Gate 定義為 Artibird 生態中的本地化網路網關與設備接入節點。它以面向客戶、行銷、零售與渠道的語言呈現 Gate，同時保留工程邊界、本地優先定位、雲端增強能力、ESP32-C6 硬體身份、生態相容性與已驗證商業宣稱控制。
 
 ---
 

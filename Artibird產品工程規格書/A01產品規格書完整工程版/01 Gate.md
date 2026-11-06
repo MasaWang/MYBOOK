@@ -1,21 +1,21 @@
 
 ---
 
-# Artibird Gate Product Specification v1.0
+# Artibird Gate Product Specification v1.1-Candidate
 
-# Artibird Gate 產品規格書 v1.0
+# Artibird Gate 產品規格書 v1.1-Candidate
 
 **Engineering + System Specification Edition**  
 **工程與系統規格書版本**
 
-**Version Date**: 2026-05-08  
+**Version Date**: 2026-11-06  
 **Document Type**: Product Specification  
 **Product Category**: Localized Network Gateway / Device Access Node  
 **Hardware Foundation**: ESP32-C6  
 **System Architecture**: OceanAI Coordinated Intelligence Architecture  
 **Runtime Platform**: ArtiOS
 
-**版本日期**：2026-05-08  
+**版本日期**：2026-11-06  
 **文件類型**：產品規格書  
 **產品類別**：本地化網路網關 / 設備接入節點  
 **硬體基礎**：ESP32-C6  
@@ -33,7 +33,7 @@
 |Item|Description|
 |---|---|
 |Document Name|Artibird Gate Product Specification|
-|Version|v1.0|
+|Version|v1.1-Candidate|
 |Document Type|Engineering + System Specification|
 |Product Name|Artibird Gate|
 |Product Category|Localized Network Gateway / Device Access Node|
@@ -42,14 +42,15 @@
 |Hardware Foundation|ESP32-C6|
 |Specification Level|Engineering + System|
 |Intended Audience|Hardware, Firmware, Software, System, Testing, Certification, Product Teams|
-|Release Date|2026-05-08|
+|Revision Date|2026-11-06|
+|Document Status|Revised candidate; implementation and validation unverified|
 
 ## 中文表
 
 |項目|說明|
 |---|---|
 |文件名稱|Artibird Gate 產品規格書|
-|文件版本|v1.0|
+|文件版本|v1.1-Candidate|
 |文件類型|工程與系統規格書|
 |產品名稱|Artibird Gate|
 |產品類別|本地化網路網關 / 設備接入節點|
@@ -58,7 +59,15 @@
 |硬體基礎|ESP32-C6|
 |規格書層級|工程與系統規格|
 |適用對象|硬體、韌體、軟體、系統、測試、認證、產品團隊|
-|發布日期|2026-05-08|
+|修訂日期|2026-11-06|
+|文件狀態|修訂候選稿；實作與驗證仍未確認|
+
+---
+
+**Status interpretation｜狀態解讀**  
+This specification states design requirements. Existing support language describes intended scope, not verified implementation. Each actual model must record required, implemented, and validated status separately with evidence. Unverified fields are not commercial claims. Appendix D is normative for the operating profile and verification record introduced by this revision.
+
+本規格記錄設計要求。既有支援描述表示預期範圍，不作已驗證實作證明。每個實際型號須分別記錄要求、已實作與已驗證狀態及證據。未確認欄位不作商業宣稱。本次新增的運行配置與驗證記錄以附錄 D 為規範依據。
 
 ---
 
@@ -99,10 +108,10 @@ Artibird Gate 採用 **本地優先、雲端增強** 的運作模式。本地連
 |Relationship with Hub|Connects distributed devices to Artibird Hub for state management, automation, and coordination|
 |Relationship with Edge|Provides device-side data and event context to OceanAI Edge through Hub or defined data paths|
 |Relationship with Cloud|Supports remote access, synchronization, account binding, and lifecycle management through OceanAI Cloud|
-|Local-first Capability|Yes|
+|Local-first Capability|Required for the named local profile; not yet validated|
 |Offline Operation Scope|Local device discovery, local event forwarding, local command routing, and Hub-assisted coordination where supported|
 |Remote Control Scope|Remote device access through OceanAI Cloud when network, account binding, and security policy are available|
-|System Dependency|Hub-enhanced, Cloud-enhanced, Edge-enhanced depending on deployment architecture|
+|System Dependency|Named Hub-managed or Cloud-managed profile; Edge optional; authority and failure behavior in Appendix D|
 
 ## 中文表
 
@@ -115,10 +124,10 @@ Artibird Gate 採用 **本地優先、雲端增強** 的運作模式。本地連
 |與 Hub 的關係|將分布式設備接入 Artibird Hub，用於狀態管理、自動化與協同|
 |與 Edge 的關係|透過 Hub 或已定義數據路徑，向 OceanAI Edge 提供設備側數據與事件上下文|
 |與 Cloud 的關係|透過 OceanAI Cloud 支援遠端存取、同步、帳號綁定與生命週期管理|
-|本地優先能力|是|
+|本地優先能力|具名本地配置要求；尚未驗證|
 |離線運作範圍|在支援條件下，本地設備發現、本地事件轉發、本地指令路由與 Hub 輔助協同可運作|
 |遠端控制範圍|當網路、帳號綁定與安全策略可用時，透過 OceanAI Cloud 進行遠端設備存取|
-|系統依賴關係|依部署架構，可由 Hub 增強、Cloud 增強或 Edge 增強|
+|系統依賴關係|具名 Hub 管理或 Cloud 管理配置；Edge 選配；權威及故障行為見附錄 D|
 
 ---
 
@@ -188,9 +197,9 @@ As a device access node, Artibird Gate is treated as a security-sensitive networ
 |---|---|
 |Main Processor / SoC|ESP32-C6|
 |CPU Architecture|Single-core 32-bit RISC-V, up to 160 MHz|
-|Memory|Flash 4MB / 8MB / 16MB by variant; optional external memory depending on design|
+|Memory|Exact C6 module, Flash capacity / partition layout, available internal RAM, peak heap / stack budget required per model; external memory only if explicitly supported and verified|
 |Wireless Module|Wi-Fi 6, Bluetooth Low Energy 5.x, IEEE 802.15.4|
-|Wired Interface|Optional Ethernet variant depending on hardware design|
+|Wired Interface|Ethernet only with specified external MAC / controller, driver, SPI / other link, pins, throughput, and tested power design; PoE requires its own PD / power design|
 |Power Input|USB-C DC input recommended; dedicated power variant optional|
 |Power Consumption|TBD by firmware workload, RF mode, and deployment profile|
 |Relay / Actuator|Not applicable by default|
@@ -210,9 +219,9 @@ As a device access node, Artibird Gate is treated as a security-sensitive networ
 |---|---|
 |主處理器 / SoC|ESP32-C6|
 |CPU 架構|單核心 32-bit RISC-V，最高 160 MHz|
-|記憶體|Flash 4MB / 8MB / 16MB，依版本配置；可依設計選配外部記憶體|
+|記憶體|每型號須列具體 C6 模組、Flash 容量／分區、可用內部 RAM、heap／stack 峰值預算；外部記憶體須確認明確支援並驗證|
 |無線模組|Wi-Fi 6、Bluetooth Low Energy 5.x、IEEE 802.15.4|
-|有線介面|依硬體設計選配 Ethernet 版本|
+|有線介面|Ethernet 須列外接 MAC／controller、driver、SPI／其他鏈路、接腳、吞吐及已測供電；PoE 另須 PD／供電設計|
 |供電方式|建議 USB-C DC 輸入；可選專用供電版本|
 |功耗|依韌體負載、RF 模式與部署曲線定義|
 |繼電器 / 執行器|預設不適用|
@@ -228,59 +237,52 @@ As a device access node, Artibird Gate is treated as a security-sensitive networ
 
 ---
 
+**Model completion requirement｜型號補齊要求**  
+Record the selected module and antenna part, PCB revision / pin map, input voltage and current, measured typical / peak power, dimensions, mounting, tested temperature / humidity range, and schematic / BOM references. Unavailable values remain explicitly unverified with an owner and closure criterion; do not invent production values.
+
+記錄選定模組與天線料號、PCB 版本／接腳圖、輸入電壓及電流、實測典型／峰值功耗、尺寸、固定方式、已測溫濕度範圍及原理圖／BOM 引用。未取得數值須明示未確認並列負責人與完成條件，不填造量產數值。
+
+---
+
 # 6. Connectivity & Networking
 
 # 6. 連接與網路能力
 
-## EN
+Device-side protocol and upstream link are separate configuration fields. ESP32-C6 remains the hardware baseline. Hardware radio support does not establish an implemented protocol stack, certified feature, or stable simultaneous workload. Wi-Fi, BLE, and 802.15.4 share one 2.4 GHz RF path; the exact role combination must be validated.
 
-Artibird Gate provides localized communication paths for Artibird devices and connects device-side networks to the broader OceanAI architecture. It supports device onboarding, wireless communication, event forwarding, state reporting, Hub communication, and cloud-assisted synchronization.
+設備側協議與上行鏈路為分開的配置欄位。ESP32-C6 保留為硬體基準。晶片射頻支援不代表協議棧已實作、功能已認證或同時負載穩定。Wi-Fi、BLE 與 802.15.4 共用一條 2.4 GHz 射頻路徑，須驗證具體角色組合。
 
-For Gate-class products, concurrent connection capacity must be defined as a **validated system-level boundary**, not a theoretical chip-level number. This includes Wi-Fi devices, BLE devices, IEEE 802.15.4 devices, MQTT sessions, message frequency, event bursts, and reconnection behavior.
-
-## ZH-TW
-
-Artibird Gate 為 Artibird 設備提供本地化通訊路徑，並將設備側網路接入更大的 OceanAI 架構。它支援設備入網、無線通訊、事件轉發、狀態回報、Hub 通訊與雲端輔助同步。
-
-對 Gate 類產品而言，併發連接容量必須被定義為 **經驗證的系統級邊界**，而不是晶片理論數字。這包括 Wi-Fi 設備、BLE 設備、IEEE 802.15.4 設備、MQTT 會話、消息頻率、事件突發與重連行為。
-
-## English Table
-
-|Item|Description|
+|Field|Requirement / current evidence status|
 |---|---|
-|Primary Connectivity|Wi-Fi 6|
-|Secondary Connectivity|BLE 5.x / IEEE 802.15.4|
-|Optional Connectivity|Ethernet by hardware variant|
-|Supported Network Mode|Gateway / local device access node / client / optional bridge mode|
-|Protocol Support|MQTT / HTTP / WebSocket / BLE / IEEE 802.15.4; Matter / Thread only if validated and certified|
-|Local Network Access|Supported|
-|Cloud Connectivity|Supported through Hub or direct cloud path depending on architecture|
-|Remote Control|Supported through OceanAI Cloud when enabled|
-|Offline Communication|Local device communication and Hub-assisted coordination where supported|
-|Antenna Design|PCB antenna or external antenna; RF keep-out required|
-|Max Concurrent Connection Capacity|TBD / Validated Value|
-|Capacity Validation Report|Required before any public capacity claim|
-|Reconnection Strategy|Required for device reconnect, Hub reconnect, and cloud recovery|
-|Event Burst Handling|Required for multi-device trigger conditions|
+|Device-side protocols|Name BLE GATT / BLE Mesh / Wi-Fi / selected 802.15.4 stack by actual model; implementation unverified|
+|BLE Mesh roles|Record Provisioner, Proxy, Friend, Relay, client / server models, and LPN support separately; do not infer roles from BLE support|
+|Upstream link|Wi-Fi STA or implemented Ethernet; name Runtime endpoint, authentication, and network requirements|
+|Wi-Fi Mesh|Only if implemented; identify ESP-Mesh-Lite / ESP-WIFI-MESH or chosen stack, root, parent selection, depth, channel, recovery, and load|
+|Bridge behavior|Specify IP routing / NAT / packet bridging / application translation explicitly|
+|Cloud-managed profile|Named direct Cloud Runtime path where implemented; no automatic failover from Hub implied|
+|Hub-managed profile|Gate communicates with configured Hub / ArtiOS; scenes and automation remain in that Runtime|
+|802.15.4 extension|Specify Thread / Zigbee stack and role; high-load Wi-Fi gateway evaluation must include RF separation / host-RCP options|
+|Protocol / application transport|Specify MQTT / HTTP / WebSocket role, version, endpoint, security, and schema per profile|
+|Capacity|Separate managed / active nodes, GATT links, friendships, provisioning concurrency, events / commands, MQTT sessions, and resource budget; no validated values assigned|
+|Coexistence|Test selected radio roles during onboarding, normal load, reconnect, diagnostics, and OTA|
 
-## 中文表
-
-|項目|說明|
+|欄位|要求／目前證據狀態|
 |---|---|
-|主要連接能力|Wi-Fi 6|
-|次要連接能力|BLE 5.x / IEEE 802.15.4|
-|可選連接能力|依硬體版本支援 Ethernet|
-|支援網路模式|網關 / 本地設備接入節點 / Client / 可選 Bridge 模式|
-|協議支援|MQTT / HTTP / WebSocket / BLE / IEEE 802.15.4；Matter / Thread 僅在驗證與認證完成後宣稱|
-|本地網路存取|支援|
-|雲端連接|依架構可透過 Hub 或直連雲端路徑支援|
-|遠端控制|啟用時透過 OceanAI Cloud 支援|
-|離線通訊|在支援條件下，本地設備通訊與 Hub 輔助協同可運作|
-|天線設計|PCB 天線或外置天線；必須保留 RF keep-out|
-|最大併發連接容量|TBD / 已驗證數值|
-|容量驗證報告|任何公開容量宣稱前必須具備|
-|重連策略|必須支援設備重連、Hub 重連與雲端恢復|
-|事件突發處理|必須支援多設備觸發條件下的處理|
+|設備側協議|依實際型號列 BLE GATT／BLE Mesh／Wi-Fi／選定 802.15.4 協議棧；實作未確認|
+|BLE Mesh 角色|分列 Provisioner、Proxy、Friend、Relay、client／server models 及 LPN 支援；不由 BLE 支援推導角色|
+|上行鏈路|Wi-Fi STA 或已實作 Ethernet；列 Runtime endpoint、身份驗證及網路要求|
+|Wi-Fi Mesh|僅限已實作；列 ESP-Mesh-Lite／ESP-WIFI-MESH 或選定協議棧、root、父節點選擇、層數、頻道、恢復及負載|
+|Bridge 行為|明列 IP routing／NAT／封包橋接／應用層轉換|
+|Cloud 管理配置|已實作條件下的具名直連 Cloud Runtime 路徑；不暗示 Hub 自動切換|
+|Hub 管理配置|Gate 與已配置 Hub / ArtiOS 通訊；場景及自動化留在該 Runtime|
+|802.15.4 擴展|列 Thread／Zigbee 協議棧及角色；高負載 Wi-Fi 網關評估包含射頻分離／host-RCP 方案|
+|協議／應用傳輸|每配置列 MQTT／HTTP／WebSocket 角色、版本、endpoint、安全及 schema|
+|容量|分開管理／活躍節點、GATT、Friend 關係、入網併發、事件／命令、MQTT 會話及資源預算；尚未指派已測數值|
+|共存|在入網、正常負載、重連、診斷及 OTA 時測試選定射頻角色|
+
+See Appendix D for the required model record, capacity metrics, failure behavior, and acceptance evidence.
+
+型號記錄、容量指標、故障行為及驗收證據要求見附錄 D。
 
 ---
 
@@ -293,38 +295,38 @@ Artibird Gate 為 Artibird 設備提供本地化通訊路徑，並將設備側�
 |Category|Status|Description|
 |---|---|---|
 |Runtime Platform|ArtiOS-compatible|Participates in ArtiOS runtime communication through Hub or defined interface|
-|Firmware Framework|ESP-IDF recommended|ESP32-C6 firmware implementation|
-|OTA Update|Supported|Secure OTA update with rollback or recovery strategy recommended|
+|Firmware Framework|ESP-IDF, version pinned per model|Record release, commit, dependency lock, sdkconfig and model schema; validate before SDK upgrade|
+|OTA Update|Required / implementation unverified|Secure OTA update with rollback or recovery strategy recommended|
 |Local Rule Engine|Optional|Gate may execute limited local routing or fallback logic; primary automation belongs to Hub / ArtiOS|
-|State Management|Supported|Maintains device connection state, pairing state, network state, and runtime status|
-|Event Engine|Supported|Handles device event ingestion, filtering, forwarding, and acknowledgment|
-|Connection Capacity Manager|Supported|Tracks active devices, sessions, memory pressure, and capacity boundary|
-|Security Features|Supported|Secure Boot, Flash Encryption, credential storage, encrypted communication where implemented|
-|Diagnostics|Supported|Signal status, connection quality, firmware version, error logs, device online status|
+|State Management|Required / implementation unverified|Maintains device connection state, pairing state, network state, and runtime status|
+|Event Engine|Required / implementation unverified|Handles device event ingestion, filtering, forwarding, and acknowledgment|
+|Connection Capacity Manager|Required / implementation unverified|Tracks active devices, sessions, memory pressure, and capacity boundary|
+|Security Features|Required / implementation unverified|Secure Boot, Flash Encryption, credential storage, encrypted communication where implemented|
+|Diagnostics|Required / implementation unverified|Signal status, connection quality, firmware version, error logs, device online status|
 |Cloud Client|Optional / architecture-dependent|May communicate through Hub or directly with OceanAI Cloud depending on product strategy|
-|MQTT Client|Supported|Communicates with Artibird Hub / ArtiOS MQTT services|
+|MQTT Client|Required / implementation unverified|Communicates with Artibird Hub / ArtiOS MQTT services|
 |Local Web Service|Optional|Local configuration, diagnostics, or setup interface|
-|Pairing Manager|Supported|Handles device discovery, onboarding, binding, and reset workflows|
-|Protocol Manager|Supported|Manages Wi-Fi, BLE, 802.15.4, and optional protocol extensions|
+|Pairing Manager|Required / implementation unverified|Handles device discovery, onboarding, binding, and reset workflows|
+|Protocol Manager|Required / implementation unverified|Manages Wi-Fi, BLE, 802.15.4, and optional protocol extensions|
 
 ## 中文表
 
 |類別|狀態|說明|
 |---|---|---|
 |Runtime 平台|相容 ArtiOS|透過 Hub 或已定義介面參與 ArtiOS Runtime 通訊|
-|韌體框架|建議 ESP-IDF|ESP32-C6 韌體實作|
-|OTA 更新|支援|建議具備安全 OTA 更新與回滾或恢復策略|
+|韌體框架|ESP-IDF，每型號固定版本|記錄 release、commit、依賴鎖定、sdkconfig 及 model schema；SDK 升級前驗證|
+|OTA 更新|要求／實作未確認|建議具備安全 OTA 更新與回滾或恢復策略|
 |本地規則引擎|選配|Gate 可執行有限的本地路由或回退邏輯；主要自動化屬於 Hub / ArtiOS|
-|狀態管理|支援|維護設備連接狀態、配對狀態、網路狀態與 Runtime 狀態|
-|事件引擎|支援|處理設備事件接收、過濾、轉發與確認|
-|連接容量管理器|支援|追蹤活躍設備、會話、記憶體壓力與容量邊界|
-|安全功能|支援|Secure Boot、Flash Encryption、憑證儲存、加密通訊，依實作|
-|診斷功能|支援|信號狀態、連接品質、韌體版本、錯誤日誌、設備在線狀態|
+|狀態管理|要求／實作未確認|維護設備連接狀態、配對狀態、網路狀態與 Runtime 狀態|
+|事件引擎|要求／實作未確認|處理設備事件接收、過濾、轉發與確認|
+|連接容量管理器|要求／實作未確認|追蹤活躍設備、會話、記憶體壓力與容量邊界|
+|安全功能|要求／實作未確認|Secure Boot、Flash Encryption、憑證儲存、加密通訊，依實作|
+|診斷功能|要求／實作未確認|信號狀態、連接品質、韌體版本、錯誤日誌、設備在線狀態|
 |雲端客戶端|選配 / 依架構|可依產品策略透過 Hub 或直接與 OceanAI Cloud 通訊|
-|MQTT Client|支援|與 Artibird Hub / ArtiOS MQTT 服務通訊|
+|MQTT Client|要求／實作未確認|與 Artibird Hub / ArtiOS MQTT 服務通訊|
 |本地 Web 服務|選配|本地配置、診斷或設定介面|
-|配對管理器|支援|處理設備發現、入網、綁定與重置流程|
-|協議管理器|支援|管理 Wi-Fi、BLE、802.15.4 與可選協議擴展|
+|配對管理器|要求／實作未確認|處理設備發現、入網、綁定與重置流程|
+|協議管理器|要求／實作未確認|管理 Wi-Fi、BLE、802.15.4 與可選協議擴展|
 
 ---
 
@@ -348,13 +350,13 @@ Artibird Gate 作為本地 Artibird 環境中的設備側接入與通訊節點�
 |Event Handling & Reporting|Gate receives device events and forwards them to Hub / ArtiOS / Cloud path|
 |State Management & Synchronization|Gate maintains local connection state and reports device state to Hub|
 |Local Control Logic|Gate routes local commands and may execute limited fallback behavior|
-|Command Execution Priority|Safety command > local user command > Hub / ArtiOS automation > cloud command > non-critical sync|
+|Command Execution Priority|Enforce device safety constraints; Runtime policy evaluates actor, intent, permission, priority and expiry independently of local / cloud transport|
 |Integration with ArtiOS|Gate participates in runtime communication and device-side event routing|
 |Integration with Hub|Hub is the preferred local coordination center for Gate-managed devices|
 |Integration with Edge|Edge receives device context through Hub or defined data interface|
 |Integration with Cloud|Cloud provides remote access, account binding, lifecycle management, and synchronization|
 |App Interaction|App can use local setup paths and cloud-assisted remote control where enabled|
-|Multi-Gate Deployment|Multiple Gate nodes may be used in larger deployments; capacity and roaming policy must be validated|
+|Multi-Gate Deployment|Multiple Gate nodes may be used in larger deployments; capacity, ownership, duplicate reception, key / address allocation and replacement behavior must be validated; roaming is protocol-specific|
 
 ## 中文表
 
@@ -364,13 +366,13 @@ Artibird Gate 作為本地 Artibird 環境中的設備側接入與通訊節點�
 |事件處理與回報|Gate 接收設備事件，並轉發至 Hub / ArtiOS / Cloud 路徑|
 |狀態管理與同步|Gate 維護本地連接狀態，並向 Hub 回報設備狀態|
 |本地控制邏輯|Gate 路由本地指令，並可執行有限的回退行為|
-|指令執行優先級|安全指令 > 本地用戶指令 > Hub / ArtiOS 自動化 > 雲端指令 > 非關鍵同步|
+|指令執行優先級|落實設備安全限制；Runtime 策略按操作者、意圖、權限、優先級及期限判斷，與本地／雲端傳輸路徑分開|
 |與 ArtiOS 整合|Gate 參與 Runtime 通訊與設備側事件路由|
 |與 Hub 整合|Hub 是 Gate 管理設備的首選本地協同中心|
 |與 Edge 整合|Edge 透過 Hub 或已定義數據介面接收設備上下文|
 |與 Cloud 整合|Cloud 提供遠端存取、帳號綁定、生命週期管理與同步|
 |App 互動|App 可使用本地設定路徑，以及在啟用條件下的雲端輔助遠端控制|
-|多 Gate 部署|大型部署可使用多個 Gate 節點；容量與漫遊策略必須驗證|
+|多 Gate 部署|大型部署可使用多個 Gate 節點；須驗證容量、權威歸屬、重複接收、密鑰／位址分配及替換行為；漫遊依具體協議處理|
 
 ---
 
@@ -446,6 +448,13 @@ Artibird Gate 管理現場設備與上層 OceanAI / Artibird 系統元件之間�
 
 ---
 
+**Command and result contract｜指令與結果契約**  
+The profile must specify topic / endpoint, schema version, delivery QoS, payload limits, command_id, correlation_id, device_id, expires_at, boot_id / sequence, result and reason_code. Reject expired or unauthorized commands; suppress duplicates according to bounded retention. Report received, forwarded, device acknowledged, failed, expired, or unknown separately. Transport acknowledgment does not prove physical execution. Preserve the source and age of device state.
+
+配置須列 topic／endpoint、schema 版本、投遞 QoS、payload 限制、command_id、correlation_id、device_id、expires_at、boot_id／sequence、result 及 reason_code。拒絕過期或未授權命令；依有界保存策略抑制重複。分別回報已接收、已轉發、設備已確認、失敗、過期或未知。傳輸確認不證明實體動作完成。保留設備狀態來源及新鮮度。
+
+---
+
 # 10. Safety, Reliability & Failure Behavior
 
 # 10. 安全、可靠性與故障行為
@@ -465,11 +474,11 @@ Artibird Gate 必須在異常運作條件下保持可預期行為。由於 Gate 
 |Watchdog|Detects firmware lockup and triggers recovery|
 |Brownout Detection|Detects voltage instability and protects runtime behavior|
 |Fail-Safe Behavior|Avoids uncontrolled command routing during fault conditions|
-|Connection Overload Protection|Limits new device sessions or pairing when validated capacity boundary is reached|
+|Connection Overload Protection|Bound sessions, pairing and queues; define rejection / coalescing / retention by message class and report overflow|
 |Reconnection Recovery|Supports staged reconnection and backoff after outage|
 |Power Failure Recovery|Restores network configuration, device registry, and runtime state after reboot|
 |OTA Failure Recovery|Supports rollback or safe firmware recovery strategy|
-|Hub Disconnection Behavior|Attempts reconnection and preserves local metadata where possible|
+|Hub Disconnection Behavior|Report Hub loss; only configured and validated bindings / fallback may execute; no implicit Cloud takeover|
 |Cloud Disconnection Behavior|Maintains local communication where supported and resynchronizes after recovery|
 |Security Mechanisms|Authentication, encryption, secure pairing, credential protection, secure OTA|
 |Debug Protection|Production system should disable or protect debug interfaces|
@@ -482,11 +491,11 @@ Artibird Gate 必須在異常運作條件下保持可預期行為。由於 Gate 
 |Watchdog|偵測韌體鎖死並觸發恢復|
 |低壓檢測|偵測電壓不穩並保護 Runtime 行為|
 |故障安全行為|在故障條件下避免失控指令路由|
-|連接過載保護|當達到已驗證容量邊界時，限制新設備會話或配對|
+|連接過載保護|限制會話、配對及佇列；按訊息類別列拒絕／合併／保存策略並回報溢出|
 |重連恢復|在斷線後支援分階段重連與退避策略|
 |斷電恢復|重啟後恢復網路配置、設備註冊表與 Runtime 狀態|
 |OTA 失敗恢復|支援回滾或安全韌體恢復策略|
-|Hub 斷線行為|嘗試重新連接，並盡可能保留本地元數據|
+|Hub 斷線行為|回報 Hub 中斷；僅執行已配置且已驗證的綁定／回退；不隱含 Cloud 接管|
 |雲端斷線行為|在支援條件下維持本地通訊，並於恢復後重新同步|
 |安全機制|身份認證、加密、安全配對、憑證保護、安全 OTA|
 |Debug 保護|量產系統應停用或保護 Debug 介面|
@@ -531,6 +540,13 @@ Artibird Gate 必須在異常運作條件下保持可預期行為。由於 Gate 
 |韌體更新方式|OTA / 本地更新 / 維護工具|
 |更換流程|Gate 替換、帳號重新綁定、設備註冊表遷移、重新配對流程|
 |服務存取|必須具備受控管理員或維護存取|
+
+---
+
+**Replacement and local service｜替換與本地維護**  
+Document which registration data, network / application keys, addresses, sequence / IV state and credentials can be securely restored and which require re-provisioning. Revoke the old Gate, prevent conflicting ownership, and test restored state before enabling commands. Specify local diagnostic access, installer authorization, credential expiry / renewal and factory-reset data deletion.
+
+說明註冊資料、網路／應用密鑰、位址、sequence／IV 狀態及憑證中哪些可安全恢復，哪些須重新入網。撤銷舊 Gate，避免權威衝突，恢復狀態測試通過後再啟用指令。列本地診斷存取、安裝者授權、憑證到期／更新及出廠重置資料刪除行為。
 
 ---
 
@@ -624,31 +640,34 @@ Artibird Gate 必須作為無線網關、設備入網節點、協議協同節點
 
 ---
 
+**Acceptance requirement｜驗收要求**  
+The categories above are test scope, not passing results. Each test needs the model / board / firmware profile, workload, procedure, sample count / duration, preapproved threshold, observed result, raw log reference and disposition. Capacity results must include P95 / P99 latency and loss / timeout rates. Do not transfer node counts from SDK examples into product claims. Appendix D lists the mandatory scenarios.
+
+以上類別為測試範圍，不作通過結果。每項測試須具型號／板卡／韌體配置、負載、步驟、樣本數／時長、預先確認門檻、觀測結果、原始 log 引用及處置。容量結果須含 P95／P99 延遲及丟失／超時率。不得將 SDK 示例節點數轉成產品宣稱。必測情境見附錄 D。
+
+---
+
 # 13. Product Variants
 
 # 13. 產品版本
 
-## English Table
+|Configuration / direction|Required distinction|Status|
+|---|---|---|
+|Gate Wi-Fi baseline|Selected C6 module, device protocols / roles, Wi-Fi STA upstream, power, enclosure and firmware|First model record required; implementation / validation unverified|
+|Gate Ethernet variant|External Ethernet controller and link, driver, pin / resource allocation, power and EMC / RF validation|Planning; separate hardware evidence required|
+|Gate Pro|Documented measurable difference from baseline; antenna alone does not prove capacity or range|Reserved positioning; no capacity claim assigned|
+|Embedded / Outdoor|Host integration or enclosure / environmental differences with validation|Planning; not supported by baseline automatically|
+|Campus deployment profile|Multi-Gate placement, identity / ownership, keys, network and maintenance configuration|Deployment profile; separate SKU only if hardware or commercial delivery differs|
+|Thread / Zigbee extension|Selected stack / role, coexistence and host-RCP / RF architecture where applicable|Research / planning; not a released baseline capability|
 
-|Variant / SKU|Hardware Difference|Firmware Difference|Market / Region|Certification Difference|Notes|
-|---|---|---|---|---|---|
-|Artibird Gate Wi-Fi|ESP32-C6, Wi-Fi-first, standard enclosure|Standard Gate firmware|Residential / small office|FCC / CE / RoHS by region|General deployment|
-|Artibird Gate Ethernet|ESP32-C6 with Ethernet backhaul variant|Ethernet-enabled firmware profile|Commercial / campus / infrastructure|Additional Ethernet and EMC validation|Stable wired backhaul|
-|Artibird Gate Pro|External antenna, improved RF design, enhanced enclosure|Higher capacity firmware profile|Larger home / commercial / campus|RF validation required|Extended coverage|
-|Artibird Gate Embedded|Embedded module form|Embedded integration firmware profile|Panel / cabinet / infrastructure|Depends on host product|For integrated systems|
-|Artibird Gate Outdoor|Enhanced enclosure and environmental protection|Outdoor diagnostics profile|Outdoor / semi-outdoor / agriculture|Environmental validation required|Requires enclosure testing|
-|Artibird Gate Campus|Optimized for multi-room and classroom deployments|Multi-Gate management profile|Education / campus|Regional compliance required|Requires capacity validation|
-
-## 中文表
-
-|版本 / SKU|硬體差異|韌體差異|市場 / 地區|認證差異|備註|
-|---|---|---|---|---|---|
-|Artibird Gate Wi-Fi|ESP32-C6、Wi-Fi 優先、標準外殼|標準 Gate 韌體|住宅 / 小型辦公|依地區 FCC / CE / RoHS|通用部署|
-|Artibird Gate Ethernet|ESP32-C6 搭配 Ethernet 回程版本|啟用 Ethernet 的韌體配置|商業 / 校園 / 基礎設施|需額外 Ethernet 與 EMC 驗證|穩定有線回程|
-|Artibird Gate Pro|外置天線、改良 RF 設計、增強外殼|更高容量韌體配置|大型住宅 / 商業 / 校園|必須 RF 驗證|擴展覆蓋|
-|Artibird Gate Embedded|嵌入式模組形態|嵌入式整合韌體配置|面板 / 機櫃 / 基礎設施|依主產品而定|用於整合系統|
-|Artibird Gate Outdoor|增強外殼與環境防護|戶外診斷配置|戶外 / 半戶外 / 農業|必須環境驗證|需外殼測試|
-|Artibird Gate Campus|面向多房間與教室部署優化|多 Gate 管理配置|教育 / 校園|需地區合規|必須容量驗證|
+|配置／方向|必要區別|狀態|
+|---|---|---|
+|Gate Wi-Fi 基準|選定 C6 模組、設備協議／角色、Wi-Fi STA 上行、供電、外殼及韌體|須完成首個型號記錄；實作／驗證未確認|
+|Gate Ethernet 版本|外接 Ethernet controller 及鏈路、driver、接腳／資源、供電及 EMC／RF 驗證|規劃；須獨立硬體證據|
+|Gate Pro|相對基準可量測差異；天線本身不證明容量或距離|預留定位；未指派容量宣稱|
+|Embedded／Outdoor|主機整合或外殼／環境差異及驗證|規劃；不由基準版自動支援|
+|Campus 部署配置|多 Gate 放置、身份／權威、密鑰、網路及維護配置|部署配置；硬體或商業交付有差別才另建 SKU|
+|Thread／Zigbee 擴展|選定協議棧／角色、共存及適用的 host-RCP／射頻架構|研究／規劃；非基準已發布能力|
 
 ---
 
@@ -751,12 +770,14 @@ All Artibird Gate performance claims, especially concurrent connection capacity,
 |Version|Date|Author|Description|
 |---|---|---|---|
 |v1.0|2026-05-08|OceanAI / Artibird Product Team|Initial Artibird Gate Product Specification based on Artibird Product Specification Template v1.1|
+|v1.1-Candidate|2026-11-06|OceanAI / Artibird specification revision|Clarify protocol / upstream profiles, evidence status, authority, capacity, recovery and acceptance records|
 
 ## 中文表
 
 |版本|日期|作者|說明|
 |---|---|---|---|
 |v1.0|2026-05-08|OceanAI / Artibird Product Team|基於 Artibird 產品規格書標準模板 v1.1 建立的 Artibird Gate 初始產品規格書|
+|v1.1-Candidate|2026-11-06|OceanAI / Artibird 規格修訂|釐清協議／上行配置、證據狀態、權威、容量、恢復及驗收記錄|
 
 ---
 
@@ -863,17 +884,87 @@ All Artibird Gate performance claims, especially concurrent connection capacity,
 
 ---
 
+# Appendix D — Operating Profile and Verification Record
+
+# 附錄 D｜運行配置與驗證記錄
+
+## D.1 Model record｜型號記錄
+
+Each actual model must record internal model / SKU, selected module, board / BOM / antenna / enclosure revisions, power input, device-side protocol and roles, upstream link, firmware commit, SDK / component lock / sdkconfig, partitions, capability schema, Runtime endpoint / authority, and required / implemented / validated status with evidence. No manufactured configuration or production value is assigned by this revision.
+
+每個實際型號須記錄內部型號／SKU、選定模組、板卡／BOM／天線／外殼版本、供電輸入、設備側協議及角色、上行鏈路、韌體 commit、SDK／依賴鎖定／sdkconfig、分區、能力 schema、Runtime endpoint／權威，以及要求／實作／驗證狀態及證據。本修訂不指派已製造配置或量產數值。
+
+## D.2 Runtime authority｜Runtime 權威
+
+The selected Hub-managed or Cloud-managed profile owns device identity, command policy, scenes, automation and system state. Gate owns local access / transport state and bounded delivery. Specify authority identity / epoch or equivalent ownership protection, installation authorization and binding. No automatic dual-master behavior or failover is implied. Edge context enters through the configured Runtime policy.
+
+選定的 Hub 管理或 Cloud 管理配置負責設備身份、指令策略、場景、自動化及系統狀態。Gate 負責本地接入／傳遞狀態及有界投遞。列權威身份／epoch 或等效歸屬保護、安裝授權及綁定。不隱含雙主或自動接管。Edge 上下文經已配置 Runtime 策略參與。
+
+## D.3 Capacity record｜容量記錄
+
+|Metric / 指標|Record / 記錄要求|
+|---|---|
+|Managed / active nodes｜管理／活躍節點|Registered total and workload time window｜註冊總數及負載時間窗|
+|GATT links｜GATT 連線|Actual simultaneous point-to-point links｜實際同時點對點連線|
+|Friendships / queues｜Friend 關係／佇列|LPN count, poll interval, queue depth / overflow｜LPN 數、輪詢週期、queue 深度／溢出|
+|Provisioning｜入網|Concurrency, success / timeout, duration｜併發、成功／超時、耗時|
+|Events / commands｜事件／命令|Rate, payload, segmentation, TTL, retransmit, P95 / P99 and loss｜頻率、payload、分段、TTL、重傳、分位延遲及丟失|
+|Upstream｜上行|MQTT sessions, TLS, reconnect, OTA / diagnostics load｜MQTT 會話、TLS、重連、OTA／診斷負載|
+|Resources｜資源|Heap minimum, stack / queue peaks, rejected / dropped counts｜heap 最低值、stack／queue 峰值、拒絕／丟棄計數|
+|Environment｜環境|RSSI, interference, placement, antenna / enclosure and temperature｜RSSI、干擾、放置、天線／外殼及溫度|
+
+BLE Mesh advertising-based nodes are not equivalent to persistent GATT connections. MQTT sessions are not equivalent to downstream device count. Every capacity claim names the complete tested profile.
+
+以 advertising 運作的 BLE Mesh 節點不等同持續 GATT 連線。MQTT 會話不等同下掛設備數。每項容量宣稱均須指明完整已測配置。
+
+## D.4 Failure expectations｜故障預期
+
+|Condition｜條件|Required behavior｜要求行為|
+|---|---|
+|Cloud / Internet loss, Hub and LAN available｜雲端／Internet 中斷，本地正常|Continue validated local functions; mark remote path unavailable｜維持已驗證本地功能，標示遠端路徑不可用|
+|Hub loss｜Hub 中斷|Report fault; only configured / validated fallback; bounded buffering｜回報故障，僅限已配置／驗證回退及有界緩衝|
+|Network recovery｜網路恢復|Jitter / backoff; restore authority and refresh state; reject expired commands｜隨機退避，恢復權威及現況，拒絕過期命令|
+|Queue / memory pressure｜佇列／記憶體壓力|Apply class-specific retention / rejection, expose counters｜按類別保存／拒絕並提供計數|
+|Credential expiry / storage error｜憑證到期／儲存錯誤|Expose reason, use authorized recovery, avoid silent reset / uncontrolled retry｜顯示原因，授權恢復，避免靜默重置／無限重試|
+|OTA failure / power loss｜OTA 失敗／斷電|Recover verified configuration and firmware; report reset / rollback reason｜恢復經核對配置與韌體，回報重置／回滾原因|
+|Gate replacement｜Gate 替換|Validate key / identity / sequence restoration; revoke old owner｜核對密鑰／身份／序列恢復並撤銷舊權威|
+
+## D.5 Mandatory acceptance scenarios｜必要驗收情境
+
+Use actual device models and production-equivalent enclosure / power. Test normal mixed traffic, simultaneous onboarding, LPN polling, event bursts, reconnect storms, duplicate / expired / reordered commands, lost acknowledgments, queue saturation, Hub / Cloud loss, credential expiry, storage failure, OTA interruption, power cycles and Gate replacement. Select node-count steps, success-rate / P95 / P99 / recovery limits, duration and sample size before testing. No example node count or untested threshold is a product claim.
+
+使用實際設備型號及等同生產的外殼／供電。測試正常混合流量、同時入網、LPN 輪詢、事件突發、重連風暴、重複／過期／亂序指令、確認丟失、queue 飽和、Hub／Cloud 中斷、憑證到期、儲存故障、OTA 中斷、斷電及 Gate 替換。測前選定節點階梯、成功率／P95／P99／恢復門檻、時長及樣本數。示例節點數或未測門檻均不作產品宣稱。
+
+Record test ID, configuration hash, expected result, observed result, raw evidence, pass / fail and unresolved issue. Update Appendix C only from reviewed evidence.
+
+記錄 test ID、配置雜湊、預期結果、觀測結果、原始證據、通過／失敗及未解問題。附錄 C 僅依已審閱證據更新。
+
+## D.6 Upstream references and adoption boundary｜上游參照與採用範圍
+
+- [ESP32-C6 RF coexistence](https://docs.espressif.com/projects/esp-idf/en/stable/esp32c6/api-guides/coexist.html)
+- [ESP-IDF BLE Mesh wifi_coexist](https://github.com/espressif/esp-idf/tree/master/examples/bluetooth/esp_ble_mesh/wifi_coexist)
+- [ESP-Mesh-Lite](https://github.com/espressif/esp-mesh-lite)
+- [ESP-IoT-Bridge](https://github.com/espressif/esp-iot-bridge)
+- [ESP-Thread-BR](https://github.com/espressif/esp-thread-br)
+- [MQTT 5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html)
+
+Reviewed on 2026-11-06. References guide implementation and testing; they are not Gate validation evidence. Pin the chosen release / commit before adoption. Inspect target overrides, watchdogs, buffers, key handling and storage recovery rather than copying SDK example defaults. The official Thread host / RCP architecture is an extension reference, not a mandated replacement for the current C6 design.
+
+查閱日期為 2026-11-06。參照用於實作及測試，不作 Gate 驗證證據。採用前固定選定 release／commit。逐項檢查 target overrides、watchdog、buffer、密鑰處理與儲存恢復，不直接複製 SDK 示例預設。官方 Thread host／RCP 架構作擴展參照，不要求取代現有 C6 設計。
+
+---
+
 # Document End
 
 # 文件結束
 
 ## EN
 
-This Artibird Gate Product Specification v1.0 defines Gate as the localized network gateway and device access node of the Artibird ecosystem. It provides a controlled engineering and system-level reference for ESP32-C6 hardware configuration, connectivity, firmware architecture, ArtiOS runtime participation, local-first operation, cloud-enhanced coordination, validation, certification, and commercial claim boundaries.
+This Artibird Gate Product Specification v1.1-Candidate describes Gate as the localized network gateway and device access node of the Artibird ecosystem. It provides a controlled engineering and system-level reference for ESP32-C6 hardware configuration, connectivity, firmware architecture, ArtiOS runtime participation, local-first operation, cloud-enhanced coordination, validation, certification, and commercial claim boundaries.
 
 ## ZH-TW
 
-本《Artibird Gate 產品規格書 v1.0》將 Gate 定義為 Artibird 生態中的本地化網路網關與設備接入節點。它為 ESP32-C6 硬體配置、連接能力、韌體架構、ArtiOS Runtime 參與、本地優先運作、雲端增強協同、驗證、認證與商業宣稱邊界，提供受控的工程與系統級參考。
+本《Artibird Gate 產品規格書 v1.1-Candidate》將 Gate 定義為 Artibird 生態中的本地化網路網關與設備接入節點。它為 ESP32-C6 硬體配置、連接能力、韌體架構、ArtiOS Runtime 參與、本地優先運作、雲端增強協同、驗證、認證與商業宣稱邊界，提供受控的工程與系統級參考。
 
 ---
 
