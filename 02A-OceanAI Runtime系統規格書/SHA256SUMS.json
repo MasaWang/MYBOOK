@@ -1,0 +1,22 @@
+{
+  "version": "v0.1-Candidate",
+  "date": "2026-11-06",
+  "files": {
+    "OceanAI_Runtime_System_Engineering_Specification_v0.1.md": {
+      "sha256": "c9af26ffd06c534b2f349eba88656404152dbb590b9459df52e315c9def48e0d",
+      "bytes": 44817
+    },
+    "OceanAI_Runtime_System_Commercial_Specification_v0.1.md": {
+      "sha256": "466ee92e4533772709d1b35638bf01463df6b57378826ecf061f51a408aadb32",
+      "bytes": 26548
+    },
+    "REVIEW.md": {
+      "sha256": "12862204113ad792e5a764d963d3938bcdec91ba61f7226e638820f1ea93c1d2",
+      "bytes": 4456
+    },
+    "README.md": {
+      "sha256": "d4d09cc94985114892db665cb6950de90e819b06036fc9a5fdcd78479752ab73",
+      "bytes": 1485
+    }
+  }
+}

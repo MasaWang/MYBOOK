@@ -1,0 +1,377 @@
+# OceanAI Runtime System Engineering Specification
+# OceanAI Runtime 系統工程規格書
+
+Version｜版本：v0.1 — Candidate｜候選稿  
+Document ID｜文件編號：OAI-RT-ENG-001（proposed｜提案）  
+Revision date｜修訂日期：2026-11-06（America/Los_Angeles）  
+Companion｜配套：OceanAI Runtime System Commercial Specification v0.1
+
+## 0. Document control and evidence status｜文件控制與證據狀態
+
+**EN**  
+This is a new standalone specification assembled from the two supplied Runtime chapters and the author's confirmed scope. It covers Cloud Runtime and Hub / ArtiOS local Runtime as deployment modes of a common operational model. It does not replace or edit the source documents. Document generation does not establish software implementation, test completion, certification, commercial availability, or a service commitment.
+
+**ZH-TW**  
+本文件根據兩份指定 Runtime 章節及作者確認的範圍，整理為新的獨立規格書。Cloud Runtime 與 Hub / ArtiOS 本地 Runtime 均納入共同運行模型的部署模式。本文件不取代或修改來源文件。文件生成不代表軟體已實作、測試完成、認證、商業供貨或服務承諾。
+
+|Label｜標記|Meaning｜含義|
+|---|---|
+|Confirmed scope｜已確認範圍|The author approved these document names and inclusion of both deployments.｜作者已同意文件名稱及兩種部署均納入。|
+|Inherited baseline｜繼承基準|Explicit content in source S1 / S2; not implementation evidence.｜S1／S2 明載內容；不等同實作證據。|
+|Proposed requirement｜候選要求|New engineering detail in this v0.1; requires technical review before adoption.｜本版新增工程細節；採用前須技術審閱。|
+|Pending decision｜待審決策|An unresolved choice; especially D01 priority semantics.｜尚未確認的選擇；尤其 D01 優先級語意。|
+|Unverified implementation｜實作未驗證|No source code, running service, hardware, or test evidence was examined.｜未核對原始碼、運行服務、硬體或測試證據。|
+
+**EN**  
+Sections describing concrete fields, interfaces, algorithms, test profiles, or migration steps are proposed requirements unless expressly marked inherited. “Shall” states the candidate acceptance obligation; it does not assert present capability. Home and School may share infrastructure while retaining domain-specific objects, permissions, and workflows; that domain mapping remains to be reviewed against the actual platform.
+
+**ZH-TW**  
+除明示繼承外，具體欄位、介面、演算法、測試配置及遷移步驟均為候選要求。「須」表示候選驗收義務，不表示目前已具備能力。Home 與 School 可共用底座，保留業務域物件、權限及流程差異；域映射仍須對照實際平台審閱。
+
+## 1. Purpose and boundary｜目的與範圍
+
+**EN**  
+OceanAI Runtime coordinates events, state, commands, scenes, automations, and execution results for intelligent spaces. The specification makes the operating behavior traceable from an input to an authorized action, an observed result, and any recovery. Device firmware remains responsible for device-level protections. Gate provides access and transport; App and Panel provide interaction; Edge and AI services provide bounded interpretation or recommendations.
+
+**ZH-TW**  
+OceanAI Runtime 為智慧空間協調事件、狀態、指令、場景、自動化與執行結果。本規格讓運行行為可由輸入追溯至授權動作、觀測結果及恢復過程。設備韌體仍負責設備層保護。Gate 提供接入與傳遞；App 與 Panel 提供互動；Edge 與 AI 服務提供受控解讀或建議。
+
+**EN**  
+Hardware schematics, RF capacity, electrical ratings, media streaming, AI model accuracy, account billing, and commercial service levels belong to their respective specifications. Runtime consumes their validated capabilities and exposes their limits; it does not infer them from a device family name.
+
+**ZH-TW**  
+硬體原理圖、射頻容量、電氣額定值、媒體串流、AI 模型準確率、帳務計費與商業服務等級由各自規格處理。Runtime 使用其已驗證能力並呈現限制，不由產品家族名稱推導能力。
+
+## 2. Shared model and system roles｜共同模型與系統角色
+
+**EN**  
+The common model describes how a space receives events, maintains state, evaluates rules, routes commands, and records outcomes. Shared semantics do not require Cloud and Hub to use identical databases, processes, or infrastructure. Every site must identify its authoritative Runtime for each controlled resource. A cloud connection and a local connection do not create two independent authorities.
+
+**ZH-TW**  
+共同模型描述空間如何接收事件、維護狀態、判斷規則、路由指令及記錄結果。共用語意不要求 Cloud 與 Hub 使用完全相同的資料庫、程序或基礎設施。每個站點須為受控資源指明權威 Runtime。雲端連線與本地連線不產生兩個獨立權威。
+
+|Component｜元件|Responsibility｜責任|Boundary｜範圍限制|
+|---|---|---|
+|Cloud Runtime Service｜雲端 Runtime 服務|Authoritative operation for cloud-managed sites.｜雲端管理站點的權威運行。|Distinct from account, analytics, and billing services.｜與帳號、分析及計費服務分開。|
+|Hub / ArtiOS Runtime｜Hub／ArtiOS 本地 Runtime|Local events, state, rules, scenes, commands, and storage.｜本地事件、狀態、規則、場景、指令及儲存。|Local continuity requires functioning local components.｜本地延續需本地元件可用。|
+|Cloud Platform Services｜雲端平台服務|Identity, organization, sites, lifecycle, history, backup and optional analysis.｜身份、組織、站點、生命週期、歷史、備份及選配分析。|Platform availability is separate from local execution.｜平台可用性與本地執行分開。|
+|Gate / protocol adapter｜Gate／協議轉接器|Onboarding transport, protocol translation, routing, connection health.｜入網傳遞、協議轉換、路由及連接健康。|No implicit ownership of the whole scene or automation engine.｜不隱含擁有完整場景或自動化引擎。|
+|Device / Sync / Act｜設備／Sync／Act|Execute supported actions, apply protection, report available evidence.｜執行受支援動作、保護及回報可取得證據。|Signal transmission may not prove appliance state.｜訊號發送不一定證明家電狀態。|
+|App / Panel / Switch｜App／Panel／Switch|Submit user intent and show acknowledged outcomes.｜提交用戶意圖並呈現已確認結果。|UI optimism must not become authoritative physical state.｜介面預先回饋不得成為權威實體狀態。|
+|Edge / Operations Agent｜Edge／運維代理|Interpret context, inspect logs, recommend bounded actions.｜解讀上下文、分析日誌及提出受控建議。|Requests pass Runtime authorization and protection policies.｜請求須通過 Runtime 授權及保護策略。|
+
+## 3. Deployment modes｜部署模式
+
+|Aspect｜項目|Cloud-managed Runtime｜雲端管理 Runtime|Hub-local Runtime with cloud services｜Hub 本地 Runtime 搭配雲端服務|
+|---|---|---|
+|Authority｜權威|Cloud Runtime for the assigned site.｜指定站點的 Cloud Runtime。|Hub / ArtiOS for assigned local resources.｜指定本地資源的 Hub／ArtiOS。|
+|Control path｜控制路徑|App / interface → Cloud Runtime → permitted device / Gate path.｜App／介面 → Cloud Runtime → 授權設備／Gate 路徑。|Local interface → Hub Runtime → permitted device / Gate path; remote requests enter through authenticated access.｜本地介面 → Hub Runtime → 授權設備／Gate 路徑；遠端請求經驗證存取進入。|
+|Rules and scenes｜規則與場景|Authoritative configuration and evaluation in Cloud Runtime.｜權威配置與判斷在 Cloud Runtime。|Authoritative execution in Hub; selected configuration / history synchronized.｜權威執行在 Hub；選定配置／歷史同步。|
+|Internet loss｜Internet 中斷|Cloud-mediated functions unavailable; only separately validated device-local behavior remains.｜雲端中介功能不可用；僅保留另經驗證的設備本地行為。|Validated local functions may continue if LAN, Hub, access and devices remain available.｜LAN、Hub、接入與設備可用時，已驗證本地功能可延續。|
+|Hub failure｜Hub 故障|Not a required component unless the selected path uses one.｜除選定路徑使用 Hub 外，非必要元件。|Coordinated local functions are affected; only documented binding / fallback remains.｜本地協同受影響；僅保留記錄在案的綁定／回退。|
+|Automatic takeover｜自動接管|Not specified or promised in v0.1.｜v0.1 未規定或承諾。|No automatic Cloud takeover implied.｜不隱含 Cloud 自動接管。|
+
+**EN**  
+Cloud Runtime is an author-confirmed scope extension relative to S1 / S2, which primarily describe Hub-based local operation. Its implementation and compatibility remain unverified. Existing systems may keep their current HTTP / MQTT services; adoption begins with an adapter and contract mapping, not a mandatory platform rewrite.
+
+**ZH-TW**  
+相對於主要描述 Hub 本地運作的 S1／S2，Cloud Runtime 為作者確認納入的範圍擴展。其實作及相容性仍未驗證。現有系統可保留 HTTP／MQTT 服務；採用先從轉接及契約映射開始，不要求全面重寫平台。
+
+## 4. Runtime functional services｜Runtime 功能服務
+
+|ID|Service｜服務|Required behavior｜要求行為|
+|---|---|---|
+|RT-01|Device Registry｜設備註冊表|Track identity, site, model, firmware, ownership and lifecycle.｜追蹤身份、站點、型號、韌體、歸屬及生命週期。|
+|RT-02|Capability Model｜能力模型|Version commands, properties, events, feedback and limits per model.｜按型號管理指令、屬性、事件、回饋及限制版本。|
+|RT-03|Device Binding｜設備綁定|Record device, space, adapter and authorized access relationships.｜記錄設備、空間、轉接器及授權存取關係。|
+|RT-04|Event Bus｜事件匯流排|Validate, route, correlate and observe events with bounded queues.｜驗證、路由、關聯及觀察事件，使用有界佇列。|
+|RT-05|Device State｜設備狀態|Maintain desired, reported and observed state with provenance and age.｜維護期望、回報及觀測狀態與來源及新鮮度。|
+|RT-06|Command Routing｜指令路由|Authorize, deduplicate, expire, route and track outcomes.｜授權、去重、期限判斷、路由及追蹤結果。|
+|RT-07|Scene Engine｜場景引擎|Track each step and summarize success, failure or partial result.｜追蹤每步並彙整成功、失敗或部分結果。|
+|RT-08|Automation Engine｜自動化引擎|Evaluate enabled, versioned rules against valid inputs.｜以有效輸入判斷啟用且有版本的規則。|
+|RT-09|Control API｜控制介面|Expose scoped commands, configuration, state and execution queries.｜提供有範圍的指令、配置、狀態及執行查詢。|
+|RT-10|Operational Store｜運行儲存|Persist configuration and required execution / recovery evidence.｜保存配置及必要執行／恢復證據。|
+|RT-11|Cloud Sync｜雲端同步|Synchronize selected data without creating a second execution authority.｜同步選定資料，不產生第二執行權威。|
+|RT-12|Health and Recovery｜健康與恢復|Expose faults, affected functions, recovery progress and final condition.｜呈現故障、受影響功能、恢復進度及最後狀態。|
+
+**EN**  
+These are logical responsibilities. Existing processes may implement several services. v0.1 does not require twelve microservices, twelve repositories, or a new broker. The deployment record names where each responsibility resides and how it is verified.
+
+**ZH-TW**  
+以上為邏輯責任。現有程序可承擔多項服務。v0.1 不要求十二個微服務、十二個儲存庫或新 Broker。部署記錄須列出各責任位置及驗證方式。
+
+## 5. Identity, data and capability contract｜身份、資料與能力契約
+
+|Object｜物件|Minimum candidate fields｜最小候選欄位|
+|---|---|
+|Site / Space｜站點／空間|site_id, space_id, parent_id, domain, timezone, runtime_mode, authority_id｜站點、空間、父層、業務域、時區、運行模式及權威。|
+|Device｜設備|device_id, site_id, model_id, firmware_version, capability_version, adapter_id, lifecycle_status｜設備、站點、型號、韌體、能力版本、轉接器及生命週期。|
+|Capability｜能力|command schema, property units, event types, feedback class, constraints, evidence_ref｜指令結構、屬性單位、事件類型、回饋層級、限制及證據。|
+|Authority｜權威|resource scope, authority_id, authority_epoch or equivalent, effective configuration version｜資源範圍、權威識別、權威世代或等效機制及有效配置版本。|
+|Execution｜執行|execution_id, command_id, scene_run_id, actor, state, timestamps, outcome evidence｜執行、指令、場景執行識別、操作者、狀態、時間及結果證據。|
+|Fault｜故障|fault_id, code, affected scope, severity, first / last seen, recovery state, evidence_ref｜故障識別、代碼、範圍、嚴重性、首次／最近出現、恢復及證據。|
+
+**EN**  
+Identifiers must be stable across retries and synchronization. An adapter maps existing device IDs and message formats; migration must not silently create a second device identity. Units, enumerations, capability versions and unsupported-command errors are explicit. A change in reported state does not change the supported capability set.
+
+**ZH-TW**  
+識別碼須在重試及同步時保持穩定。轉接器映射現有設備 ID 及訊息格式；遷移不得靜默產生第二個設備身份。單位、列舉、能力版本及不支援指令錯誤須明確。回報狀態變化不改變受支援能力集合。
+
+## 6. Command lifecycle and execution evidence｜指令生命週期與執行證據
+
+**EN**  
+Before dispatch, Runtime checks site / resource scope, authenticated actor, permission, capability, safety policy, authority, duplicate status, deadline and applicable priority. Reject invalid commands with a reason. Preserve the original actor and intent when requests cross Cloud or Hub; transport is recorded separately.
+
+**ZH-TW**  
+派送前，Runtime 檢查站點／資源範圍、已驗證操作者、權限、能力、安全策略、權威、重複狀態、期限及適用優先級。拒絕無效指令並提供原因。請求經 Cloud 或 Hub 時保留原操作者及意圖；傳輸路徑另行記錄。
+
+|State｜狀態|Meaning｜含義|
+|---|---|
+|received｜已接收|Request recorded; no execution commitment yet.｜已記錄請求，尚未承諾執行。|
+|accepted / rejected｜接受／拒絕|Validation passed or a recorded reason blocks execution.｜驗證通過或以記錄原因阻止執行。|
+|dispatched｜已派送|Sent to the configured adapter / device path.｜已送至已配置轉接器／設備路徑。|
+|device_acknowledged｜設備已確認|Device accepted / reported processing as specified by its protocol.｜設備按協議接受／回報處理。|
+|completed｜完成|The capability's declared completion evidence is satisfied.｜滿足該能力所宣告的完成證據。|
+|failed / expired / canceled｜失敗／過期／取消|Recorded outcome; cancellation is only guaranteed before a defined cutoff.｜已記錄結果；僅在指定截止點前保證取消。|
+|unknown｜未知|Outcome cannot currently be established.｜目前無法確定結果。|
+
+**EN**  
+Completion evidence must identify transport acceptance, firmware action, output feedback, or physical observation. A completed IR transmission is not proof that an air conditioner reached the requested state. MQTT acknowledgments do not establish physical execution. Unknown outcomes remain unknown until reconciled; a timeout alone must not cause an unsafe duplicate action.
+
+**ZH-TW**  
+完成證據須區分傳輸接受、韌體動作、輸出回饋或實體觀測。IR 發送完成不證明冷氣達到要求狀態。MQTT 確認不證明實體執行。未知結果須保留至核對完成；不能僅因超時就造成不安全重複動作。
+
+**EN**  
+Use command_id for idempotency, correlation_id for the causal chain, and an explicit expiry / deadline. Absolute actions such as set-on may be retryable under policy; toggle, pulse, increment and similar actions require a declared retry strategy. A retry preserves the logical command identity. On reboot, duplicate protection and boot / sequence handling must prevent replay of old actions.
+
+**ZH-TW**  
+以 command_id 處理冪等、correlation_id 串起因果鏈，並列明有效期／截止時間。設定開啟等絕對動作可依策略重試；toggle、pulse、increment 等須有明確重試方式。重試保留邏輯指令身份。重啟後的重複保護及 boot／sequence 處理須避免重放舊動作。
+
+## 7. Events, state and freshness｜事件、狀態與新鮮度
+
+|Record｜記錄|Required semantics｜要求語意|
+|---|---|
+|Event envelope｜事件封套|event_id, source, site / device scope, event_type, schema_version, occurred_at, received_at, boot_id / sequence, correlation_id, payload｜事件、來源、範圍、類型、schema、發生／接收時間、啟動／序列、關聯及內容。|
+|Desired state｜期望狀態|Authorized requested target; distinct from actual state.｜已授權目標；與實際狀態分開。|
+|Reported state｜回報狀態|What firmware or adapter reports, with source and timestamp.｜韌體或轉接器回報，附來源及時間。|
+|Observed state｜觀測狀態|Independent observation where available, with quality and method.｜可取得的獨立觀測，附品質及方法。|
+|Quality｜品質|valid, stale, estimated, unknown, invalid; threshold depends on capability.｜有效、過期、估計、未知、無效；門檻依能力。|
+|Connection state｜連接狀態|Reachability / heartbeat condition, not proof of correct physical operation.｜可達／心跳條件，不作實體運作正確證明。|
+
+**EN**  
+Do not overwrite a newer authoritative value with an older queued report. Account for boot ID, sequence, source and clock uncertainty. Preserve last-known values with their age instead of presenting them as current. Sensors with invalid or stale readings must not silently drive rules that require valid measurements. A reconnect triggers a snapshot and bounded resynchronization.
+
+**ZH-TW**  
+不得以較舊的排隊回報覆寫較新的權威值。須考慮 boot ID、序列、來源及時鐘不確定性。最後已知值保留其時間，不呈現為現況。無效或過期感測值不得靜默驅動需要有效量測的規則。重連須觸發快照及有界重新同步。
+
+## 8. Scenes, automation and scheduling｜場景、自動化與排程
+
+**EN**  
+A scene stores a versioned set of steps, dependencies, target capabilities, deadlines and failure policy. Each scene run has its own ID and per-step outcomes. Multi-device execution is not assumed atomic. Partial success must be visible. Compensation, if supported, is a separately authorized action with its own safety conditions; do not promise universal rollback of physical actions.
+
+**ZH-TW**  
+場景保存有版本的步驟、依賴、目標能力、期限及失敗策略。每次場景執行具有獨立 ID 及逐步結果。多設備執行不預設為原子交易。部分成功須可見。若支援補償，須作另經授權且有安全條件的動作；不承諾所有實體行為都能回滾。
+
+**EN**  
+Automation rules record trigger, input validity, conditions, action, enabled state, rule version, cooldown / hysteresis, recursion limits and audit context. Rule evaluation and execution must be traceable separately. Prevent feedback loops and duplicate triggering after reconnect. Rules affected by user overrides need an explicit hold / release policy.
+
+**ZH-TW**  
+自動化規則記錄觸發、輸入有效性、條件、動作、啟用狀態、規則版本、冷卻／遲滯、防遞迴限制及稽核上下文。規則判斷與執行須分開追溯。防止回授迴圈及重連後重複觸發。受用戶覆蓋影響的規則須明列保持／解除策略。
+
+**EN**  
+Schedules record the site timezone and daylight-saving behavior. Define missed-run policy: skip, bounded catch-up, or explicit operator recovery. Clock correction must not repeat a completed action. Use a monotonic clock for in-process elapsed time where available and record wall-clock uncertainty for distributed correlation. Startup must reconcile outstanding actions before enabling catch-up execution.
+
+**ZH-TW**  
+排程記錄站點時區及夏令時間行為。錯過執行須指定跳過、有界補執行或由操作員恢復。時鐘校正不能重複已完成動作。程序內耗時可採單調時鐘；跨系統關聯須記錄實際時鐘不確定性。啟動時先核對未完成動作，再啟用補執行。
+
+## 9. Priority baseline and pending change D01｜優先級基準與待審變更 D01
+
+**Inherited baseline｜繼承基準：S1 §6.13；S2 §6.3。**
+
+|Priority｜優先級|Source｜來源|Baseline meaning｜基準含義|
+|---|---|---|
+|1|Safety / Fail-Safe｜安全／故障安全|Protective behavior overrides other commands.｜保護行為優先於其他指令。|
+|2|Local Manual Control｜本地手動控制|Local Switch, Panel and App actions.｜Switch、Panel 及 App 本地動作。|
+|3|Local Automation｜本地自動化|Hub / ArtiOS rules and scenes.｜Hub／ArtiOS 規則及場景。|
+|4|Edge-Assisted Logic｜Edge 輔助邏輯|Enabled Edge-assisted decisions.｜已啟用 Edge 輔助決策。|
+|5|Cloud Command｜雲端指令|Remote / cloud-initiated requests.｜遠端／雲端發起請求。|
+|6|Background Sync｜背景同步|Non-critical logs, analytics and updates.｜非關鍵日誌、分析及更新。|
+
+**EN — Pending decision D01**  
+The Gate revision proposed separating actor / intent priority from local / cloud transport. That proposal has not replaced the system baseline above. Store actor, intent, transport and policy_version separately now; preserve the inherited precedence until the system-level change is reviewed. Do not silently give remote manual actions the same priority as local manual actions, or apply an unreviewed Gate rule as system policy. Cloud-mode arbitration, manual hold duration, same-priority conflict resolution and preemption cutoffs require a reviewed policy profile before that deployment is accepted.
+
+**ZH-TW — 待審決策 D01**  
+Gate 修訂提出將操作者／意圖優先級與本地／雲端傳輸分開。該提案尚未取代上述系統基準。目前先分欄記錄 actor、intent、transport 及 policy_version；系統層變更審定前保留既有順序。不靜默把遠端手動提升至本地手動同級，也不把未審 Gate 規則當成系統策略。雲端模式仲裁、手動保持時間、同級衝突及搶占截止點須有已審策略配置，該部署才可驗收。
+
+## 10. Authority, synchronization and migration｜權威、同步與遷移
+
+**EN**  
+Maintain one execution authority per resource scope. Document an authority ID and generation / epoch or an equivalent mechanism that rejects stale owners. Transport credentials alone do not transfer authority. On a network partition, a disconnected side must not assume leadership unless an explicitly reviewed failover protocol permits it.
+
+**ZH-TW**  
+每個資源範圍維持一個執行權威。記錄權威 ID 及世代／epoch，或可拒絕舊權威的等效機制。傳輸憑證本身不轉移權威。網路分割時，中斷的一側不得自行成為主控，除非有明確審定的接管協議。
+
+|Data class｜資料類別|Synchronization rule｜同步規則|
+|---|---|
+|Commands｜指令|Preserve ID and expiry; no replay of stale actions after reconnect.｜保留 ID 及期限；重連不重放過期動作。|
+|State｜狀態|Apply ownership, ordering and quality; reconcile snapshots.｜套用權威、順序及品質；核對快照。|
+|Configuration｜配置|Version changes and record author / authority; reject or surface conflicts.｜配置有版本，記錄作者／權威；拒絕或呈現衝突。|
+|History / telemetry｜歷史／遙測|Bound retention and upload backlog; tolerate late arrival with source time.｜限制保存及上傳積壓；保留來源時間處理晚到資料。|
+|Credentials / keys｜憑證／密鑰|Use an authorized provisioning / recovery path; never ordinary telemetry.｜經授權入網／恢復路徑；不得作一般遙測傳送。|
+
+**EN**  
+Cloud-to-Hub or Hub-to-Cloud migration is a controlled operation: verify compatibility and backup; quiesce affected command admission; reconcile in-flight results; transfer eligible configuration and identity securely; advance authority; revoke the old writer; verify state and rules; reopen control. Abort or restore a single authority on failure. This is a proposed procedure, not an implemented migration feature.
+
+**ZH-TW**  
+Cloud 轉 Hub 或 Hub 轉 Cloud 為受控操作：確認相容性及備份；暫停受影響指令受理；核對執行中結果；安全轉移適用配置與身份；更新權威世代；撤銷舊寫入者；驗證狀態與規則；恢復控制。失敗時中止或恢復單一權威。此為候選流程，不表示遷移功能已實作。
+
+## 11. Failure and recovery matrix｜故障與恢復矩陣
+
+|Condition｜條件|Cloud mode｜雲端模式|Hub-local mode｜Hub 本地模式|Required evidence｜必要證據|
+|---|---|---|---|
+|Internet / Cloud loss｜Internet／雲端中斷|Cloud-mediated control affected.｜雲端中介控制受影響。|Validated local functions continue with healthy local dependencies.｜本地依賴正常時維持已驗證本地功能。|Affected functions, rejected requests and recovery log.｜受影響功能、拒絕請求及恢復記錄。|
+|Hub process / power loss｜Hub 程序／斷電|Unaffected unless used in its path.｜除路徑依賴外不受影響。|Scenes / rules affected; only documented endpoint fallback remains.｜場景／規則受影響；僅保留已記錄終端回退。|Restart reason, state restoration and reconciliation.｜重啟原因、狀態恢復及核對。|
+|Gate / adapter loss｜Gate／轉接器中斷|Devices using it become unreachable.｜經該路徑設備不可達。|Same access-path limitation.｜同樣受接入路徑限制。|Path health, command expiry and no duplicate action on recovery.｜路徑健康、指令過期及恢復不重複動作。|
+|Device silent / invalid data｜設備無回應／資料無效|Mark stale / unknown; apply capability policy.｜標示過期／未知並依能力策略處理。|Same semantic behavior.｜相同語意行為。|State quality and suppressed unsafe automation.｜狀態品質及不當自動化抑制。|
+|Edge / AI unavailable｜Edge／AI 不可用|Stop dependent assistance; retain independent rules.｜停止依賴的輔助，保留獨立規則。|Same semantic behavior.｜相同語意行為。|Dependency status and deterministic fallback.｜依賴狀態及可預期回退。|
+|Queue / storage pressure｜佇列／儲存壓力|Bound admission, retention and retry.｜限制受理、保存及重試。|Same, within local resources.｜在本地資源內採相同行為。|Dropped / rejected counts and protected critical records.｜丟棄／拒絕計數及必要記錄保護。|
+|Credential / permission failure｜憑證／權限故障|Reject unauthorized action; expose reason.｜拒絕未授權動作並呈現原因。|Use valid local credentials within their documented scope.｜以有效本地憑證在記錄範圍內操作。|No authentication bypass, visible renewal path.｜無驗證繞過並有可見更新路徑。|
+|Update / restart｜更新／重啟|Staged restart and reconciliation.｜分階段重啟及核對。|Validated rollback / restore procedure.｜經驗證回滾／還原流程。|Schema compatibility, backup and recovery results.｜schema 相容、備份及恢復結果。|
+
+**EN**  
+Recovery is an explicit state: detected, contained, recovering, verifying, resolved or operator_required. Report the affected function, last trustworthy state, recovery action and reason. Avoid representing “process restarted” as “service recovered” before checks pass. Automatic retries are bounded and must not override device protections.
+
+**ZH-TW**  
+恢復須有明確狀態：已偵測、已限制影響、恢復中、驗證中、已解決或需人工。回報受影響功能、最後可信狀態、恢復動作及原因。檢查通過前，不以「程序已重啟」表示「服務已恢復」。自動重試有界，且不能覆蓋設備保護。
+
+## 12. Interfaces and integration｜介面與整合
+
+**EN**  
+The following are logical interface requirements. Paths are proposed examples and must be mapped to existing APIs before implementation. Every endpoint enforces tenant / site / resource scope, authentication, authorization, schema compatibility and audit correlation. Control admission is distinct from completion. Event-stream reconnection must support snapshot recovery and a resumable cursor or an explicitly bounded gap.
+
+**ZH-TW**  
+以下為邏輯介面要求。路徑為候選示例，實作前須映射現有 API。每個 endpoint 須落實租戶／站點／資源範圍、驗證、授權、schema 相容及稽核關聯。指令受理與完成分開。事件串流重連須支援快照恢復及可續接游標，或明確有界的資料缺口。
+
+|Interface｜介面|Candidate operation｜候選操作|Response semantics｜回應語意|
+|---|---|---|
+|Command submission｜指令提交|POST /runtime/commands|Admission result + command_id; not physical success.｜受理結果及 command_id，不作實體成功。|
+|Execution query｜執行查詢|GET /runtime/commands/{command_id}|Lifecycle, reason and completion evidence.｜生命週期、原因及完成證據。|
+|State query｜狀態查詢|GET /runtime/devices/{device_id}/state|Values, source, quality, time and version.｜值、來源、品質、時間及版本。|
+|Scene run｜場景執行|POST /runtime/scenes/{scene_id}/runs|scene_run_id and step outcomes.｜scene_run_id 及逐步結果。|
+|Event access｜事件存取|Authenticated subscription / stream｜經驗證訂閱／串流|Scoped events, cursor and gap indication.｜有範圍事件、游標及缺口標示。|
+|Health / diagnostics｜健康／診斷|GET /runtime/health; scoped logs｜健康查詢；有範圍日誌|Service status, dependency and recovery condition.｜服務狀態、依賴及恢復條件。|
+
+**EN**  
+For MQTT, the adapter record supplies broker ownership, topic mapping, MQTT version, QoS, session / retain policy, payload limits, ACLs, credentials, reconnect and expiry behavior. Durable desired-state documents and one-shot action commands need distinct retention policies. App foreground return must revalidate the session, restore subscriptions, fetch a snapshot and surface an actionable error if access cannot recover.
+
+**ZH-TW**  
+採 MQTT 時，轉接記錄須列 Broker 歸屬、topic 映射、MQTT 版本、QoS、session／retain 策略、payload 限制、ACL、憑證、重連及期限行為。持久期望狀態文件與一次性動作指令須採不同保存策略。App 回前景須重新確認 session、恢復訂閱、取得快照；無法恢復存取時呈現可處理錯誤。
+
+## 13. Security, privacy and operational access｜安全、隱私與運維存取
+
+**EN**  
+Use scoped identities for users, installers, devices, adapters, Runtime instances and agents. Authorize actions at the Runtime and retain device-level protection. Record grant / revocation, credential rotation and expiry behavior, including documented local access during Internet loss. An expired cloud session must not silently disable all valid local access, nor permit an authentication bypass. Protect backups, keys, logs and diagnostic exports according to their sensitivity.
+
+**ZH-TW**  
+用戶、安裝者、設備、轉接器、Runtime 實例及代理均採有範圍身份。在 Runtime 授權動作並保留設備層保護。記錄授權／撤銷、憑證輪替及到期行為，包含 Internet 中斷時的本地存取。雲端 session 到期不得靜默停用全部有效本地存取，也不能導致驗證繞過。按敏感程度保護備份、密鑰、日誌及診斷匯出。
+
+**EN**  
+Collect data required for the selected operational purpose. Declare local storage, cloud synchronization, retention, deletion and export per data class. Raw video / audio and sensitive context require explicit deployment policy. Keep secrets out of logs. Operators must be able to identify who requested an action, which policy admitted it, where it executed, and what evidence supports the outcome.
+
+**ZH-TW**  
+依選定運行目的收集必要資料。每類資料列明本地保存、雲端同步、保留期限、刪除及匯出。原始影像／聲音及敏感上下文須有明確部署策略。日誌不得含密鑰。操作員須能查明誰提出動作、哪項策略受理、在哪執行及哪些證據支持結果。
+
+## 14. Observability and health metrics｜可觀測性與健康指標
+
+|Category｜類別|Minimum observations｜最小觀測|
+|---|---|
+|Service｜服務|Uptime, version, restart / crash reason, dependency reachability.｜運行時間、版本、重啟／崩潰原因、依賴可達。|
+|Commands｜指令|Accepted / rejected / expired / failed / unknown counts; per-stage latency and P95 / P99.｜受理／拒絕／過期／失敗／未知計數；各階段耗時及分位延遲。|
+|Events｜事件|Ingest rate, queue depth, backlog age, deduplication, drops and ordering issues.｜接收率、queue 深度、積壓時間、去重、丟棄及順序問題。|
+|State｜狀態|Fresh / stale / unknown counts, reconciliation lag, clock uncertainty.｜有效／過期／未知數、核對延遲、時鐘不確定性。|
+|Rules / scenes｜規則／場景|Evaluation count, suppression reason, loop protection, partial failures.｜判斷次數、抑制原因、迴圈保護及部分失敗。|
+|Resources｜資源|CPU, memory, storage / write errors, connections, queue high-water marks.｜CPU、記憶體、儲存／寫入錯誤、連線及 queue 高水位。|
+|Sync / recovery｜同步／恢復|Last success, pending records, retries, authority conflicts and recovery duration.｜最後成功、待同步數、重試、權威衝突及恢復時間。|
+
+**EN**  
+An Operations Agent may read scoped logs and generate reports, diagnostics and recovery suggestions. Execution requires a separately authorized Runtime request. The reporting integration shall identify source coverage and missing evidence; an AI explanation is not a substitute for measured state or an execution record.
+
+**ZH-TW**  
+Operations Agent 可閱讀有範圍日誌並生成報告、診斷及恢復建議。執行須另經授權 Runtime 請求。報告整合須標明來源覆蓋及缺少證據；AI 解釋不能取代量測狀態或執行記錄。
+
+## 15. Capacity and acceptance｜容量與驗收
+
+**EN**  
+No production device limit, latency guarantee, availability percentage, retention period or recovery-time commitment is assigned by v0.1. Capacity is a measured operating profile, not a count derived from a chip or broker. Record site count, devices / active fraction, adapters, event rate / burst, command rate, scene width, rule count / complexity, sessions, payloads, synchronization, storage, background AI and hardware / cloud resources.
+
+**ZH-TW**  
+v0.1 不指派量產設備上限、延遲保證、可用率、保存期限或恢復時間承諾。容量為經量測的運行配置，不能由晶片或 Broker 推算。記錄站點數、設備／活躍比例、轉接器、事件率／突發、指令率、場景廣度、規則數／複雜度、session、payload、同步、儲存、背景 AI 及硬體／雲端資源。
+
+|Test ID|Scenario｜情境|Acceptance evidence｜驗收證據|
+|---|---|---|
+|AT-01|Identity / authorization｜身份／授權|Cross-site and unauthorized commands rejected with audit reason.｜跨站及未授權指令遭拒並有稽核原因。|
+|AT-02|Duplicate / replay｜重複／重放|Repeated logical command causes no unintended repeated physical action.｜重複邏輯指令不造成非預期重複實體動作。|
+|AT-03|Expiry / reconnect｜期限／重連|Expired queued commands are not executed after recovery.｜恢復後不執行已過期排隊命令。|
+|AT-04|State ordering / freshness｜狀態順序／新鮮度|Old reports do not replace newer authoritative state; stale state visible.｜舊回報不覆蓋新權威狀態；過期狀態可見。|
+|AT-05|Partial scene failure｜場景部分失敗|Step outcomes and partial result are accurate; compensation follows policy.｜逐步及部分結果正確；補償依策略。|
+|AT-06|Cloud / Internet outage｜雲端／Internet 中斷|Each mode matches §3 / §11; no false local-continuity claim.｜各模式符合 §3／§11；無錯誤本地延續宣稱。|
+|AT-07|Hub / Gate outage｜Hub／Gate 中斷|Affected scope and fallback match the tested profile.｜影響範圍及回退符合已測配置。|
+|AT-08|Process / storage / power failure｜程序／儲存／斷電|Restore reviewed configuration and reconcile outcomes without old-action replay.｜還原已審配置並核對結果，不重放舊動作。|
+|AT-09|Priority / authority conflict｜優先級／權威衝突|Reviewed policy version applied; stale owner rejected; no silent D01 adoption.｜採已審策略版本，拒絕舊權威，不靜默採用 D01。|
+|AT-10|Load / soak｜負載／耐久|Agreed workload, duration and thresholds recorded with raw latency / error / resource evidence.｜約定負載、時長及門檻，附原始延遲／錯誤／資源證據。|
+|AT-11|App idle / session recovery｜App 待機／session 恢復|Session and subscriptions recover, snapshot refreshes and pending results reconcile.｜session 及訂閱恢復，快照更新，待定結果完成核對。|
+|AT-12|Backup / update / migration｜備份／更新／遷移|Restore compatibility and authority checks pass; old writer revoked where migration applies.｜還原相容及權威檢查通過；適用遷移時撤銷舊寫入者。|
+
+**EN**  
+For each test record build / configuration hashes, device and firmware versions, procedure, predetermined pass criteria, sample count / duration, expected and observed results, raw evidence, defects and reviewer. A practical first slice uses one Runtime, one existing adapter / Gate path, a physical control, a sensor and an execution endpoint, then repeats it in each intended deployment mode. Select numerical thresholds before testing; do not report placeholders as passed tests.
+
+**ZH-TW**  
+每項測試記錄建置／配置雜湊、設備及韌體版本、步驟、預先確認通過條件、樣本數／時長、預期與實際結果、原始證據、缺陷及審閱人。第一個實際切片可使用一個 Runtime、一條現有轉接器／Gate 路徑、一個實體控制、一個感測器及一個執行端，再於每種預定部署模式重測。測前選定數值門檻；不得把佔位值回報為通過。
+
+## 16. Adoption sequence and release record｜採用順序與發布記錄
+
+|Step｜順序|Work｜工作|Exit condition｜完成條件|
+|---|---|---|
+|1|Map current services / protocols / evidence.｜盤點現有服務／協議／證據。|Every logical responsibility has an owner and implementation status.｜各邏輯責任有承擔位置及實作狀態。|
+|2|Select a site mode, authority and reviewed priority profile.｜選站點模式、權威及已審優先策略。|D01 / Cloud arbitration disposition recorded.｜記錄 D01／Cloud 仲裁處置。|
+|3|Add identity, command IDs, expiry, state provenance and outcome tracking.｜補身份、指令 ID、期限、狀態來源及結果追蹤。|One real action is traceable end to end.｜一個真實動作可全程追溯。|
+|4|Add rule / scene outcomes, recovery and bounded synchronization.｜補規則／場景結果、恢復及有界同步。|Fault and partial-failure tests pass.｜故障及部分失敗測試通過。|
+|5|Measure capacity and operational reporting.｜量測容量及運行報告。|Raw evidence supports the named profile.｜原始證據支持具名配置。|
+|6|Release a compatible deployment package.｜發布相容部署套件。|Engineering evidence and commercial offering record agree.｜工程證據與商業方案記錄一致。|
+
+**EN**  
+The release record includes Runtime build, schema and API versions, adapter / device compatibility, deployment mode, authority / priority policy, limits, known issues, update / rollback path, backup / restore test and support boundary. It is the common reference for the commercial specification. Existing repository structures may be reused; this document does not create a new management framework.
+
+**ZH-TW**  
+發布記錄包含 Runtime build、schema 及 API 版本、轉接器／設備相容性、部署模式、權威／優先策略、限制、已知問題、更新／回滾路徑、備份／還原測試及支援範圍。此記錄為商業版共同依據。可沿用現有儲存庫結構；本文件不建立新的管理框架。
+
+## 17. Decisions and evidence still required｜尚需決策與證據
+
+|ID|Open item｜待完成項目|Release implication｜發布影響|
+|---|---|---|
+|D01|Priority semantics across actor, intent and transport.｜操作者、意圖及傳輸間的優先語意。|No silent replacement of inherited priorities.｜不得靜默取代繼承優先級。|
+|D02|Actual Cloud / Hub service mapping and compatibility.｜Cloud／Hub 實際服務映射及相容性。|No implemented-mode claim without evidence.｜無證據不宣稱模式已實作。|
+|D03|Authority / migration mechanism and key recovery.｜權威／遷移機制及密鑰恢復。|No automatic takeover or migration promise.｜不承諾自動接管或遷移。|
+|D04|Workload, thresholds, retention and resource sizing.｜負載、門檻、保存及資源配置。|No capacity or performance guarantee.｜不作容量或性能保證。|
+|D05|Model-specific feedback and safety boundaries.｜各型號回饋及安全範圍。|No physical-result inference beyond available evidence.｜不超出可取得證據推定實體結果。|
+
+## 18. Source lineage and revision history｜來源沿革與修訂紀錄
+
+|Source｜來源|Verified content｜已讀內容|Use in this document｜本文件用途|
+|---|---|---|
+|S1: System Engineering Chapter 6｜系統工程第六章|§6.1–6.15; blob de587861efac555e0c898cdd2282f48c895178b8.|Runtime functions, role boundaries, state, routing, scenes, automation, synchronization and inherited priorities.｜Runtime 功能、角色、狀態、路由、場景、自動化、同步及繼承優先級。|
+|S2: Architecture v1.1 Chapter 6｜架構 v1.1 第六章|§6.1–6.5; blob 8499b96909170df4ad8821af7eb613102b1a2bea.|Functions, inherited priorities, continuity and failure conditions.｜功能、繼承優先級、延續及故障條件。|
+|Author confirmation｜作者確認|Document names; Cloud and Hub / ArtiOS deployments included.｜文件名稱；納入 Cloud 及 Hub／ArtiOS 部署。|Scope approval only; not implementation evidence.｜僅範圍確認，不作實作證據。|
+
+- [S1 — Runtime engineering source](https://github.com/MasaWang/MYBOOK/blob/main/OceanAI系統工程規格書/chapters/06_Runtime架構.md)
+- [S2 — Runtime architecture source](https://github.com/MasaWang/MYBOOK/blob/main/OceanAI系統架構規格書/A01-1%20OceanAI%20系統架構規格書%20v1.1/章節/chapter%206%20Runtime%20架構.md)
+
+**EN**  
+Source paths were read in this conversation; blob identifiers above identify the retrieved text. Other chapters and implementation repositories were not audited for this generation. This standalone v0.1 reorganizes and extends the source material; it does not claim unchanged source wording.
+
+**ZH-TW**  
+本對話已讀取來源路徑；上述 blob 識別取得的文字。本次生成未審計其他章節及實作儲存庫。本獨立 v0.1 重新組織並展開來源內容，不聲稱逐字保留來源原稿。
+
+|Version｜版本|Date｜日期|Change｜變更|
+|---|---|---|
+|v0.1-Candidate|2026-11-06|Initial bilingual standalone specification; preserve priority baseline, expose D01 and separate scope from implementation.｜首次英中獨立規格；保留優先級基準，明列 D01，分開範圍與實作。|

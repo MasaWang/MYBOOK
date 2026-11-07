@@ -29,6 +29,8 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 
 工程規格書標題裡的「OceanAI / Artibird」表示 OceanAI 系統如何整合 Artibird 硬體產品。這份仍是 OceanAI 系統工程規格。Artibird 只有產品規格書。
 
+[02A](02A-OceanAI%20Runtime系統規格書/README.md) 是 Runtime 的工程與商業候選稿，排在 02 之後、03 之前。它繼承 01 與 02 的第六章，不取代這兩章。
+
 ## 📂 文件總覽
 
 ### 01｜架構層
@@ -42,6 +44,14 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 | 文件 | 說明 | 入口 |
 |------|------|------|
 | **OceanAI系統工程規格書** | 系統工程規格書 v1.0，系統架構 + Runtime + 整合，19 章，中英對照 | [02-OceanAI系統工程規格書/README.md](02-OceanAI系統工程規格書/README.md) |
+
+### 02A｜Runtime 候選
+
+繼承 [01 第六章](01-OceanAI系統架構規格書/A01-1%20OceanAI%20系統架構規格書%20v1.1/章節/chapter%206%20Runtime%20架構.md) 與 [02 第六章](02-OceanAI系統工程規格書/chapters/06_Runtime架構.md)。不取代這兩章，也不修改 Gate 套件。狀態是 v0.1-Candidate。D01 尚未採用。實作與商業供應尚未驗證。
+
+| 順序 | 文件 | 說明 | 入口 |
+|------|------|------|------|
+| 02A | **OceanAI Runtime系統規格書** | 工程規格與商業規格各一份，中英對照 | [02A-OceanAI Runtime系統規格書/README.md](02A-OceanAI%20Runtime系統規格書/README.md) |
 
 ### 03–06｜產品層（Artibird｜僅產品規格書）
 
@@ -67,6 +77,7 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 ```
 L1  架構規格    01  OceanAI系統架構規格書 v1.1
 L2  工程規格    02  OceanAI系統工程規格書 v1.0
+L2  Runtime候選  02A  OceanAI Runtime 系統工程／商業規格書 v0.1-Candidate
 L3  產品規格    03–06  Artibird 產品工程／商業規格書、型錄、SKU 規範
 L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之海
 ```
@@ -75,13 +86,14 @@ L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之�
 
 | 名稱 | 定位 | 系統規格書 | 產品規格書 |
 |------|------|-----------|-----------|
-| **OceanAI** | 系統名 | 架構規格書 v1.1、工程規格書 v1.0 | — |
+| **OceanAI** | 系統名 | 架構規格書 v1.1、工程規格書 v1.0、Runtime 候選 v0.1 | — |
 | **Artibird** | 硬體產品名 | 無 | 產品工程規格書、產品商業規格書、型錄、SKU 規範 |
 
 | 資料夾 | 正式名稱 | 層級 | 類型 | 版本 | 上游依賴 | 下游／關聯 | 用途 |
 |--------|----------|------|------|------|----------|------------|------|
 | [01-OceanAI系統架構規格書](01-OceanAI系統架構規格書/README.md) | OceanAI 系統架構規格書 | L1 架構 | 規格書 | v1.1 | — | L2 工程規格、L3 產品規格 | 架構原則、模型、治理、驗證框架 |
-| [02-OceanAI系統工程規格書](02-OceanAI系統工程規格書/README.md) | OceanAI 系統工程規格書（正式標題含 Artibird 整合語意） | L2 工程 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格 | 系統—產品整合、Runtime、設備模型、測試 |
+| [02-OceanAI系統工程規格書](02-OceanAI系統工程規格書/README.md) | OceanAI 系統工程規格書（正式標題含 Artibird 整合語意） | L2 工程 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格、02A 候選 | 系統—產品整合、Runtime、設備模型、測試 |
+| [02A-OceanAI Runtime系統規格書](02A-OceanAI%20Runtime系統規格書/README.md) | OceanAI Runtime 系統規格書 | L2 Runtime | 候選規格 | v0.1-Candidate | 01 第六章、02 第六章 | 商業配套同夾 | Cloud 與 Hub／ArtiOS 部署的運行契約；不取代 01／02 原章 |
 | [03-Artibird產品工程規格書](03-Artibird產品工程規格書/README.md) | Artibird 產品工程規格書 | L3 產品 | 規格書 | 各產品 v1.0 | L1、L2 | 型錄、商業規格 | 單品硬體／韌體／連接／測試 |
 | [04-Artibird產品商業規格書](04-Artibird產品商業規格書/README.md) | Artibird 產品商業規格書 | L3 產品 | 規格書 | 各產品 v1.0 | L2、L3 工程 | 型錄、對外文案 | 面向客戶語言（受宣稱邊界約束） |
 | [05-Artibird產品型錄](05-Artibird產品型錄/README.md) | Artibird 產品型錄 | L3 產品 | 型錄 | v1.0 | L3 工程／商業 | 銷售、渠道 | 產品組合與應用場景 |
@@ -97,6 +109,7 @@ L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之�
 | 01 OceanAI系統架構規格書 | 07 OceanAI系統架構 | 規格 v1.1，與敘事書稿分開 |
 | 02 OceanAI系統工程規格書 | 08 OceanAI系統 | 工程規格 v1.0，與敘事整合版分開 |
 | 01 OceanAI系統架構規格書 v1.1 | 02 OceanAI系統工程規格書 v1.0 | 架構層在上；工程層展開整合與 Runtime |
+| 02 第六章、01 第六章 | 02A OceanAI Runtime系統規格書 | 候選稿繼承這兩章；不取代原文，D01 尚未採用 |
 | Artibird | 系統規格書 | Artibird 的規格在 03–06，屬產品規格 |
 
 ## 結構說明
