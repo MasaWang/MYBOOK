@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SPEC="$ROOT/OceanAI系統架構規格書/A01-1 OceanAI 系統架構規格書 v1.1"
+SPEC="$ROOT/01-OceanAI系統架構規格書/A01-1 OceanAI 系統架構規格書 v1.1"
 OUT="$SPEC/完整版.md"
 TMP="$(mktemp)"
 

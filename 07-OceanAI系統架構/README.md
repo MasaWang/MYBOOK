@@ -5,7 +5,7 @@
 | 本書（敘事書稿） | 規格書（另冊） |
 |------------------|----------------|
 | 架構敘事、章節版 / OceanAI 系統整合單檔 | 正式架構規格書 v1.1 |
-| [OceanAI系統架構](.) | [OceanAI系統架構規格書](../OceanAI系統架構規格書/README.md) |
+| [OceanAI系統架構](.) | [OceanAI系統架構規格書](../01-OceanAI系統架構規格書/README.md) |
 
 [跨冊文件關係矩陣](../README.md#跨冊文件關係矩陣) — 書稿不替代規格書。
 
@@ -13,5 +13,5 @@
 
 | 版本 | 說明 | 入口 |
 |------|------|------|
-| **A01-1 書稿版** | 章節版書稿；整合單檔見 [OceanAI 系統](../OceanAI系統/README.md) | [A01-1 OceanAI 系統架構 書稿版/README.md](A01-1%20OceanAI%20系統架構%20書稿版/README.md) |
+| **A01-1 書稿版** | 章節版書稿；整合單檔見 [OceanAI 系統](../08-OceanAI系統/README.md) | [A01-1 OceanAI 系統架構 書稿版/README.md](A01-1%20OceanAI%20系統架構%20書稿版/README.md) |
 | **A01-1 新書稿版** | 新書稿章節版（修訂後分冊） | [A01-1 OceanAI 系統架構 新書稿版/README.md](A01-1%20OceanAI%20系統架構%20新書稿版/README.md) |

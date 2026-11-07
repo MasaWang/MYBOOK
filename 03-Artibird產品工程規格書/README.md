@@ -1,6 +1,6 @@
 # Artibird 產品工程規格書
 
-Artibird 全系列**產品**工程規格書集合（中英對照）。**Artibird 無系統規格書** — 系統層見 [OceanAI系統架構規格書](../OceanAI系統架構規格書/README.md)、[OceanAI系統工程規格書](../OceanAI系統工程規格書/README.md)。
+Artibird 全系列**產品**工程規格書集合（中英對照）。**Artibird 無系統規格書** — 系統層見 [OceanAI系統架構規格書](../01-OceanAI系統架構規格書/README.md)、[OceanAI系統工程規格書](../02-OceanAI系統工程規格書/README.md)。
 
 [跨冊文件關係矩陣](../README.md#跨冊文件關係矩陣)
 

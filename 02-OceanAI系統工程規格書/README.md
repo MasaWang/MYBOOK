@@ -4,14 +4,14 @@ OceanAI / Artibird 系統架構、Runtime 與整合**工程規格書**（中英�
 
 正式文件標題為 **《OceanAI / Artibird 系統規格書 v1.0》**（「Artibird」表示系統整合 Artibird 產品之語意）；庫內導航名 **OceanAI系統工程規格書**。本冊屬 **OceanAI 系統工程規格**，不是 Artibird 系統規格書。
 
-定位於 [OceanAI系統架構規格書](../OceanAI系統架構規格書/README.md) v1.1（架構層）之下、[Artibird產品工程規格書](../Artibird產品工程規格書/README.md)（產品層）之上。Artibird 文件線僅含**產品**規格書。
+定位於 [OceanAI系統架構規格書](../01-OceanAI系統架構規格書/README.md) v1.1（架構層）之下、[Artibird產品工程規格書](../03-Artibird產品工程規格書/README.md)（產品層）之上。Artibird 文件線僅含**產品**規格書。
 
 | 上游 | 本書 | 下游 |
 |------|------|------|
-| [架構規格書 v1.1](../OceanAI系統架構規格書/README.md) | **工程規格書 v1.0**（本資料夾） | [產品工程規格書](../Artibird產品工程規格書/README.md) |
+| [架構規格書 v1.1](../01-OceanAI系統架構規格書/README.md) | **工程規格書 v1.0**（本資料夾） | [產品工程規格書](../03-Artibird產品工程規格書/README.md) |
 | 架構原則、治理 | 整合、Runtime、設備模型 | 單品硬體／韌體 |
 
-敘事書稿（非規格）：[OceanAI系統](../OceanAI系統/README.md)｜[OceanAI系統架構](../OceanAI系統架構/README.md) — 見[跨冊矩陣](../README.md#跨冊文件關係矩陣)
+敘事書稿（非規格）：[OceanAI系統架構](../07-OceanAI系統架構/README.md)｜[OceanAI系統](../08-OceanAI系統/README.md) — 見[跨冊矩陣](../README.md#跨冊文件關係矩陣)
 
 ## 章節目錄
 

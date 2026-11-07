@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-V11="$ROOT/OceanAI系統架構規格書/A01-1 OceanAI 系統架構規格書 v1.1"
+V11="$ROOT/01-OceanAI系統架構規格書/A01-1 OceanAI 系統架構規格書 v1.1"
 
 audit_pair() {
   local ch="$1" ap="$2" label="$3" max="${4:-15}"

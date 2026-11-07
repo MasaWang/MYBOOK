@@ -2,11 +2,11 @@
 
 《OceanAI 系統架構》書稿版（中英對照）。文件類型為**架構敘事書稿**，**不是**《OceanAI 系統架構規格書》。
 
-另見：[新書稿版](../A01-1%20OceanAI%20系統架構%20新書稿版/README.md)｜[規格書 v1.1](../../OceanAI系統架構規格書/A01-1%20OceanAI%20系統架構規格書%20v1.1/README.md)
+另見：[新書稿版](../A01-1%20OceanAI%20系統架構%20新書稿版/README.md)｜[規格書 v1.1](../../01-OceanAI系統架構規格書/A01-1%20OceanAI%20系統架構規格書%20v1.1/README.md)
 
 ## OceanAI 系統（整合單檔）
 
-整合敘事正本見頂層 [OceanAI 系統](../../OceanAI系統/README.md)（[讓空間協同為一.md](../../OceanAI系統/讓空間協同為一.md)），與書稿版原 `OceanAI 整合版 完整.md` 為同一份文件，不在此重複收錄。
+整合敘事正本見頂層 [OceanAI 系統](../../08-OceanAI系統/README.md)（[讓空間協同為一.md](../../08-OceanAI系統/讓空間協同為一.md)），與書稿版原 `OceanAI 整合版 完整.md` 為同一份文件，不在此重複收錄。
 
 ## 章節目錄
 
