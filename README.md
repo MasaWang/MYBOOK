@@ -1,12 +1,20 @@
 # MYBOOK｜OceanAI / Artibird 文件庫
 
+<br>
+
 本庫收錄 OceanAI / Artibird 相關文件，各自獨立成資料夾。資料夾以編號排列，順序就是閱讀與約束順序：架構規格 → 工程規格 → 產品規格 → 敘事書稿。
 
+<br>
+
 OceanAI 是系統名。Artibird 是硬體產品名。
+
+<br>
 
 ## 四份 OceanAI 系統文件的關係
 
 上面兩份是規格，由上往下約束。下面兩份是敘事書稿，沿用同一套概念；修訂書稿不改規格條文。
+
+<br>
 
 ```text
 架構規格書 v1.1          工程規格書 v1.0
@@ -16,6 +24,8 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 07-OceanAI系統架構（章節書稿） → 08-OceanAI系統（整合單檔）
 ```
 
+<br>
+
 | 順序 | 資料夾 | 類型 | 內容 |
 |------|--------|------|------|
 | 01 | [OceanAI系統架構規格書](01-OceanAI系統架構規格書/README.md) | L1 架構規格 v1.1 | 19 章加附錄。定義架構哲學、設計原則、分層、Runtime、數據模型、事件／指令／狀態、本地優先、雲端、邊緣、協同、安全、治理與宣稱邊界、容量、部署、版本演進、測試框架 |
@@ -23,23 +33,41 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 | 07 | [OceanAI系統架構](07-OceanAI系統架構/README.md) | L4 敘事書稿 | 兩套章節稿：書稿版、新書稿版。新書稿用群島式群集 Runtime、ORT、ART 來講架構 |
 | 08 | [OceanAI系統](08-OceanAI系統/README.md) | L4 敘事整合 | 單檔《讓空間協同為一》。把系統講成一篇中英對照的工程敘事。OceanAI 是系統級智慧架構，Artibird 是實體產品層 |
 
+<br>
+
 兩本規格書題目會重疊，分工不同。架構規格書定原則、模型和治理邊界；工程規格書定這些原則如何落到 Hub、Gate、設備、Runtime 和測試。產品工程規格書再往下，才寫單品硬體和韌體。
+
+<br>
 
 兩本書稿講同一套架構故事。`07-OceanAI系統架構` 是分冊章節，`08-OceanAI系統` 是把書稿收成一篇的整合正本。它們可以解釋系統，規格條文以 01 與 02 為準。
 
+<br>
+
 工程規格書標題裡的「OceanAI / Artibird」表示 OceanAI 系統如何整合 Artibird 硬體產品。這份仍是 OceanAI 系統工程規格。Artibird 只有產品規格書。
 
+<br>
+
 [02A](02A-OceanAI%20Runtime系統規格書/README.md) 是 Runtime 的工程與商業候選稿，排在 02 之後、03 之前。它繼承 01 與 02 的第六章，不取代這兩章。
+
+<br>
 
 ## 三個倉庫的對應
 
 這三個倉庫記不同的事，用連結對照，不把內容合併。
+
+<br>
+
+### 三個倉庫
 
 | 倉庫 | 記什麼 |
 |------|--------|
 | [MYBOOK](README.md) | OceanAI 架構規格、工程規格、Runtime 候選稿，以及 Artibird 產品規格和書稿 |
 | [artibird-engineering](https://github.com/MasaWang/artibird-engineering) | Hub、Gate、Sync 等硬體工程資料 |
 | [iot-docs](https://github.com/KristampsWong/iot-docs) | 現網軟體由哪些專案組成、怎麼配合、文件寫到哪一次提交 |
+
+<br>
+
+### 目前的對應
 
 | 現網軟體（iot-docs） | OceanAI 文件（MYBOOK） | 硬體（artibird-engineering） | 目前的對應 |
 |----------------------|------------------------|------------------------------|------------|
@@ -53,9 +81,15 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 | IOTControl、artibird-app | 書稿和型錄裡的互動層 | 無硬體產品編號 | 兩個軟體專案。App 裡的 `typeId`、`productId` 不是硬體產品編號 |
 | 設備韌體 | 產品工程規格裡的韌體要求 | 韌體倉庫與相容性仍是 unknown | 韌體倉庫位置待確認 |
 
+<br>
+
 iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面向物理環境的系統級協同智慧架構。Artibird 仍是硬體產品名。書稿 07–09 不約束工程中心，也不約束 iot-docs。
 
+<br>
+
 ## 📂 文件總覽
+
+<br>
 
 ### 01｜架構層
 
@@ -63,19 +97,27 @@ iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面�
 |------|------|------|
 | **OceanAI系統架構規格書** | 系統架構、Runtime 與治理規格書 v1.1，架構層，中英對照 | [01-OceanAI系統架構規格書/README.md](01-OceanAI系統架構規格書/README.md) |
 
+<br>
+
 ### 02｜工程層
 
 | 文件 | 說明 | 入口 |
 |------|------|------|
 | **OceanAI系統工程規格書** | 系統工程規格書 v1.0，系統架構 + Runtime + 整合，19 章，中英對照 | [02-OceanAI系統工程規格書/README.md](02-OceanAI系統工程規格書/README.md) |
 
+<br>
+
 ### 02A｜Runtime 候選
 
 繼承 [01 第六章](01-OceanAI系統架構規格書/A01-1%20OceanAI%20系統架構規格書%20v1.1/章節/chapter%206%20Runtime%20架構.md) 與 [02 第六章](02-OceanAI系統工程規格書/chapters/06_Runtime架構.md)。不取代這兩章，也不修改 Gate 套件。狀態是 v0.1-Candidate。D01 尚未採用。實作與商業供應尚未驗證。
 
+<br>
+
 | 順序 | 文件 | 說明 | 入口 |
 |------|------|------|------|
 | 02A | **OceanAI Runtime系統規格書** | 工程規格與商業規格各一份，中英對照 | [02A-OceanAI Runtime系統規格書/README.md](02A-OceanAI%20Runtime系統規格書/README.md) |
+
+<br>
 
 ### 03–06｜產品層（Artibird｜僅產品規格書）
 
@@ -86,6 +128,8 @@ iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面�
 | 05 | **Artibird產品型錄** | Artibird 產品型錄 v1.0，產品層與應用組合，中英對照 | [05-Artibird產品型錄/README.md](05-Artibird產品型錄/README.md) |
 | 06 | **Artibird SKU與型號命名規範** | SKU 結構、型號命名與治理規範 v1.0，中英對照 | [06-Artibird SKU與型號命名規範/README.md](06-Artibird%20SKU與型號命名規範/README.md) |
 
+<br>
+
 ### 07–09｜書稿
 
 | 順序 | 文件 | 說明 | 入口 |
@@ -94,9 +138,13 @@ iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面�
 | 08 | **OceanAI系統** | 《OceanAI 系統》工程敘事整合版《讓空間協同為一 / Make spaces work as one》 | [08-OceanAI系統/README.md](08-OceanAI系統/README.md) |
 | 09 | **智慧之海** | 哲學與架構專書《The Architecture of Intelligence》，六篇 ~20 章，中英對照 | [09-智慧之海/README.md](09-智慧之海/README.md) |
 
+<br>
+
 ## 跨冊文件關係矩陣
 
 文件金字塔（規格由上而下約束；書稿沿用概念，不改規格條文）：
+
+<br>
 
 ```
 L1  架構規格    01  OceanAI系統架構規格書 v1.1
@@ -106,12 +154,16 @@ L3  產品規格    03–06  Artibird 產品工程／商業規格書、型錄、
 L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之海
 ```
 
-**文件線分工**
+<br>
+
+### 文件線分工
 
 | 名稱 | 定位 | 系統規格書 | 產品規格書 |
 |------|------|-----------|-----------|
 | **OceanAI** | 系統名 | 架構規格書 v1.1、工程規格書 v1.0、Runtime 候選 v0.1 | — |
 | **Artibird** | 硬體產品名 | 無 | 產品工程規格書、產品商業規格書、型錄、SKU 規範 |
+
+<br>
 
 | 資料夾 | 正式名稱 | 層級 | 類型 | 版本 | 上游依賴 | 下游／關聯 | 用途 |
 |--------|----------|------|------|------|----------|------------|------|
@@ -126,7 +178,9 @@ L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之�
 | [08-OceanAI系統](08-OceanAI系統/README.md) | OceanAI 系統（讓空間協同為一） | L4 書稿 | 敘事整合 | Prose | L1/L2 概念同源 | 書稿版章節 | 對外白皮書／工程敘事單檔 |
 | [09-智慧之海](09-智慧之海/README.md) | The Architecture of Intelligence | L4 書稿 | 哲學專書 | — | OceanAI 思想脈絡 | — | 智慧架構哲學；不替代 L1–L3 規格 |
 
-**對照**
+<br>
+
+### 對照
 
 | A | B | 關係 |
 |---|---|------|
@@ -136,6 +190,8 @@ L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之�
 | 02 第六章、01 第六章 | 02A OceanAI Runtime系統規格書 | 候選稿繼承這兩章；不取代原文，D01 尚未採用 |
 | iot-docs | 01、02、02A、03–06 | 現網軟體概覽。硬體編號以 artibird-engineering 為準，未確認的現網設備不對上編號 |
 | Artibird | 系統規格書 | Artibird 的規格在 03–06，屬產品規格 |
+
+<br>
 
 ## 結構說明
 
