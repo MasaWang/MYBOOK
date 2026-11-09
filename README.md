@@ -51,7 +51,7 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 | IOTControl、artibird-app | 書稿和型錄裡的互動層 | 無硬體產品編號 | 兩個軟體專案。App 裡的 `typeId`、`productId` 不是硬體產品編號 |
 | 設備韌體 | 產品工程規格裡的韌體要求 | 韌體倉庫與相容性仍是 unknown | 韌體倉庫位置待確認 |
 
-iot-docs 用 Artibird 稱呼現網這套智能家居軟體。MYBOOK 裡 OceanAI 是系統名，Artibird 是硬體產品名。兩邊的用法都保留。書稿 07–09 不約束工程中心，也不約束 iot-docs。
+iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面向物理環境的系統級協同智慧架構。Artibird 仍是硬體產品名。書稿 07–09 不約束工程中心，也不約束 iot-docs。
 
 ## 📂 文件總覽
 
