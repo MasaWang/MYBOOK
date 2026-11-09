@@ -1,22 +1,23 @@
 {
-  "version": "v0.1-Candidate",
+  "version": "v1.0",
   "date": "2026-11-08",
+  "approval": "Draft",
   "files": {
-    "OceanAI_Runtime_System_Engineering_Specification_v0.1.md": {
-      "sha256": "40515c5c6f4044b58fffc70ee36f16bd4f63a43f44693f09dea52eef0a415396",
-      "bytes": 47868
-    },
-    "OceanAI_Runtime_System_Commercial_Specification_v0.1.md": {
-      "sha256": "86852c032910baa1209d4e85281fa14b4f754b748644474e5a02a4596646a456",
-      "bytes": 27566
+    "README.md": {
+      "sha256": "d7d3dac3a312f8ab2fe432f25f4e3b808e53a6a54c40f2387d71c8f2334134a9",
+      "bytes": 4378
     },
     "REVIEW.md": {
-      "sha256": "aeaa503a6cffe8bad527351b8bbae52f3275e1a3cbd3bdd9d75314a608382bd7",
-      "bytes": 5058
+      "sha256": "4054b2538d8ebfd8c7d312b31c3f9654ecb0e7e3e754bd5db0c9a6b1171d5e80",
+      "bytes": 4961
     },
-    "README.md": {
-      "sha256": "6cc8776f1117439d5a88b4edf088523ae66735dd2eec774652a5698041b09109",
-      "bytes": 2110
+    "工程規格書/完整版.md": {
+      "sha256": "118535601cc55d537d3f239c6025c3acc15947012e7068f6df9ddae5fc03c17d",
+      "bytes": 48837
+    },
+    "商業規格書/完整版.md": {
+      "sha256": "87d93c55bc735f18393e2e2ef8ce3c90dfd9cf48f9e14b46f869e6aaf80211c5",
+      "bytes": 28051
     }
   }
 }

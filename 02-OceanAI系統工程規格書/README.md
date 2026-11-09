@@ -13,7 +13,7 @@ OceanAI / Artibird 系統架構、Runtime 與整合**工程規格書**（中英�
 
 敘事書稿（非規格）：[OceanAI系統架構](../07-OceanAI系統架構/README.md)｜[OceanAI系統](../08-OceanAI系統/README.md) — 見[跨冊矩陣](../README.md#跨冊文件關係矩陣)
 
-Runtime 候選配套（不取代本書各章）：[OceanAI Runtime 系統規格書 v0.1](../02A-OceanAI%20Runtime系統規格書/README.md)
+Runtime 正式規格（不取代本書各章）：[OceanAI Runtime 系統規格書 v1.0](../02A-OceanAI%20Runtime系統規格書/README.md)
 
 ## 章節目錄
 
