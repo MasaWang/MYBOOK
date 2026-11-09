@@ -50,6 +50,18 @@ The common model describes how a space receives events, maintains state, evaluat
 **ZH-TW**  
 共同模型描述空間如何接收事件、維護狀態、判斷規則、路由指令及記錄結果。共用語意不要求 Cloud 與 Hub 使用完全相同的資料庫、程序或基礎設施。每個站點須為受控資源指明權威 Runtime。雲端連線與本地連線不產生兩個獨立權威。
 
+## 2.1 Names aligned to v1.1 and v1.0｜與 v1.1、v1.0 對齊的名稱
+
+**EN**  
+In architecture specification v1.1 §6.5, ORT is the system-level runtime architecture. ORT Cloud Runtime is its cloud portion. ART is the local runtime on an Artibird Hub. In this candidate, Cloud Runtime Service is ORT Cloud Runtime, and Hub / ArtiOS Runtime is ART. They are two implementations with their own codebases. They follow the same scene execution logic and serve different scopes. ORT Cloud Runtime serves all managed schools and homes. ART serves the one school or home assigned to that Hub.
+
+Engineering specification v1.0 §6.7.1 names the command entries. When the App is on the campus LAN and can reach the Hub, the command follows the ART Local Path. Otherwise it follows the ORT Cloud Path. Device feedback is received by the Hub first, then reported to the cloud. The Hub and the cloud each publish feedback to the App, and the App filters the duplicate notice. This naming does not adopt D01, and it is not evidence that the two codebases have been compared.
+
+**ZH-TW**  
+架構規格書 v1.1 第 6.5 節裡，ORT 是系統級運行架構。ORT Cloud Runtime 是其中的雲端運行部分。ART 是 Artibird Hub 上的本地運行。本候選稿的 Cloud Runtime Service 即 ORT Cloud Runtime，Hub／ArtiOS Runtime 即 ART。兩者各有一套程式碼，遵循相同的場景運行邏輯，服務範圍不同。ORT Cloud Runtime 服務所有已納管的學校與家庭。ART 服務該 Hub 所屬的一所學校或一個家庭。
+
+工程規格書 v1.0 第 6.7.1 節寫明命令入口。App 在校園區域網路內且能連通 Hub 時，命令走 ART 本地控制路徑。其餘情況走 ORT 雲端控制路徑。終端回饋先由 Hub 接收，再上報雲端。Hub 與雲端各自向 App 發布回饋，由 App 過濾重複訊息。此名稱對齊不採用 D01，也不作為兩套程式碼已經對照過的證據。
+
 |Component｜元件|Responsibility｜責任|Boundary｜範圍限制|
 |---|---|---|
 |Cloud Runtime Service｜雲端 Runtime 服務|Authoritative operation for cloud-managed sites.｜雲端管理站點的權威運行。|Distinct from account, analytics, and billing services.｜與帳號、分析及計費服務分開。|

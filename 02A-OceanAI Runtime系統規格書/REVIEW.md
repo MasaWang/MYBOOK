@@ -23,7 +23,7 @@ Generated two standalone bilingual Markdown specifications using the two actuall
 |Priority consistency｜優先級一致性|Preserved the inherited six levels; Gate transport / intent change remains D01 pending review.｜保留原六級；Gate 傳輸／意圖改動列 D01 待審。|
 |Cross-document mapping｜跨文件對應|Commercial capability scope maps to RT services and engineering acceptance.｜商業能力範圍對應 RT 服務及工程驗收。|
 |Implementation evidence｜實作證據|No code, running service, hardware or test audit performed.｜未執行程式碼、運行服務、硬體或測試審計。|
-|Repository change｜儲存庫修改|None; original chapters and Gate package unchanged.｜無；原章節及 Gate 套件未變更。|
+|Repository change｜儲存庫修改|2026-11-08 records the ORT, ORT Cloud Runtime, and ART names from v1.1 §6.5, and the command paths from v1.0 §6.7.1. SHA-256 regenerated. Original chapters and the Gate package remain unchanged. Implementation remains unverified.｜2026-11-08 記入 v1.1 第 6.5 節的 ORT、ORT Cloud Runtime、ART，以及 v1.0 第 6.7.1 節的控制路徑。SHA-256 已重算。原章節與 Gate 套件仍未改。實作仍未驗證。|
 
 ## Main unresolved items｜主要未解事項
 

@@ -15,3 +15,9 @@ Read engineering §0 and §9 before applying the new contracts or priority propo
 
 **ZH-TW**  
 採用新契約或優先提案前，先讀工程 §0 及 §9。原六級優先基準持續明列；D01 尚未採用。Cloud 與 Hub 部署均在範圍內，但實作及商業供應尚未驗證。這些為新的獨立草稿，不取代原章節，也不修改先前 Gate 套件。
+
+**EN**  
+Section 2.1 of the engineering specification aligns this candidate with architecture specification v1.1 §6.5 and engineering specification v1.0 §6.7.1. Cloud Runtime Service is ORT Cloud Runtime. Hub / ArtiOS Runtime is ART. The two have separate codebases, follow the same scene execution logic, and serve different scopes.
+
+**ZH-TW**  
+工程規格第 2.1 節把本候選稿對齊架構規格書 v1.1 第 6.5 節與工程規格書 v1.0 第 6.7.1 節。Cloud Runtime Service 即 ORT Cloud Runtime。Hub／ArtiOS Runtime 即 ART。兩者各有程式碼，遵循相同的場景運行邏輯，服務範圍不同。

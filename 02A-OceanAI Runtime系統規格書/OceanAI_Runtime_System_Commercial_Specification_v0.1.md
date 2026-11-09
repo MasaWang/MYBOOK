@@ -28,6 +28,12 @@ OceanAI Runtime coordinates supported devices, events, state, scenes, automation
 **ZH-TW**  
 OceanAI Runtime 在智慧空間中協調受支援設備、事件、狀態、場景、自動化及控制請求。它將用戶意圖與環境資訊連接至允許的動作，並呈現執行結果、運行狀態及恢復過程。
 
+**EN**  
+ORT names the system-level runtime architecture. ORT Cloud Runtime is the cloud implementation and serves all managed schools and homes. ART is the Hub implementation and serves the one school or home assigned to that Hub. The two follow the same scene execution logic. This commercial text does not add a separate offering for either name.
+
+**ZH-TW**  
+ORT 指系統級運行架構。ORT Cloud Runtime 是雲端實現，服務所有已納管的學校與家庭。ART 是 Hub 實現，服務該 Hub 所屬的一所學校或一個家庭。兩者遵循相同的場景運行邏輯。本商業文本不為這兩個名稱另立方案。
+
 **Candidate short description｜候選簡短介紹**
 
 **EN**  

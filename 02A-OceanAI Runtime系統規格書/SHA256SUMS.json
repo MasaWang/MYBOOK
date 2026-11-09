@@ -1,22 +1,22 @@
 {
   "version": "v0.1-Candidate",
-  "date": "2026-11-06",
+  "date": "2026-11-08",
   "files": {
     "OceanAI_Runtime_System_Engineering_Specification_v0.1.md": {
-      "sha256": "c9af26ffd06c534b2f349eba88656404152dbb590b9459df52e315c9def48e0d",
-      "bytes": 44817
+      "sha256": "448e235ba97c9631f183d1bbd8e8818059877f314545dc8b1bd826d79473cd5d",
+      "bytes": 46745
     },
     "OceanAI_Runtime_System_Commercial_Specification_v0.1.md": {
-      "sha256": "466ee92e4533772709d1b35638bf01463df6b57378826ecf061f51a408aadb32",
-      "bytes": 26548
+      "sha256": "15fecb6d925a2a6f96dce44565bb35acdabb285e4ba414a4cb92be61d0f35be9",
+      "bytes": 27189
     },
     "REVIEW.md": {
-      "sha256": "12862204113ad792e5a764d963d3938bcdec91ba61f7226e638820f1ea93c1d2",
-      "bytes": 4456
+      "sha256": "c3491e8d14337ccd396d87d7fb1b1d83fd11d03e5e774bc58b6ddb0e3e93e75f",
+      "bytes": 4784
     },
     "README.md": {
-      "sha256": "d4d09cc94985114892db665cb6950de90e819b06036fc9a5fdcd78479752ab73",
-      "bytes": 1485
+      "sha256": "6cc8776f1117439d5a88b4edf088523ae66735dd2eec774652a5698041b09109",
+      "bytes": 2110
     }
   }
 }
