@@ -82,7 +82,7 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 | Hub（hubServer） | ART。02A 裡的 Hub／ArtiOS 本地 Runtime | `HUB-G1`、`HUB-G1-PRO` | 角色相同。hubServer 的程式不在 iot-docs 的五個專案裡，倉庫仍未知。現網這台樹莓派對上哪一個編號，待確認 |
 | 網關 | 03 Gate 產品規格 | `GATE-G1-STD` 只對應已記錄的配置 1 | 角色相近。現網網關與 `GATE-G1-STD` 的對應待確認 |
 | 紅外和射頻遙控 | 03 Sync 產品規格 | `SYNC-G1-IRRF` | 待確認 |
-| IOTControl、artibird-app | 書稿和型錄裡的互動層 | 無硬體產品編號 | 兩個軟體專案。App 裡的 `typeId`、`productId` 不是硬體產品編號 |
+| IOTControl、artibird-app | 書稿和型錄裡的互動層 | 無硬體產品編號 | 兩個軟體專案。artibird-app 又名 Artibird 極光版。App 裡的 `typeId`、`productId` 不是硬體產品編號 |
 | 設備韌體 | 產品工程規格裡的韌體要求 | 韌體倉庫與相容性仍是 unknown | 韌體倉庫位置待確認 |
 
 <br>
