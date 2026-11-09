@@ -3,20 +3,20 @@
   "date": "2026-11-08",
   "files": {
     "README.md": {
-      "sha256": "1c90fbc38c5edcac4dabdd05585e8c5bb1e64cc5f484def70f2f3f66ab013ace",
-      "bytes": 4258
+      "sha256": "007c07e8266a9888dc973b36c8f56977d1c30a624776446085a88f2401a78ed7",
+      "bytes": 4265
     },
     "REVIEW.md": {
       "sha256": "16dc5bcc5062420d68cb909244cce60518df8ce7f02f52de9b2a8ccefc987c08",
       "bytes": 4795
     },
     "工程規格書/完整版.md": {
-      "sha256": "e389b68b4a1b80a6c7f1bc5b51e200f50e44e4528484f288d3cf53d4b2f5394a",
-      "bytes": 48608
+      "sha256": "8359b49ac5ff7d3226e5ab9973b33bfaec91e337fe46cd17585f5799387c4614",
+      "bytes": 48610
     },
     "商業規格書/完整版.md": {
-      "sha256": "ce385220a4d39e010a3d13041d7853ca4cbd4df2f1e939570d6e704068649070",
-      "bytes": 27943
+      "sha256": "aa6b808c6e8a0504b5e3c5d48051c3cfdee2cb49b601e95f8c5754fb1739ecb3",
+      "bytes": 27909
     }
   }
 }

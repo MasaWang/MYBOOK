@@ -4,7 +4,7 @@ OceanAI Runtime 的工程規格與商業規格（中英對照）。正式版。
 
 本規格繼承 [架構規格書 v1.1 第六章](../01-OceanAI系統架構規格書/A01-1%20OceanAI%20系統架構規格書%20v1.1/章節/chapter%206%20Runtime%20架構.md) 與 [工程規格書 v1.0 第六章](../02-OceanAI系統工程規格書/chapters/06_Runtime架構.md)。不取代這兩章，也不修改 Gate 套件。
 
-ORT 是系統級運行架構。ORT Cloud Runtime 是其雲端 Runtime 實現，服務所有已納管場域。ART 是 Artibird Hub 上的本地 Runtime 實現，服務該 Hub 所屬的一所學校或一個家庭。兩套實現各有自己的程式碼，遵循相同的場景運行邏輯。
+ORT 是系統級運行架構。ORT Cloud Runtime 是其雲端 Runtime 實現，服務所有已納管場域。ART 是 Artibird Hub 上的本地 ArtiOS Runtime 實現，服務該 Hub 所屬的一所學校或一個家庭。兩套實現各有自己的程式碼，遵循相同的場景運行邏輯。
 
 D01 尚未採用。AT-13 尚未執行。實作與商業供應尚未驗證。價格、授權與服務等級尚未核准。
 
