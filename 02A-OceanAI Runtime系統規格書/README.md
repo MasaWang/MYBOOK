@@ -1,6 +1,6 @@
 # OceanAI Runtime 系統規格書 v1.0
 
-OceanAI Runtime 的工程規格與商業規格（中英對照）。正式版。核准狀態為草案，與 [OceanAI 系統工程規格書 v1.0](../02-OceanAI系統工程規格書/README.md) 相同。
+OceanAI Runtime 的工程規格與商業規格（中英對照）。正式版。
 
 本規格繼承 [架構規格書 v1.1 第六章](../01-OceanAI系統架構規格書/A01-1%20OceanAI%20系統架構規格書%20v1.1/章節/chapter%206%20Runtime%20架構.md) 與 [工程規格書 v1.0 第六章](../02-OceanAI系統工程規格書/chapters/06_Runtime架構.md)。不取代這兩章，也不修改 Gate 套件。
 

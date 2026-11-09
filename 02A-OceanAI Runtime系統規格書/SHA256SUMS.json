@@ -1,23 +1,22 @@
 {
   "version": "v1.0",
   "date": "2026-11-08",
-  "approval": "Draft",
   "files": {
     "README.md": {
-      "sha256": "d7d3dac3a312f8ab2fe432f25f4e3b808e53a6a54c40f2387d71c8f2334134a9",
-      "bytes": 4378
+      "sha256": "1c90fbc38c5edcac4dabdd05585e8c5bb1e64cc5f484def70f2f3f66ab013ace",
+      "bytes": 4258
     },
     "REVIEW.md": {
-      "sha256": "4054b2538d8ebfd8c7d312b31c3f9654ecb0e7e3e754bd5db0c9a6b1171d5e80",
-      "bytes": 4961
+      "sha256": "16dc5bcc5062420d68cb909244cce60518df8ce7f02f52de9b2a8ccefc987c08",
+      "bytes": 4795
     },
     "工程規格書/完整版.md": {
-      "sha256": "118535601cc55d537d3f239c6025c3acc15947012e7068f6df9ddae5fc03c17d",
-      "bytes": 48837
+      "sha256": "e389b68b4a1b80a6c7f1bc5b51e200f50e44e4528484f288d3cf53d4b2f5394a",
+      "bytes": 48608
     },
     "商業規格書/完整版.md": {
-      "sha256": "87d93c55bc735f18393e2e2ef8ce3c90dfd9cf48f9e14b46f869e6aaf80211c5",
-      "bytes": 28051
+      "sha256": "ce385220a4d39e010a3d13041d7853ca4cbd4df2f1e939570d6e704068649070",
+      "bytes": 27943
     }
   }
 }

@@ -3,7 +3,7 @@
 
 Date｜日期：2026-11-06（America/Los_Angeles）  
 Classification｜分類：System Architecture / Runtime Model / Engineering Verification / Commercial Offering｜系統架構／Runtime 模型／工程驗證／商業方案  
-Status｜狀態：v1.0｜正式版。Approval status｜核准狀態：Draft｜草案
+Status｜狀態：v1.0｜正式版
 
 ## Summary｜摘要
 
@@ -17,13 +17,13 @@ Generated two standalone bilingual Markdown specifications using the two actuall
 
 |Item｜項目|Result｜結果|
 |---|---|
-|Document creation｜文件生成|Engineering v1.0 and commercial v1.0 are the formal edition. Approval status remains Draft.｜工程及商業 v1.0 為正式版。核准狀態仍為草案。|
+|Document creation｜文件生成|Engineering v1.0 and commercial v1.0 are the formal edition.｜工程及商業 v1.0 為正式版。|
 |English / Traditional Chinese｜英文／繁體中文|Substantive prose is paired; tables carry both languages.｜實質段落英中成對，表格附雙語。|
 |Source traceability｜來源可追溯|S1 / S2 paths, blob IDs and baseline-to-extension distinction recorded.｜記錄 S1／S2 路徑、blob 及基準／擴展區別。|
 |Priority consistency｜優先級一致性|Preserved the inherited six levels; Gate transport / intent change remains D01 pending review.｜保留原六級；Gate 傳輸／意圖改動列 D01 待審。|
 |Cross-document mapping｜跨文件對應|Commercial capability scope maps to RT services and engineering acceptance. AT-13 records scene-behavior parity and is not yet executed.｜商業能力範圍對應 RT 服務及工程驗收。AT-13 記錄場景行為一致性，尚未執行。|
 |Implementation evidence｜實作證據|No code, running service, hardware or test audit performed.｜未執行程式碼、運行服務、硬體或測試審計。|
-|Repository change｜儲存庫修改|2026-11-08 publishes v1.0 as the formal edition and splits both specifications into chapters. Approval status remains Draft. D01 is not adopted. AT-13 is not executed. Implementation and commercial availability remain unverified. SHA-256 regenerated.｜2026-11-08 以 v1.0 發布正式版，兩份規格拆為章節。核准狀態仍為草案。D01 未採用。AT-13 未執行。實作與商業供應仍未驗證。SHA-256 已重算。|
+|Repository change｜儲存庫修改|2026-11-08 publishes v1.0 as the formal edition and splits both specifications into chapters. D01 is not adopted. AT-13 is not executed. Implementation and commercial availability remain unverified. SHA-256 regenerated.｜2026-11-08 以 v1.0 發布正式版，兩份規格拆為章節。D01 未採用。AT-13 未執行。實作與商業供應仍未驗證。SHA-256 已重算。|
 
 ## Main unresolved items｜主要未解事項
 
