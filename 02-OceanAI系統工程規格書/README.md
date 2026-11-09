@@ -15,6 +15,8 @@ OceanAI / Artibird 系統架構、Runtime 與整合**工程規格書**（中英�
 
 Runtime 正式規格（不取代本書各章）：[OceanAI Runtime 系統規格書 v1.0](../02A-OceanAI%20Runtime系統規格書/README.md)
 
+雲端共用基礎服務候選（不取代本書各章）：[OceanAI 雲端共用基礎服務工程規格 v0.1](../02B-OceanAI雲端共用基礎服務規格書/README.md)
+
 ## 章節目錄
 
 - [封面](chapters/00_封面.md)
