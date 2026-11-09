@@ -502,6 +502,22 @@ Synchronization must be selective. It must follow privacy, permission, retention
 |10|重試 / 佇列處理|同步失敗依重試、過期或拒絕規則處理|
 |11|日誌記錄|支援條件下記錄同步活動|
 
+## EN
+
+Three items in the ORT Cloud Path remain open. They are recorded here so a later program reading or test can fill them in. They are not yet a verified flow.
+
+- The actual downlink from ORT Cloud Runtime to the Hub.
+- How the App recognizes that two feedback notices belong to the same event.
+- How a reconnect decides which state record is newer.
+
+## ZH-TW
+
+ORT 雲端控制路徑有三項仍待補齊。這裡先記下，供之後依程式或實測填入。它們還不是已驗證的流程。
+
+- 雲端路徑的實際下行鏈路。
+- App 如何辨識兩份回饋屬於同一事件。
+- 重連時如何判斷哪筆狀態較新。
+
 ---
 
 ## C.11 Failure and Recovery Flow

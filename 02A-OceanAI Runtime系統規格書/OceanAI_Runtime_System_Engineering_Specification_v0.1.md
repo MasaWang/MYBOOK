@@ -53,12 +53,12 @@ The common model describes how a space receives events, maintains state, evaluat
 ## 2.1 Names aligned to v1.1 and v1.0｜與 v1.1、v1.0 對齊的名稱
 
 **EN**  
-In architecture specification v1.1 §6.5, ORT is the system-level runtime architecture. ORT Cloud Runtime is its cloud portion. ART is the local runtime on an Artibird Hub. In this candidate, Cloud Runtime Service is ORT Cloud Runtime, and Hub / ArtiOS Runtime is ART. They are two implementations with their own codebases. They follow the same scene execution logic and serve different scopes. ORT Cloud Runtime serves all managed schools and homes. ART serves the one school or home assigned to that Hub.
+In architecture specification v1.1 §6.5, ORT is the system-level runtime architecture. ORT Cloud Runtime is its cloud-side runtime implementation. ART is its local runtime implementation on an Artibird Hub. In this candidate, Cloud Runtime Service is ORT Cloud Runtime, and Hub / ArtiOS Runtime is ART. They are two implementations with their own codebases. They follow the same scene execution logic and serve different scopes. ORT Cloud Runtime serves all managed schools and homes. ART serves the one school or home assigned to that Hub.
 
 Engineering specification v1.0 §6.7.1 names the command entries. When the App is on the campus LAN and can reach the Hub, the command follows the ART Local Path. Otherwise it follows the ORT Cloud Path. Device feedback is received by the Hub first, then reported to the cloud. The Hub and the cloud each publish feedback to the App, and the App filters the duplicate notice. This naming does not adopt D01, and it is not evidence that the two codebases have been compared.
 
 **ZH-TW**  
-架構規格書 v1.1 第 6.5 節裡，ORT 是系統級運行架構。ORT Cloud Runtime 是其中的雲端運行部分。ART 是 Artibird Hub 上的本地運行。本候選稿的 Cloud Runtime Service 即 ORT Cloud Runtime，Hub／ArtiOS Runtime 即 ART。兩者各有一套程式碼，遵循相同的場景運行邏輯，服務範圍不同。ORT Cloud Runtime 服務所有已納管的學校與家庭。ART 服務該 Hub 所屬的一所學校或一個家庭。
+架構規格書 v1.1 第 6.5 節裡，ORT 是系統級運行架構。ORT Cloud Runtime 是其雲端 Runtime 實現。ART 是其本地 Runtime 實現，部署在 Artibird Hub 上。本候選稿的 Cloud Runtime Service 即 ORT Cloud Runtime，Hub／ArtiOS Runtime 即 ART。兩者各有一套程式碼，遵循相同的場景運行邏輯，服務範圍不同。ORT Cloud Runtime 服務所有已納管的學校與家庭。ART 服務該 Hub 所屬的一所學校或一個家庭。
 
 工程規格書 v1.0 第 6.7.1 節寫明命令入口。App 在校園區域網路內且能連通 Hub 時，命令走 ART 本地控制路徑。其餘情況走 ORT 雲端控制路徑。終端回饋先由 Hub 接收，再上報雲端。Hub 與雲端各自向 App 發布回饋，由 App 過濾重複訊息。此名稱對齊不採用 D01，也不作為兩套程式碼已經對照過的證據。
 
@@ -333,6 +333,7 @@ v0.1 不指派量產設備上限、延遲保證、可用率、保存期限或恢
 |AT-10|Load / soak｜負載／耐久|Agreed workload, duration and thresholds recorded with raw latency / error / resource evidence.｜約定負載、時長及門檻，附原始延遲／錯誤／資源證據。|
 |AT-11|App idle / session recovery｜App 待機／session 恢復|Session and subscriptions recover, snapshot refreshes and pending results reconcile.｜session 及訂閱恢復，快照更新，待定結果完成核對。|
 |AT-12|Backup / update / migration｜備份／更新／遷移|Restore compatibility and authority checks pass; old writer revoked where migration applies.｜還原相容及權威檢查通過；適用遷移時撤銷舊寫入者。|
+|AT-13|Scene behavior parity｜場景行為一致性|Same classroom, same scene version, and same initial device state. Trigger the class scene once from ART and once from ORT Cloud Runtime. Compare each device's target action, the scene result when a step fails, and the state recorded on both sides after synchronization. Deliver the same device feedback to the App in both orders and show that the interface handles it once. This test is not yet executed. The statement that the two implementations follow the same scene logic comes from the confirmed architecture description, not from a comparison of the two programs.｜同一教室、同一場景版本、同一初始設備狀態。分別從 ART 與 ORT Cloud Runtime 觸發上課場景。比對各設備的目標動作、部分失敗時的場景結果，以及同步完成後兩端記錄的狀態。讓同一筆終端回饋以兩種順序抵達 App，確認介面只處理一次。此項尚未執行。兩套實現遵循相同場景邏輯，來自已確認的架構描述，不是兩套程式的比對結果。|
 
 **EN**  
 For each test record build / configuration hashes, device and firmware versions, procedure, predetermined pass criteria, sample count / duration, expected and observed results, raw evidence, defects and reviewer. A practical first slice uses one Runtime, one existing adapter / Gate path, a physical control, a sensor and an execution endpoint, then repeats it in each intended deployment mode. Select numerical thresholds before testing; do not report placeholders as passed tests.

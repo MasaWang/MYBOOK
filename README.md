@@ -73,7 +73,7 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 |----------------------|------------------------|------------------------------|------------|
 | 系統總覽 | 01 架構規格、02 工程規格 | — | 現網行為說明，不是這兩份規格的採用版 |
 | iot-backend | OceanAI Cloud | — | 現網業務 API 與主數據 |
-| emqxMP | ORT Cloud Runtime | — | 現網雲端 Runtime。ORT 的雲端運行部分。不是 EMQX Broker |
+| emqxMP | ORT Cloud Runtime | — | 現網雲端 Runtime。ORT 的雲端 Runtime 實現。不是 EMQX Broker |
 | EMQX | — | — | 雲端 MQTT Broker 和本地 MQTT Broker，只轉發訊息 |
 | Hub（hubServer） | ART。02A 裡的 Hub／ArtiOS 本地 Runtime | `HUB-G1`、`HUB-G1-PRO` | 角色相同。hubServer 的程式不在 iot-docs 的五個專案裡，倉庫仍未知。現網這台樹莓派對上哪一個編號，待確認 |
 | 網關 | 03 Gate 產品規格 | `GATE-G1-STD` 只對應已記錄的配置 1 | 角色相近。現網網關與 `GATE-G1-STD` 的對應待確認 |

@@ -250,28 +250,44 @@ Cloud、本地自動化、場景執行，或在支援條件下來自 OceanAI Edg
 ## **6.7.1 ORT 雲端控制路徑與 ART 本地控制路徑**
 
 **EN  
-**ORT is the system-level runtime architecture. ORT Cloud Runtime is the cloud portion of ORT. It has its own codebase and serves all managed schools and homes. ART is the local runtime on an Artibird Hub. It has its own codebase and serves the one school or home assigned to that Hub. The two implementations follow the same scene execution logic.
+**ORT is the system-level runtime architecture. ORT Cloud Runtime is its cloud-side runtime implementation. It has its own codebase and serves all managed schools and homes. ART is the local runtime implementation on an Artibird Hub. It has its own codebase and serves the one school or home assigned to that Hub. The two implementations follow the same scene execution logic.
 
-For the classroom scene, the App selects the command entry. When the App is on the campus LAN and can reach the Hub, the command follows the ART Local Path. Otherwise it follows the ORT Cloud Path. Device feedback is received by the Hub first, then reported to the cloud. The Hub and the cloud each publish that feedback to the App, and the App filters the duplicate notice. The Hub and the cloud synchronize runtime state. When the cloud connection is interrupted, ART continues controls and automations that already have their local execution conditions, and synchronizes the record after the connection returns.
+The App selects the command entry based on campus LAN membership and Hub reachability from the App. When the App is on the campus LAN and can reach the Hub, the command follows the ART Local Path. Otherwise the App selects the ORT Cloud Path. The execution result is evaluated separately using device feedback received through the Hub.
+
+**Feedback delivery.** The device reports to the Hub first. The Hub then reports to the cloud. The Hub and the cloud each publish that feedback to the App, and the App filters the duplicate notice.
+
+**State synchronization.** The Hub and the cloud synchronize the runtime state of that site.
+
+The App may select the cloud entry both when the App cannot reach the Hub and when the cloud also cannot reach the Hub. Only the first case is an App routing choice. Whether the second case completes on-site control depends on the cloud path actually reaching the Hub, and that downlink remains to be verified. When the cloud connection is interrupted and local execution conditions are already available, ART continues those controls and automations, and synchronizes the record after the connection returns.
+
+Three items stay open for the Runtime flow appendix, to be filled from the programs or from a test: the actual downlink of the cloud path, how the App recognizes that two feedback notices belong to the same event, and how a reconnect decides which state record is newer.
 
 **ZH-TW  
-**ORT 是系統級運行架構。ORT Cloud Runtime 是 ORT 的雲端運行部分，有自己的程式碼，服務所有已納管的學校與家庭。ART 是 Artibird Hub 上的本地運行，有自己的程式碼，服務該 Hub 所屬的一所學校或一個家庭。兩套實現遵循相同的場景運行邏輯。
+**ORT 是系統級運行架構。ORT Cloud Runtime 是其雲端 Runtime 實現，有自己的程式碼，服務所有已納管的學校與家庭。ART 是 Artibird Hub 上的本地 Runtime 實現，有自己的程式碼，服務該 Hub 所屬的一所學校或一個家庭。兩套實現遵循相同的場景運行邏輯。
 
-以上課場景為例，App 選擇命令入口。App 在校園區域網路內且能連通 Hub 時，命令走 ART 本地控制路徑。其餘情況走 ORT 雲端控制路徑。終端回饋先由 Hub 接收，再上報雲端。Hub 與雲端各自向 App 發布回饋，由 App 過濾重複訊息。Hub 與雲端同步的是運行狀態。雲端連線中斷時，已具備本地執行條件的控制與自動化由 ART 繼續運行，待連線恢復後再同步紀錄。
+App 依是否位於校園區域網路內，以及 App 能否連通 Hub，選擇命令入口。App 在校園區域網路內且能連通 Hub 時，命令走 ART 本地控制路徑。其餘情況，App 選擇 ORT 雲端控制路徑。執行結果另依 Hub 收到的終端回饋判定。
+
+**回饋傳遞。** 終端先回報 Hub，Hub 再上報雲端。Hub 與雲端各自向 App 發布回饋，由 App 過濾重複訊息。
+
+**狀態同步。** Hub 與雲端同步該場域的運行狀態。
+
+App 連不到 Hub，以及雲端也連不到 Hub，兩種情況都可能讓 App 選擇雲端入口。前者是 App 的路由選擇。後者能否完成現場控制，取決於雲端路徑是否實際到達 Hub，這條下行鏈路仍待驗證。雲端連線中斷且本地執行條件已經具備時，ART 繼續那些控制與自動化，待連線恢復後再同步紀錄。
+
+三項留在 Runtime 流程附錄，依程式或實測補齊：雲端路徑的實際下行鏈路、App 如何辨識兩份回饋屬於同一事件，以及重連時如何判斷哪筆狀態較新。
 
 ## **English Table**
 
-| **Path** | **Entry** | **When** |
+| **Path** | **Entry** | **App Route Selection** |
 |----|----|----|
-| ORT Cloud Path | ORT Cloud Runtime | The App is outside the campus LAN, or the Hub is not reachable |
-| ART Local Path | ART on the Hub | The App is on the campus LAN and can reach the Hub |
+| ORT Cloud Path | ORT Cloud Runtime | The App is outside the campus LAN, or the App cannot reach the Hub |
+| ART Local Path | ART on the Hub | The App is on the campus LAN and the App can reach the Hub |
 
 ## **中文表**
 
-| **路徑** | **入口** | **條件** |
+| **路徑** | **入口** | **App 路由選擇條件** |
 |----|----|----|
-| ORT Cloud Path｜ORT 雲端控制路徑 | ORT Cloud Runtime | App 不在校園區域網路內，或連不到 Hub |
-| ART Local Path｜ART 本地控制路徑 | Hub 上的 ART | App 在校園區域網路內，而且連得到 Hub |
+| ORT Cloud Path｜ORT 雲端控制路徑 | ORT Cloud Runtime | App 不在校園區域網路內，或 App 連不到 Hub |
+| ART Local Path｜ART 本地控制路徑 | Hub 上的 ART | App 在校園區域網路內，而且 App 連得到 Hub |
 
 ## **6.8 Scene Execution**
 

@@ -21,7 +21,7 @@ Generated two standalone bilingual Markdown specifications using the two actuall
 |English / Traditional Chinese｜英文／繁體中文|Substantive prose is paired; tables carry both languages.｜實質段落英中成對，表格附雙語。|
 |Source traceability｜來源可追溯|S1 / S2 paths, blob IDs and baseline-to-extension distinction recorded.｜記錄 S1／S2 路徑、blob 及基準／擴展區別。|
 |Priority consistency｜優先級一致性|Preserved the inherited six levels; Gate transport / intent change remains D01 pending review.｜保留原六級；Gate 傳輸／意圖改動列 D01 待審。|
-|Cross-document mapping｜跨文件對應|Commercial capability scope maps to RT services and engineering acceptance.｜商業能力範圍對應 RT 服務及工程驗收。|
+|Cross-document mapping｜跨文件對應|Commercial capability scope maps to RT services and engineering acceptance. AT-13 records scene-behavior parity and is not yet executed.｜商業能力範圍對應 RT 服務及工程驗收。AT-13 記錄場景行為一致性，尚未執行。|
 |Implementation evidence｜實作證據|No code, running service, hardware or test audit performed.｜未執行程式碼、運行服務、硬體或測試審計。|
 |Repository change｜儲存庫修改|2026-11-08 records the ORT, ORT Cloud Runtime, and ART names from v1.1 §6.5, and the command paths from v1.0 §6.7.1. SHA-256 regenerated. Original chapters and the Gate package remain unchanged. Implementation remains unverified.｜2026-11-08 記入 v1.1 第 6.5 節的 ORT、ORT Cloud Runtime、ART，以及 v1.0 第 6.7.1 節的控制路徑。SHA-256 已重算。原章節與 Gate 套件仍未改。實作仍未驗證。|
 

@@ -107,8 +107,8 @@ These terms should be used as the official reference vocabulary for the OceanAI 
 |OceanAI System Architecture|The architecture-level reference that defines OceanAI’s system identity, layer model, runtime behavior, local-cloud-edge coordination, security, privacy, governance, capacity, deployment, validation, and evolution strategy.|
 |OceanAI Runtime|The active operating structure through which events, commands, states, scenes, automations, priorities, and failure behavior are processed.|
 |ORT|OceanAI Runtime as the system-level runtime architecture. It covers cloud runtime, local runtime, and their collaboration.|
-|ORT Cloud Runtime|The cloud portion of ORT. It has its own codebase and serves all managed schools and homes.|
-|ART|ArtiOS Runtime deployed on an Artibird Hub. It has its own codebase, serves the one school or home assigned to that Hub, and follows the same scene execution logic as ORT Cloud Runtime.|
+|ORT Cloud Runtime|The cloud-side runtime implementation of ORT. It has its own codebase and serves all managed schools and homes.|
+|ART|The local runtime implementation on an Artibird Hub. It has its own codebase, serves the school or home assigned to that Hub, and follows the same scene execution logic as ORT Cloud Runtime.|
 |OceanAI Data Model|The structured representation of devices, spaces, users, roles, services, configurations, capabilities, health states, events, commands, and validation records.|
 |OceanAI Governance Model|The system of rules and boundaries that controls AI behavior, runtime decisions, data handling, security, privacy, engineering claims, commercial claims, certification language, and traceability.|
 |OceanAI Validation Framework|The evidence-based framework used to test and validate architecture behavior, runtime behavior, connectivity, security, privacy, capacity, reliability, deployment, and claims.|
@@ -123,8 +123,8 @@ These terms should be used as the official reference vocabulary for the OceanAI 
 |OceanAI 系統架構|定義 OceanAI 系統身份、分層模型、Runtime 行為、本地—雲端—Edge 協同、安全、隱私、治理、容量、部署、驗證與演進策略的架構級參考。|
 |OceanAI Runtime|處理事件、指令、狀態、場景、自動化、優先級與故障行為的主動運行結構。|
 |ORT|作為系統級運行架構的 OceanAI Runtime。涵蓋雲端運行、本地運行，以及兩者之間的協作。|
-|ORT Cloud Runtime|ORT 的雲端運行部分。有自己的程式碼，服務所有已納管的學校與家庭。|
-|ART|部署在 Artibird Hub 上的 ArtiOS Runtime。有自己的程式碼，服務該 Hub 所屬的一所學校或一個家庭，並與 ORT Cloud Runtime 遵循相同的場景運行邏輯。|
+|ORT Cloud Runtime|ORT 的雲端 Runtime 實現。有自己的程式碼，服務所有已納管的學校與家庭。|
+|ART|Artibird Hub 上的本地 Runtime 實現。有自己的程式碼，服務該 Hub 所屬的學校或家庭，並與 ORT Cloud Runtime 遵循相同的場景運行邏輯。|
 |OceanAI 數據模型|設備、空間、用戶、角色、服務、配置、能力、健康狀態、事件、指令與驗證記錄的結構化表示。|
 |OceanAI 治理模型|控制 AI 行為、Runtime 決策、數據處理、安全、隱私、工程宣稱、商業宣稱、認證語言與可追溯性的規則與邊界體系。|
 |OceanAI 驗證框架|用於測試與驗證架構行為、Runtime 行為、連接、安全、隱私、容量、可靠性、部署與宣稱的證據型框架。|
