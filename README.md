@@ -31,6 +31,28 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 
 [02A](02A-OceanAI%20Runtime系統規格書/README.md) 是 Runtime 的工程與商業候選稿，排在 02 之後、03 之前。它繼承 01 與 02 的第六章，不取代這兩章。
 
+## 三個倉庫的對應
+
+這三個倉庫記不同的事，用連結對照，不把內容合併。
+
+| 倉庫 | 記什麼 |
+|------|--------|
+| [MYBOOK](README.md) | OceanAI 架構規格、工程規格、Runtime 候選稿，以及 Artibird 產品規格和書稿 |
+| [artibird-engineering](https://github.com/MasaWang/artibird-engineering) | Hub、Gate、Sync 等硬體工程資料 |
+| [iot-docs](https://github.com/KristampsWong/iot-docs) | 現網軟體由哪些專案組成、怎麼配合、文件寫到哪一次提交 |
+
+| 現網軟體（iot-docs） | OceanAI 文件（MYBOOK） | 硬體（artibird-engineering） | 目前的對應 |
+|----------------------|------------------------|------------------------------|------------|
+| 系統總覽 | 01 架構規格、02 工程規格 | — | 現網行為說明，不是這兩份規格的採用版 |
+| iot-backend、emqxMP、EMQX | 02A 裡的 Cloud Runtime | — | 候選稿尚未把現網服務收成已採用契約 |
+| Hub（hubServer） | 02A 裡的 Hub／ArtiOS 本地 Runtime | `HUB-G1`、`HUB-G1-PRO` | 角色相同。現網這台樹莓派對上哪一個編號，待確認。hubServer 的代碼不在 iot-docs 的五個專案裡 |
+| 網關 | 03 Gate 產品規格 | `GATE-G1-STD` 只對應已記錄的配置 1 | 角色相近。現網網關與 `GATE-G1-STD` 的對應待確認 |
+| 紅外和射頻遙控 | 03 Sync 產品規格 | `SYNC-G1-IRRF` | 待確認 |
+| IOTControl、artibird-app | 書稿和型錄裡的互動層 | 無硬體產品編號 | 兩個軟體專案。App 裡的 `typeId`、`productId` 不是硬體產品編號 |
+| 設備韌體 | 產品工程規格裡的韌體要求 | 韌體倉庫與相容性仍是 unknown | 韌體倉庫位置待確認 |
+
+iot-docs 用 Artibird 稱呼現網這套智能家居軟體。MYBOOK 裡 OceanAI 是系統名，Artibird 是硬體產品名。兩邊的用法都保留。書稿 07–09 不約束工程中心，也不約束 iot-docs。
+
 ## 📂 文件總覽
 
 ### 01｜架構層
@@ -110,6 +132,7 @@ L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之�
 | 02 OceanAI系統工程規格書 | 08 OceanAI系統 | 工程規格 v1.0，與敘事整合版分開 |
 | 01 OceanAI系統架構規格書 v1.1 | 02 OceanAI系統工程規格書 v1.0 | 架構層在上；工程層展開整合與 Runtime |
 | 02 第六章、01 第六章 | 02A OceanAI Runtime系統規格書 | 候選稿繼承這兩章；不取代原文，D01 尚未採用 |
+| iot-docs | 01、02、02A、03–06 | 現網軟體概覽。硬體編號以 artibird-engineering 為準，未確認的現網設備不對上編號 |
 | Artibird | 系統規格書 | Artibird 的規格在 03–06，屬產品規格 |
 
 ## 結構說明
