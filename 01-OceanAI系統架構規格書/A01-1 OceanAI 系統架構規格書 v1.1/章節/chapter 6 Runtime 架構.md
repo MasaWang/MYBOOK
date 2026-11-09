@@ -204,18 +204,52 @@ Runtime 延續性確保當組件故障或雲端服務不可用時，關鍵本地
 
 ---
 
-## 6.5 Chapter Conclusion
+## 6.5 ORT and ART
 
-## 6.5 章節結論
+## 6.5 ORT 與 ART
 
 ## EN
 
-This chapter defines the Runtime Architecture of OceanAI. It provides a detailed description of runtime functions, priority handling, continuity, degraded behavior, and failure handling.
+ORT is the system-level runtime architecture of OceanAI. It covers cloud runtime, local runtime, and the collaboration between them. ORT Cloud Runtime is the cloud portion of that architecture. ART is the local runtime deployed on an Artibird Hub.
+
+ORT Cloud Runtime and ART are two distinct runtime implementations. They follow the same scene execution logic and serve different scopes. ORT Cloud Runtime has its own codebase and serves all managed schools and homes. ART has its own codebase and serves the one school or home assigned to that Hub. One ORT architecture can cover multiple ART deployments. ART on a Hub applies that scene logic within its own site.
+
+## English Table
+
+|Term|Role|
+|---|---|
+|ORT — OceanAI Runtime|System-level runtime architecture. It covers cloud runtime, local runtime, and their collaboration.|
+|ORT Cloud Runtime|The cloud portion of ORT. It has its own codebase and serves all managed schools and homes.|
+|ART — ArtiOS Runtime|Local runtime on an Artibird Hub. It has its own codebase and serves the one school or home assigned to that Hub.|
+
+## ZH-TW
+
+ORT 是 OceanAI 的系統級運行架構。它涵蓋雲端運行、本地運行，以及兩者之間的協作。ORT Cloud Runtime 是這套架構中的雲端運行部分。ART 是部署在 Artibird Hub 上的本地運行。
+
+ORT Cloud Runtime 與 ART 是兩套獨立實現的 Runtime，遵循相同的場景運行邏輯，服務範圍不同。ORT Cloud Runtime 有自己的程式碼，服務所有已納管的學校與家庭。ART 有自己的程式碼，服務該 Hub 所屬的一所學校或一個家庭。同一套 ORT 架構可以涵蓋多個 ART 部署。Hub 上的 ART 在單一場域內實現與雲端一致的場景運行邏輯。
+
+## 中文表
+
+|術語|角色|
+|---|---|
+|ORT — OceanAI Runtime|系統級運行架構。涵蓋雲端運行、本地運行，以及兩者之間的協作。|
+|ORT Cloud Runtime|ORT 的雲端運行部分。有自己的程式碼，服務所有已納管的學校與家庭。|
+|ART — ArtiOS Runtime|Artibird Hub 上的本地運行。有自己的程式碼，服務該 Hub 所屬的一所學校或一個家庭。|
+
+---
+
+## 6.6 Chapter Conclusion
+
+## 6.6 章節結論
+
+## EN
+
+This chapter defines the Runtime Architecture of OceanAI. It provides a detailed description of runtime functions, priority handling, continuity, degraded behavior, failure handling, and the roles of ORT and ART.
 
 The next chapter (Chapter 7) will define the **System Data Model**, explaining how devices, spaces, users, events, commands, states, telemetry, and context are represented and interrelated.
 
 ## ZH-TW
 
-本章定義 OceanAI 的 Runtime 架構，詳細描述 Runtime 功能、優先級處理、延續性、降級行為與故障處理。
+本章定義 OceanAI 的 Runtime 架構，詳細描述 Runtime 功能、優先級處理、延續性、降級行為、故障處理，以及 ORT 與 ART 的角色。
 
 下一章（第七章）將定義 **系統數據模型**，說明設備、空間、用戶、事件、指令、狀態、遙測與上下文如何被表示與相互關聯。
