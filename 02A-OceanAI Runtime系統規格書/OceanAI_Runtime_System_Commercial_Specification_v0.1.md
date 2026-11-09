@@ -3,7 +3,7 @@
 
 Version｜版本：v0.1 — Candidate｜候選稿  
 Document ID｜文件編號：OAI-RT-COM-001（proposed｜提案）  
-Revision date｜修訂日期：2026-11-06（America/Los_Angeles）  
+Revision date｜修訂日期：2026-11-08（America/Los_Angeles）  
 Engineering reference｜工程依據：OceanAI Runtime System Engineering Specification v0.1 — OAI-RT-ENG-001
 
 ## 0. Document purpose and status｜文件用途與狀態
@@ -29,10 +29,10 @@ OceanAI Runtime coordinates supported devices, events, state, scenes, automation
 OceanAI Runtime 在智慧空間中協調受支援設備、事件、狀態、場景、自動化及控制請求。它將用戶意圖與環境資訊連接至允許的動作，並呈現執行結果、運行狀態及恢復過程。
 
 **EN**  
-ORT names the system-level runtime architecture. ORT Cloud Runtime is the cloud implementation and serves all managed schools and homes. ART is the Hub implementation and serves the one school or home assigned to that Hub. The two follow the same scene execution logic. This commercial text does not add a separate offering for either name.
+OceanAI Runtime (ORT) is the system-level runtime architecture. ORT Cloud Runtime is its cloud-side runtime implementation and serves all managed schools and homes. ArtiOS Runtime (ART) is its local runtime implementation on an Artibird Hub and serves the school or home assigned to that Hub. The two implementations have separate codebases and follow the same scene execution logic. This commercial text does not add a separate offering for either name.
 
 **ZH-TW**  
-ORT 指系統級運行架構。ORT Cloud Runtime 是雲端實現，服務所有已納管的學校與家庭。ART 是 Hub 實現，服務該 Hub 所屬的一所學校或一個家庭。兩者遵循相同的場景運行邏輯。本商業文本不為這兩個名稱另立方案。
+OceanAI Runtime（ORT）是系統級運行架構。ORT Cloud Runtime 是其雲端 Runtime 實現，服務所有已納管的學校與家庭。ArtiOS Runtime（ART）是其本地 Runtime 實現，部署在 Artibird Hub 上，服務該 Hub 所屬的一所學校或一個家庭。兩套實現各有自己的程式碼，遵循相同的場景運行邏輯。本商業文本不為這兩個名稱另立方案。
 
 **Candidate short description｜候選簡短介紹**
 
@@ -79,7 +79,7 @@ Agriculture, outdoor infrastructure and other specialized environments require s
 
 |Question｜選型問題|Cloud Runtime deployment｜Cloud Runtime 部署|Hub / ArtiOS local deployment｜Hub／ArtiOS 本地部署|
 |---|---|---|
-|Where does coordination run?｜協同在哪運行？|Cloud Runtime for the assigned site.｜指定站點的 Cloud Runtime。|Local Hub / ArtiOS for assigned resources.｜指定資源的本地 Hub／ArtiOS。|
+|Where does coordination run?｜協同在哪運行？|ORT Cloud Runtime serves all managed schools and homes.｜ORT Cloud Runtime 服務所有已納管的學校與家庭。|ART on the Hub serves the one school or home assigned to that Hub.｜Hub 上的 ART 服務該 Hub 所屬的一所學校或一個家庭。|
 |Required components｜必要元件|Supported devices / adapters, Internet, account and active cloud service.｜受支援設備／轉接器、Internet、帳號及有效雲端服務。|Compatible Hub, local network / power, devices / adapters and supported Runtime release.｜相容 Hub、本地網路／供電、設備／轉接器及受支援 Runtime 版本。|
 |Internet unavailable｜Internet 不可用|Cloud-mediated control / rules are affected; independent device behavior only where validated.｜雲端中介控制／規則受影響；僅保留已驗證獨立設備行為。|Named local functions may continue with functioning local components.｜本地元件正常時，具名本地功能可延續。|
 |Remote access｜遠端存取|Through authorized cloud service.｜經授權雲端服務。|Through configured and authorized remote path; local access remains a separate capability.｜經配置及授權遠端路徑；本地存取為另一能力。|
@@ -87,10 +87,10 @@ Agriculture, outdoor infrastructure and other specialized environments require s
 |Change of mode｜模式轉換|Compatibility and controlled migration review required.｜須相容及受控遷移審閱。|Same; no automatic takeover or migration included by implication.｜同樣要求；不隱含自動接管或遷移。|
 
 **EN**  
-The two modes share the engineering model, but their available features and service commitments may differ. The signed offering record states the exact supported release and mode. Hub / Cloud synchronization does not mean both are allowed to issue independent authoritative commands to the same resource.
+The two implementations follow the same scene execution logic, but their available features and service commitments may differ. The signed offering record states the exact supported release and mode. Hub / Cloud synchronization does not mean both are allowed to issue independent authoritative commands to the same resource.
 
 **ZH-TW**  
-兩種模式共用工程模型，但可用功能及服務承諾可能不同。經確認方案記錄須列具體受支援版本及模式。Hub／Cloud 同步不表示兩者均可對同一資源獨立發出權威指令。
+兩套實現遵循相同的場景運行邏輯，但可用功能及服務承諾可能不同。經確認方案記錄須列具體受支援版本及模式。Hub／Cloud 同步不表示兩者均可對同一資源獨立發出權威指令。
 
 ## 5. Functional scope and product packages｜功能範圍與產品組合
 
