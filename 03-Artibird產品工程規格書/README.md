@@ -10,3 +10,4 @@ Artibird 全系列**產品**工程規格書集合（中英對照）。**Artibird
 |------|------|------|
 | **A01產品規格書完整工程版** | Gate、Hub、Sync、Switch、Panel、Act、Sense、Vision 工程規格書 v1.0 | [A01產品規格書完整工程版/README.md](A01產品規格書完整工程版/README.md) |
 | **Artibird Hub 系列系統工程規格書 v0.1** | Hub、Hub Pro、Building Controller 共用工程審閱草案。不取代 A01，也不改既有規劃編號 | [Artibird Hub 系列系統工程規格書 v0.1/README.md](Artibird%20Hub%20系列系統工程規格書%20v0.1/README.md) |
+| **Artibird Gate 智能空間網關工程規格書 v0.1** | Artibird Gate 工程審閱草案。不取代 A01，也不改 `GATE-G1-STD` | [Artibird Gate 智能空間網關工程規格書 v0.1/README.md](Artibird%20Gate%20智能空間網關工程規格書%20v0.1/README.md) |
