@@ -139,7 +139,7 @@ iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面�
 
 | 順序 | 文件 | 說明 | 入口 |
 |------|------|------|------|
-| 03 | **Artibird產品工程規格書** | Artibird 全系列產品工程規格書（Gate–Vision），中英對照。另有 Hub 系列與 Gate 工程審閱草案 v0.1 | [03-Artibird產品工程規格書/README.md](03-Artibird產品工程規格書/README.md) |
+| 03 | **Artibird產品工程規格書** | Artibird 全系列產品工程規格書（Gate–Vision），中英對照。另有 Hub 系列、Gate 與 Sync 工程審閱草案 v0.1 | [03-Artibird產品工程規格書/README.md](03-Artibird產品工程規格書/README.md) |
 | 04 | **Artibird產品商業規格書** | Artibird 全系列產品商業規格書（Gate–Vision），中英對照 | [04-Artibird產品商業規格書/README.md](04-Artibird產品商業規格書/README.md) |
 | 05 | **Artibird產品型錄** | Artibird 產品型錄 v1.0，產品層與應用組合，中英對照 | [05-Artibird產品型錄/README.md](05-Artibird產品型錄/README.md) |
 | 06 | **Artibird SKU與型號命名規範** | SKU 結構、型號命名與治理規範 v1.0，中英對照 | [06-Artibird SKU與型號命名規範/README.md](06-Artibird%20SKU與型號命名規範/README.md) |
@@ -188,7 +188,7 @@ L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之�
 | [02-OceanAI系統工程規格書](02-OceanAI系統工程規格書/README.md) | OceanAI 系統工程規格書（正式標題含 Artibird 整合語意） | L2 工程 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格、02A Runtime 規格 | 系統—產品整合、Runtime、設備模型、測試 |
 | [02A-OceanAI Runtime系統規格書](02A-OceanAI%20Runtime系統規格書/README.md) | OceanAI Runtime 系統規格書 | L2 Runtime | 規格書 | v1.0 | 01 第六章、02 第六章 | 商業規格同夾 | Cloud 與 Hub／ArtiOS 部署的運行契約；不取代 01／02 原章 |
 | [02B-OceanAI雲端共用基礎服務規格書](02B-OceanAI雲端共用基礎服務規格書/README.md) | OceanAI 雲端共用基礎服務工程規格 | L2 雲端共用服務 | 候選規格 | v0.1 | 01、02、02A | — | 16 項共用服務的候選契約；尚未批准，不取代既有規格 |
-| [03-Artibird產品工程規格書](03-Artibird產品工程規格書/README.md) | Artibird 產品工程規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列與 Gate 草案 v0.1 | L1、L2 | 型錄、商業規格 | 單品硬體／韌體／連接／測試。兩份草案不取代 A01，也不改 HUB-G1／HUB-G1-PRO／GATE-G1-STD |
+| [03-Artibird產品工程規格書](03-Artibird產品工程規格書/README.md) | Artibird 產品工程規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列、Gate 與 Sync 草案 v0.1 | L1、L2 | 型錄、商業規格 | 單品硬體／韌體／連接／測試。三份草案不取代 A01，也不改 HUB-G1／HUB-G1-PRO／GATE-G1-STD／SYNC-G1-IRRF |
 | [04-Artibird產品商業規格書](04-Artibird產品商業規格書/README.md) | Artibird 產品商業規格書 | L3 產品 | 規格書 | 各產品 v1.0 | L2、L3 工程 | 型錄、對外文案 | 面向客戶語言（受宣稱邊界約束） |
 | [05-Artibird產品型錄](05-Artibird產品型錄/README.md) | Artibird 產品型錄 | L3 產品 | 型錄 | v1.0 | L3 工程／商業 | 銷售、渠道 | 產品組合與應用場景 |
 | [06-Artibird SKU與型號命名規範](06-Artibird%20SKU與型號命名規範/README.md) | SKU 與型號命名規範 | L3 產品 | 治理 | v1.0 | L3 工程規格 | 全產品線 | SKU／型號命名治理 |
