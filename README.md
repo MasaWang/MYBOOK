@@ -135,6 +135,18 @@ iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面�
 
 <br>
 
+### 02C｜分散式時間架構候選 v0.1
+
+Cloud、Hub、Gate 與設備的時間契約。尚未批准，也尚未與現有程式碼核對。不取代 01、02 或 02A。
+
+<br>
+
+| 順序 | 文件 | 說明 | 入口 |
+|------|------|------|------|
+| 02C | **OceanAI 分散式時間架構與時間可靠性工程規格** | 候選工程規格 v0.1，OAI-RUNTIME-ENG-004 | [02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md](02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) |
+
+<br>
+
 ### 03–06｜產品層（Artibird｜僅產品規格書）
 
 | 順序 | 文件 | 說明 | 入口 |
@@ -167,6 +179,7 @@ L1  架構規格    01  OceanAI系統架構規格書 v1.1
 L2  工程規格    02  OceanAI系統工程規格書 v1.0
 L2  Runtime規格  02A  OceanAI Runtime 系統工程／商業規格書 v1.0
 L2  雲端共用服務候選  02B  OceanAI 雲端共用基礎服務工程規格 v0.1
+L2  時間架構候選  02C  OceanAI 分散式時間架構與時間可靠性工程規格 v0.1
 L3  產品規格    03–06  Artibird 產品工程／商業規格書、型錄、SKU 規範
 L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之海
 ```
@@ -177,7 +190,7 @@ L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之�
 
 | 名稱 | 定位 | 系統規格書 | 產品規格書 |
 |------|------|-----------|-----------|
-| **OceanAI** | 系統名 | 架構規格書 v1.1、工程規格書 v1.0、Runtime 規格書 v1.0、雲端共用服務候選 v0.1 | — |
+| **OceanAI** | 系統名 | 架構規格書 v1.1、工程規格書 v1.0、Runtime 規格書 v1.0、雲端共用服務候選 v0.1、時間架構候選 v0.1 | — |
 | **Artibird** | 硬體產品名 | 無 | 產品工程規格書、產品商業規格書、型錄、SKU 規範 |
 
 <br>
@@ -188,6 +201,7 @@ L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之�
 | [02-OceanAI系統工程規格書](02-OceanAI系統工程規格書/README.md) | OceanAI 系統工程規格書（正式標題含 Artibird 整合語意） | L2 工程 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格、02A Runtime 規格 | 系統—產品整合、Runtime、設備模型、測試 |
 | [02A-OceanAI Runtime系統規格書](02A-OceanAI%20Runtime系統規格書/README.md) | OceanAI Runtime 系統規格書 | L2 Runtime | 規格書 | v1.0 | 01 第六章、02 第六章 | 商業規格同夾 | Cloud 與 Hub／ArtiOS 部署的運行契約；不取代 01／02 原章 |
 | [02B-OceanAI雲端共用基礎服務規格書](02B-OceanAI雲端共用基礎服務規格書/README.md) | OceanAI 雲端共用基礎服務工程規格 | L2 雲端共用服務 | 候選規格 | v0.1 | 01、02、02A | — | 16 項共用服務的候選契約；尚未批准，不取代既有規格 |
+| [02C-OceanAI分散式時間架構與時間可靠性工程規格書](02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) | OceanAI 分散式時間架構與時間可靠性工程規格 | L2 時間架構 | 候選規格 | v0.1 | 01、02、02A | Hub、Gate、Sync 工程草案 | OAI-RUNTIME-ENG-004；尚未批准，不取代既有規格，也不改 HUB-G1／HUB-G1-PRO |
 | [03-Artibird產品工程規格書](03-Artibird產品工程規格書/README.md) | Artibird 產品工程規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列、Gate 與 Sync 草案 v0.1 | L1、L2 | 型錄、商業規格 | 單品硬體／韌體／連接／測試。三份草案不取代 A01，也不改 HUB-G1／HUB-G1-PRO／GATE-G1-STD／SYNC-G1-IRRF |
 | [04-Artibird產品商業規格書](04-Artibird產品商業規格書/README.md) | Artibird 產品商業規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列草案 v2.0 | L2、L3 工程 | 型錄、對外文案 | 面向客戶語言（受宣稱邊界約束）。Hub 系列草案不取代 v1.0-Final，價格與 SKU 未核准 |
 | [05-Artibird產品型錄](05-Artibird產品型錄/README.md) | Artibird 產品型錄 | L3 產品 | 型錄 | v1.0 | L3 工程／商業 | 銷售、渠道 | 產品組合與應用場景 |
@@ -206,7 +220,7 @@ L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之�
 | 02 OceanAI系統工程規格書 | 08 OceanAI系統 | 工程規格 v1.0，與敘事整合版分開 |
 | 01 OceanAI系統架構規格書 v1.1 | 02 OceanAI系統工程規格書 v1.0 | 架構層在上；工程層展開整合與 Runtime |
 | 02 第六章、01 第六章 | 02A OceanAI Runtime系統規格書 | 正式規格 v1.0 繼承這兩章；不取代原文，D01 尚未採用 |
-| iot-docs | 01、02、02A、02B、03–06 | 現網軟體概覽。硬體編號以 artibird-engineering 為準，未確認的現網設備不對上編號。02B 尚未與現網程式核對 |
+| iot-docs | 01、02、02A、02B、02C、03–06 | 現網軟體概覽。硬體編號以 artibird-engineering 為準，未確認的現網設備不對上編號。02B、02C 尚未與現網程式核對 |
 | Artibird | 系統規格書 | Artibird 的規格在 03–06，屬產品規格 |
 
 <br>
