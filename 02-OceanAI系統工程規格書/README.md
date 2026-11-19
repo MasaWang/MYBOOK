@@ -21,6 +21,8 @@ Runtime 正式規格（不取代本書各章）：[OceanAI Runtime 系統規格�
 
 深海計算視覺引擎審閱稿（不取代本書各章，也不改 emqxMP）：[OAI-VIS-ENG-001 v1.1](02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md)
 
+智能系統架構草案（不取代本書各章，也不改現網程式）：[OAI-AI-ARCH-001 v0.2](02E-OceanAI智能系統架構規格書/README.md)
+
 ## 章節目錄
 
 - [封面](chapters/00_封面.md)
