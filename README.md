@@ -121,7 +121,7 @@ iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面�
 | 02B | **OceanAI 雲端共用基礎服務工程規格** | 16 項共用基礎服務。v0.2 是目前候選，v0.1 保留。尚未批准、尚未鎖定。只讀盤點固定於 2026-11-09 的提交；正式 Diff 與硬體驗收未完成。不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02B-OceanAI雲端共用基礎服務規格書/README.md](02-OceanAI系統工程規格書/02B-OceanAI雲端共用基礎服務規格書/README.md) |
 | 02C | **OceanAI 分散式時間架構與時間可靠性工程規格** | Cloud、Hub、Gate 與設備的時間契約。候選 v0.1，OAI-RUNTIME-ENG-004。尚未批准，也尚未與現有程式碼核對。不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md](02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) |
 | 02D | **OceanAI 深海計算運維與診斷視覺引擎工程規格** | 在現行 emqxMP 運維看板上增量加入視覺模組。審閱稿 v1.1，OAI-VIS-ENG-001。尚未批准，不改 emqxMP 程式或線上看板。不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md](02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md) |
-| 02E | **OceanAI 智能系統架構規格書** | 架構草案 v0.2，OAI-AI-ARCH-001。四個核心模組與 Figure 1 總體架構圖。候選 API 尚未與現網核對。不改現網程式，也不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md) |
+| 02E | **OceanAI 智能系統架構規格書** | 架構草案 v0.2，OAI-AI-ARCH-001。四個核心模組、Figure 1 總體架構圖，以及 Figure 2 現有正式環境與增量整合圖。候選 API 尚未與現網核對。不改現網程式，也不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md) |
 
 <br>
 
@@ -183,7 +183,7 @@ L4  敘事書稿        07   OceanAI系統架構、08  OceanAI系統、09  智�
 | [02B-OceanAI雲端共用基礎服務規格書](02-OceanAI系統工程規格書/02B-OceanAI雲端共用基礎服務規格書/README.md) | OceanAI 雲端共用基礎服務工程規格 | L2 工程 · 二級 | 候選規格 | v0.2；v0.1 保留 | 01、02、02A | — | 16 項共用服務的候選契約。v0.2 含 2026-11-09 靜態盤點；尚未批准，不取代既有規格 |
 | [02C-OceanAI分散式時間架構與時間可靠性工程規格書](02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) | OceanAI 分散式時間架構與時間可靠性工程規格 | L2 工程 · 二級 | 候選規格 | v0.1 | 01、02、02A | Hub、Gate、Sync 工程草案 | OAI-RUNTIME-ENG-004；尚未批准，不取代既有規格，也不改 HUB-G1／HUB-G1-PRO |
 | [02D-OceanAI深海計算運維與診斷視覺引擎工程規格書](02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md) | OceanAI 深海計算運維與診斷視覺引擎工程規格 | L2 工程 · 二級 | 審閱稿 | v1.1 | 現行 emqxMP `/ops/board` | — | OAI-VIS-ENG-001；僅增量整合，尚未批准，不改 emqxMP 程式或線上看板 |
-| [02E-OceanAI智能系統架構規格書](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md) | OceanAI 智能系統架構規格書 | L2 工程 · 二級 | 架構草案 | v0.2 | 01、02、02A | Operations Agent、Cloud Runtime | OAI-AI-ARCH-001；Figure 1 為智能系統總體架構圖。尚未批准，不改現網程式，也不取代既有規格 |
+| [02E-OceanAI智能系統架構規格書](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md) | OceanAI 智能系統架構規格書 | L2 工程 · 二級 | 架構草案 | v0.2 | 01、02、02A | Operations Agent、Cloud Runtime | OAI-AI-ARCH-001；Figure 1 為智能系統總體架構圖，Figure 2 為現有正式環境與增量整合圖。尚未批准，不改現網程式，也不取代既有規格 |
 | [03-Artibird產品工程規格書](03-Artibird產品工程規格書/README.md) | Artibird 產品工程規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列、Gate 與 Sync 草案 v0.1 | L1、L2 | 型錄、商業規格 | 單品硬體／韌體／連接／測試。三份草案不取代 A01，也不改 HUB-G1／HUB-G1-PRO／GATE-G1-STD／SYNC-G1-IRRF |
 | [04-Artibird產品商業規格書](04-Artibird產品商業規格書/README.md) | Artibird 產品商業規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列草案 v2.0、v2.3 | L2、L3 工程 | 型錄、對外文案 | 面向客戶語言（受宣稱邊界約束）。v2.3 不取代 v1.0-Final 或 v2.0，價格與 SKU 未核准 |
 | [05-Artibird產品型錄](05-Artibird產品型錄/README.md) | Artibird 產品型錄 | L3 產品 | 型錄 | v1.0 | L3 工程／商業 | 銷售、渠道 | 產品組合與應用場景 |

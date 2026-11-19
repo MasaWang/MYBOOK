@@ -319,6 +319,12 @@ AI 服務停止或異常時，Cloud Runtime 的核心控制流程必須維持可
 
 ## 8. Production Compatibility｜正式環境相容
 
+![Figure 2 — Existing Production and Additive Integration｜現有正式環境與增量整合](figure-2-existing-production-additive-integration.png)
+
+**Figure 2 — Existing Production and Additive Integration｜現有正式環境與增量整合**
+
+本圖表示現有正式環境、增量觀測、智能架構與可視化報告的關係。圖中的 iot-backend、emqxMP、EMQX MQTT 與 MySQL 依原圖保留。
+
 第一階段必須保留現有：
 
 - OceanAI Cloud Runtime 核心控制流程

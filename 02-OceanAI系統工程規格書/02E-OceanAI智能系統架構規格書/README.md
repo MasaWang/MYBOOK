@@ -17,6 +17,8 @@ Initial Deployment｜初期部署：OceanAI Cloud Mode｜雲端模式
 
 第一章是 Executive Architecture｜總體架構。Figure 1 使用收錄的總體架構圖。圖中的虛線是授權即時查詢。各方框是邏輯模組，不代表必須獨立部署。Runtime Observability｜運行可觀測性在圖中是獨立資料層。Operations Agent 經 Runtime Interface 讀取運行證據；設備控制與狀態的權威留在 Runtime。
 
+第八章 Figure 2 表示現有正式環境、增量觀測整合、智能架構與可視化報告的關係。圖內的 iot-backend、emqxMP、EMQX MQTT 與 MySQL 依原圖保留。
+
 提交說明建議後續 Operations Agent、Cloud Runtime、School Domain 與其他 AI 應用規格引用這張 Figure 1。本次沒有改那些文件。
 
 候選 API、資料欄位與工具名稱尚未與現有 Cloud Runtime 程式核對。P0–P5 尚未執行。本版不改 `iot-backend`、`emqxMP`、EMQX、IOTControl 或設備韌體。
