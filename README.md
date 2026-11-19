@@ -47,11 +47,7 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 
 <br>
 
-[02A](02A-OceanAI%20Runtime系統規格書/README.md) 是 Runtime 的工程與商業正式規格 v1.0，排在 02 之後、03 之前。它繼承 01 與 02 的第六章，不取代這兩章。
-
-<br>
-
-[02B](02B-OceanAI雲端共用基礎服務規格書/README.md) 是雲端共用基礎服務候選規格。v0.2（2026-11-19）併入 P0 決策與 2026-11-09 只讀盤點；v0.1 保留。尚未批准，不取代 01、02 或 02A。
+[02](02-OceanAI系統工程規格書/README.md) 採兩級。一級是系統工程規格書 v1.0。二級是 [02A](02A-OceanAI%20Runtime系統規格書/README.md)、[02B](02B-OceanAI雲端共用基礎服務規格書/README.md)、[02C](02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md)、[02D](02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md)。條目見 [02｜工程層](#02工程層)。
 
 <br>
 
@@ -105,57 +101,26 @@ iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面�
 
 ### 02｜工程層
 
+兩級。一級是系統工程規格書。二級掛在它下面，不取代一級。
+
+<br>
+
+一級
+
 | 文件 | 說明 | 入口 |
 |------|------|------|
 | **OceanAI系統工程規格書** | 系統工程規格書 v1.0，系統架構 + Runtime + 整合，19 章，中英對照 | [02-OceanAI系統工程規格書/README.md](02-OceanAI系統工程規格書/README.md) |
 
 <br>
 
-### 02A｜Runtime 正式規格 v1.0
-
-繼承 [01 第六章](01-OceanAI系統架構規格書/A01-1%20OceanAI%20系統架構規格書%20v1.1/章節/chapter%206%20Runtime%20架構.md) 與 [02 第六章](02-OceanAI系統工程規格書/chapters/06_Runtime架構.md)。不取代這兩章，也不修改 Gate 套件。D01 尚未採用。實作與商業供應尚未驗證。
-
-<br>
+二級
 
 | 順序 | 文件 | 說明 | 入口 |
 |------|------|------|------|
-| 02A | **OceanAI Runtime系統規格書** | 工程規格與商業規格各一份，中英對照 | [02A-OceanAI Runtime系統規格書/README.md](02A-OceanAI%20Runtime系統規格書/README.md) |
-
-<br>
-
-### 02B｜雲端共用基礎服務候選 v0.2
-
-16 項共用基礎服務。v0.2 是目前候選，v0.1 保留。尚未批准、尚未鎖定。只讀盤點固定於 2026-11-09 的提交；正式 Diff 與硬體驗收未完成。不取代 01、02 或 02A。
-
-<br>
-
-| 順序 | 文件 | 說明 | 入口 |
-|------|------|------|------|
-| 02B | **OceanAI 雲端共用基礎服務工程規格** | 候選工程規格 v0.2；v0.1 保留 | [02B-OceanAI雲端共用基礎服務規格書/README.md](02B-OceanAI雲端共用基礎服務規格書/README.md) |
-
-<br>
-
-### 02C｜分散式時間架構候選 v0.1
-
-Cloud、Hub、Gate 與設備的時間契約。尚未批准，也尚未與現有程式碼核對。不取代 01、02 或 02A。
-
-<br>
-
-| 順序 | 文件 | 說明 | 入口 |
-|------|------|------|------|
-| 02C | **OceanAI 分散式時間架構與時間可靠性工程規格** | 候選工程規格 v0.1，OAI-RUNTIME-ENG-004 | [02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md](02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) |
-
-<br>
-
-### 02D｜深海計算視覺引擎審閱稿 v1.1
-
-在現行 emqxMP 運維看板上增量加入視覺模組。尚未批准，不改 emqxMP 程式或線上看板。不取代 01、02 或 02A。
-
-<br>
-
-| 順序 | 文件 | 說明 | 入口 |
-|------|------|------|------|
-| 02D | **OceanAI 深海計算運維與診斷視覺引擎工程規格** | 審閱稿 v1.1，OAI-VIS-ENG-001 | [02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md](02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md) |
+| 02A | **OceanAI Runtime系統規格書** | 工程規格與商業規格各一份，中英對照。繼承 [01 第六章](01-OceanAI系統架構規格書/A01-1%20OceanAI%20系統架構規格書%20v1.1/章節/chapter%206%20Runtime%20架構.md) 與 [02 第六章](02-OceanAI系統工程規格書/chapters/06_Runtime架構.md)。不取代這兩章，也不修改 Gate 套件。D01 尚未採用。實作與商業供應尚未驗證 | [02A-OceanAI Runtime系統規格書/README.md](02A-OceanAI%20Runtime系統規格書/README.md) |
+| 02B | **OceanAI 雲端共用基礎服務工程規格** | 16 項共用基礎服務。v0.2 是目前候選，v0.1 保留。尚未批准、尚未鎖定。只讀盤點固定於 2026-11-09 的提交；正式 Diff 與硬體驗收未完成。不取代 01、02 或 02A | [02B-OceanAI雲端共用基礎服務規格書/README.md](02B-OceanAI雲端共用基礎服務規格書/README.md) |
+| 02C | **OceanAI 分散式時間架構與時間可靠性工程規格** | Cloud、Hub、Gate 與設備的時間契約。候選 v0.1，OAI-RUNTIME-ENG-004。尚未批准，也尚未與現有程式碼核對。不取代 01、02 或 02A | [02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md](02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) |
+| 02D | **OceanAI 深海計算運維與診斷視覺引擎工程規格** | 在現行 emqxMP 運維看板上增量加入視覺模組。審閱稿 v1.1，OAI-VIS-ENG-001。尚未批准，不改 emqxMP 程式或線上看板。不取代 01、02 或 02A | [02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md](02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md) |
 
 <br>
 
@@ -187,14 +152,14 @@ Cloud、Hub、Gate 與設備的時間契約。尚未批准，也尚未與現有�
 <br>
 
 ```
-L1  架構規格    01  OceanAI系統架構規格書 v1.1
-L2  工程規格    02  OceanAI系統工程規格書 v1.0
-L2  Runtime規格  02A  OceanAI Runtime 系統工程／商業規格書 v1.0
-L2  雲端共用服務候選  02B  OceanAI 雲端共用基礎服務工程規格 v0.2（v0.1 保留）
-L2  時間架構候選  02C  OceanAI 分散式時間架構與時間可靠性工程規格 v0.1
-L2  視覺引擎審閱稿  02D  OceanAI 深海計算運維與診斷視覺引擎工程規格 v1.1
-L3  產品規格    03–06  Artibird 產品工程／商業規格書、型錄、SKU 規範
-L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之海
+L1  架構規格        01   OceanAI系統架構規格書 v1.1
+L2  工程規格 一級   02   OceanAI系統工程規格書 v1.0
+    工程規格 二級   02A  OceanAI Runtime 系統工程／商業規格書 v1.0
+    工程規格 二級   02B  OceanAI 雲端共用基礎服務工程規格 v0.2（v0.1 保留）
+    工程規格 二級   02C  OceanAI 分散式時間架構與時間可靠性工程規格 v0.1
+    工程規格 二級   02D  OceanAI 深海計算運維與診斷視覺引擎工程規格 v1.1
+L3  產品規格        03–06  Artibird 產品工程／商業規格書、型錄、SKU 規範
+L4  敘事書稿        07   OceanAI系統架構、08  OceanAI系統、09  智慧之海
 ```
 
 <br>
@@ -211,11 +176,11 @@ L4  敘事書稿    07  OceanAI系統架構、08  OceanAI系統、09  智慧之�
 | 資料夾 | 正式名稱 | 層級 | 類型 | 版本 | 上游依賴 | 下游／關聯 | 用途 |
 |--------|----------|------|------|------|----------|------------|------|
 | [01-OceanAI系統架構規格書](01-OceanAI系統架構規格書/README.md) | OceanAI 系統架構規格書 | L1 架構 | 規格書 | v1.1 | — | L2 工程規格、L3 產品規格 | 架構原則、模型、治理、驗證框架 |
-| [02-OceanAI系統工程規格書](02-OceanAI系統工程規格書/README.md) | OceanAI 系統工程規格書（正式標題含 Artibird 整合語意） | L2 工程 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格、02A Runtime 規格 | 系統—產品整合、Runtime、設備模型、測試 |
-| [02A-OceanAI Runtime系統規格書](02A-OceanAI%20Runtime系統規格書/README.md) | OceanAI Runtime 系統規格書 | L2 Runtime | 規格書 | v1.0 | 01 第六章、02 第六章 | 商業規格同夾 | Cloud 與 Hub／ArtiOS 部署的運行契約；不取代 01／02 原章 |
-| [02B-OceanAI雲端共用基礎服務規格書](02B-OceanAI雲端共用基礎服務規格書/README.md) | OceanAI 雲端共用基礎服務工程規格 | L2 雲端共用服務 | 候選規格 | v0.2；v0.1 保留 | 01、02、02A | — | 16 項共用服務的候選契約。v0.2 含 2026-11-09 靜態盤點；尚未批准，不取代既有規格 |
-| [02C-OceanAI分散式時間架構與時間可靠性工程規格書](02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) | OceanAI 分散式時間架構與時間可靠性工程規格 | L2 時間架構 | 候選規格 | v0.1 | 01、02、02A | Hub、Gate、Sync 工程草案 | OAI-RUNTIME-ENG-004；尚未批准，不取代既有規格，也不改 HUB-G1／HUB-G1-PRO |
-| [02D-OceanAI深海計算運維與診斷視覺引擎工程規格書](02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md) | OceanAI 深海計算運維與診斷視覺引擎工程規格 | L2 視覺引擎 | 審閱稿 | v1.1 | 現行 emqxMP `/ops/board` | — | OAI-VIS-ENG-001；僅增量整合，尚未批准，不改 emqxMP 程式或線上看板 |
+| [02-OceanAI系統工程規格書](02-OceanAI系統工程規格書/README.md) | OceanAI 系統工程規格書（正式標題含 Artibird 整合語意） | L2 工程 · 一級 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格、02A–02D | 系統—產品整合、Runtime、設備模型、測試 |
+| [02A-OceanAI Runtime系統規格書](02A-OceanAI%20Runtime系統規格書/README.md) | OceanAI Runtime 系統規格書 | L2 工程 · 二級 | 規格書 | v1.0 | 01 第六章、02 第六章 | 商業規格同夾 | Cloud 與 Hub／ArtiOS 部署的運行契約；不取代 01／02 原章 |
+| [02B-OceanAI雲端共用基礎服務規格書](02B-OceanAI雲端共用基礎服務規格書/README.md) | OceanAI 雲端共用基礎服務工程規格 | L2 工程 · 二級 | 候選規格 | v0.2；v0.1 保留 | 01、02、02A | — | 16 項共用服務的候選契約。v0.2 含 2026-11-09 靜態盤點；尚未批准，不取代既有規格 |
+| [02C-OceanAI分散式時間架構與時間可靠性工程規格書](02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) | OceanAI 分散式時間架構與時間可靠性工程規格 | L2 工程 · 二級 | 候選規格 | v0.1 | 01、02、02A | Hub、Gate、Sync 工程草案 | OAI-RUNTIME-ENG-004；尚未批准，不取代既有規格，也不改 HUB-G1／HUB-G1-PRO |
+| [02D-OceanAI深海計算運維與診斷視覺引擎工程規格書](02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md) | OceanAI 深海計算運維與診斷視覺引擎工程規格 | L2 工程 · 二級 | 審閱稿 | v1.1 | 現行 emqxMP `/ops/board` | — | OAI-VIS-ENG-001；僅增量整合，尚未批准，不改 emqxMP 程式或線上看板 |
 | [03-Artibird產品工程規格書](03-Artibird產品工程規格書/README.md) | Artibird 產品工程規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列、Gate 與 Sync 草案 v0.1 | L1、L2 | 型錄、商業規格 | 單品硬體／韌體／連接／測試。三份草案不取代 A01，也不改 HUB-G1／HUB-G1-PRO／GATE-G1-STD／SYNC-G1-IRRF |
 | [04-Artibird產品商業規格書](04-Artibird產品商業規格書/README.md) | Artibird 產品商業規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列草案 v2.0、v2.3 | L2、L3 工程 | 型錄、對外文案 | 面向客戶語言（受宣稱邊界約束）。v2.3 不取代 v1.0-Final 或 v2.0，價格與 SKU 未核准 |
 | [05-Artibird產品型錄](05-Artibird產品型錄/README.md) | Artibird 產品型錄 | L3 產品 | 型錄 | v1.0 | L3 工程／商業 | 銷售、渠道 | 產品組合與應用場景 |
