@@ -15,7 +15,7 @@ Initial Deployment｜初期部署：OceanAI Cloud Mode｜雲端模式
 
 本規格放在 [工程規格書](../README.md) 內，作為二級文件。它不取代 [架構規格書 v1.1](../../01-OceanAI系統架構規格書/README.md)、[工程規格書 v1.0](../README.md)、[Runtime 規格 v1.0](../02A-OceanAI%20Runtime系統規格書/README.md) 或 [雲端共用基礎服務 v0.2](../02B-OceanAI雲端共用基礎服務規格書/README.md)。MYBOOK 沒有更早的 OAI-AI-ARCH-001 檔案；本 v0.2 是這次收錄的架構草案。
 
-第一章是 Executive Architecture｜總體架構。Figure 1 是 OceanAI 智能系統總體架構圖，用 Mermaid 維護。圖中的虛線是按權限執行的按需查詢。各方框是邏輯模組，不代表必須獨立部署。Runtime Observability｜運行可觀測性在圖中是獨立資料層。Operations Agent 經 Runtime Interface 讀取運行證據；設備控制與狀態的權威留在 Runtime。
+第一章是 Executive Architecture｜總體架構。Figure 1 使用收錄的總體架構圖。圖中的虛線是授權即時查詢。各方框是邏輯模組，不代表必須獨立部署。Runtime Observability｜運行可觀測性在圖中是獨立資料層。Operations Agent 經 Runtime Interface 讀取運行證據；設備控制與狀態的權威留在 Runtime。
 
 提交說明建議後續 Operations Agent、Cloud Runtime、School Domain 與其他 AI 應用規格引用這張 Figure 1。本次沒有改那些文件。
 

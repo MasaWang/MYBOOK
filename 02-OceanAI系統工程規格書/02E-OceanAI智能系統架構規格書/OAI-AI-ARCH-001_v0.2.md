@@ -36,53 +36,7 @@ Runtime 資料契約、權限控制、事件與狀態查詢、診斷資料接入
 
 ### 1.2 Executive Architecture Diagram｜總體架構圖
 
-```mermaid
-flowchart TB
-    APP["OceanAI Applications & Operations Console<br/>App · Operations Dashboard · Home · School"]
-
-    subgraph AI["OceanAI AI System"]
-        direction TB
-        GW["01 AI Gateway<br/>智能服務閘道"]
-        ORCH["03 Agent Orchestration<br/>智能體協同"]
-        CTX["02 Context Engine<br/>情境引擎"]
-        RI["04 Runtime Interface<br/>運行系統介面"]
-        OA["Operations Agent<br/>運行分析 · 故障診斷 · 報告"]
-
-        GW --> ORCH
-        ORCH <--> CTX
-        ORCH <--> OA
-        CTX <--> RI
-    end
-
-    subgraph OBS["Runtime Observability｜運行可觀測性"]
-        direction LR
-        TELE["Telemetry Adapter<br/>遙測適配"]
-        STORE["Logs · Metrics · Traces<br/>Incidents · Evidence"]
-        TELE --> STORE
-    end
-
-    subgraph RT["OceanAI Cloud Runtime Service"]
-        direction TB
-        REG["Device Registry<br/>設備註冊"]
-        CMD["Command & State<br/>命令與狀態"]
-        EVT["Event & Health<br/>事件與健康"]
-        FAULT["Fault & Recovery<br/>故障與恢復"]
-    end
-
-    subgraph PHY["Device Connectivity & Artibird"]
-        direction LR
-        CONN["Device Connectivity<br/>MQTT · Gate · Sync"]
-        DEV["Switch · Plug · Sense<br/>Flow · Other Devices"]
-        CONN <--> DEV
-    end
-
-    APP <--> GW
-    OA --> GW
-    RI <--> STORE
-    RI -.->|"Authorized Read API"| RT
-    RT -->|"Runtime Events"| TELE
-    RT <--> CONN
-```
+![Figure 1 — OceanAI AI Executive Architecture｜OceanAI 智能系統總體架構](figure-1-oceanai-ai-executive-architecture.jpg)
 
 **Figure 1 — OceanAI AI Executive Architecture｜OceanAI 智能系統總體架構**
 
