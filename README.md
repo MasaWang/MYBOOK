@@ -47,7 +47,7 @@ OceanAI 是系統名。Artibird 是硬體產品名。
 
 <br>
 
-[02](02-OceanAI系統工程規格書/README.md) 採兩級。一級是系統工程規格書 v1.0。二級是 [02A](02-OceanAI系統工程規格書/02A-OceanAI%20Runtime系統規格書/README.md)、[02B](02-OceanAI系統工程規格書/02B-OceanAI雲端共用基礎服務規格書/README.md)、[02C](02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md)、[02D](02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md)、[02E](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md)。條目見 [02｜工程層](#02工程層)。
+[02](02-OceanAI系統工程規格書/README.md) 採兩級。一級是系統工程規格書 v1.0。二級是 [02A](02-OceanAI系統工程規格書/02A-OceanAI%20Runtime系統規格書/README.md)、[02B](02-OceanAI系統工程規格書/02B-OceanAI雲端共用基礎服務規格書/README.md)、[02C](02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md)、[02D](02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md)、[02E](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md)、[02F](02-OceanAI系統工程規格書/02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md)。條目見 [02｜工程層](#02工程層)。
 
 <br>
 
@@ -122,6 +122,7 @@ iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面�
 | 02C | **OceanAI 分散式時間架構與時間可靠性工程規格** | Cloud、Hub、Gate 與設備的時間契約。候選 v0.1，OAI-RUNTIME-ENG-004。尚未批准，也尚未與現有程式碼核對。不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md](02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) |
 | 02D | **OceanAI 深海計算運維與診斷視覺引擎工程規格** | 在現行 emqxMP 運維看板上增量加入視覺模組。審閱稿 v1.1，OAI-VIS-ENG-001。尚未批准，不改 emqxMP 程式或線上看板。不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md](02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md) |
 | 02E | **OceanAI 智能系統架構規格書** | 架構草案 v0.2，OAI-AI-ARCH-001。四個核心模組、Figure 1 總體架構圖，以及 Figure 2 現有正式環境與增量整合圖。候選 API 尚未與現網核對。不改現網程式，也不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md) |
+| 02F | **OceanAI 雲端運行服務架構與可觀測性整合工程規格** | 工程草案 v1.0，OAI-RUNTIME-CLOUD-001。以現有 Cloud Production 為起點，增量、唯讀優先。P0–P5 尚未執行。不改現網程式，也不取代 01、02、02A 或 02E | [02-OceanAI系統工程規格書/02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md](02-OceanAI系統工程規格書/02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md) |
 
 <br>
 
@@ -160,6 +161,7 @@ L2  工程規格 一級   02   OceanAI系統工程規格書 v1.0
     工程規格 二級   02C  OceanAI 分散式時間架構與時間可靠性工程規格 v0.1
     工程規格 二級   02D  OceanAI 深海計算運維與診斷視覺引擎工程規格 v1.1
     工程規格 二級   02E  OceanAI 智能系統架構規格書 v0.2
+    工程規格 二級   02F  OceanAI 雲端運行服務架構與可觀測性整合工程規格 v1.0
 L3  產品規格        03–06  Artibird 產品工程／商業規格書、型錄、SKU 規範
 L4  敘事書稿        07   OceanAI系統架構、08  OceanAI系統、09  智慧之海
 ```
@@ -170,7 +172,7 @@ L4  敘事書稿        07   OceanAI系統架構、08  OceanAI系統、09  智�
 
 | 名稱 | 定位 | 系統規格書 | 產品規格書 |
 |------|------|-----------|-----------|
-| **OceanAI** | 系統名 | 架構規格書 v1.1、工程規格書 v1.0、Runtime 規格書 v1.0、雲端共用服務候選 v0.1 與 v0.2、時間架構候選 v0.1、深海計算視覺引擎審閱稿 v1.1、智能系統架構草案 v0.2 | — |
+| **OceanAI** | 系統名 | 架構規格書 v1.1、工程規格書 v1.0、Runtime 規格書 v1.0、雲端共用服務候選 v0.1 與 v0.2、時間架構候選 v0.1、深海計算視覺引擎審閱稿 v1.1、智能系統架構草案 v0.2、雲端運行可觀測性整合工程草案 v1.0 | — |
 | **Artibird** | 硬體產品名 | 無 | 產品工程規格書、產品商業規格書、型錄、SKU 規範 |
 
 <br>
@@ -178,12 +180,13 @@ L4  敘事書稿        07   OceanAI系統架構、08  OceanAI系統、09  智�
 | 資料夾 | 正式名稱 | 層級 | 類型 | 版本 | 上游依賴 | 下游／關聯 | 用途 |
 |--------|----------|------|------|------|----------|------------|------|
 | [01-OceanAI系統架構規格書](01-OceanAI系統架構規格書/README.md) | OceanAI 系統架構規格書 | L1 架構 | 規格書 | v1.1 | — | L2 工程規格、L3 產品規格 | 架構原則、模型、治理、驗證框架 |
-| [02-OceanAI系統工程規格書](02-OceanAI系統工程規格書/README.md) | OceanAI 系統工程規格書（正式標題含 Artibird 整合語意） | L2 工程 · 一級 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格、02A–02E | 系統—產品整合、Runtime、設備模型、測試 |
+| [02-OceanAI系統工程規格書](02-OceanAI系統工程規格書/README.md) | OceanAI 系統工程規格書（正式標題含 Artibird 整合語意） | L2 工程 · 一級 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格、02A–02F | 系統—產品整合、Runtime、設備模型、測試 |
 | [02A-OceanAI Runtime系統規格書](02-OceanAI系統工程規格書/02A-OceanAI%20Runtime系統規格書/README.md) | OceanAI Runtime 系統規格書 | L2 工程 · 二級 | 規格書 | v1.0 | 01 第六章、02 第六章 | 商業規格同夾 | Cloud 與 Hub／ArtiOS 部署的運行契約；不取代 01／02 原章 |
 | [02B-OceanAI雲端共用基礎服務規格書](02-OceanAI系統工程規格書/02B-OceanAI雲端共用基礎服務規格書/README.md) | OceanAI 雲端共用基礎服務工程規格 | L2 工程 · 二級 | 候選規格 | v0.2；v0.1 保留 | 01、02、02A | — | 16 項共用服務的候選契約。v0.2 含 2026-11-09 靜態盤點；尚未批准，不取代既有規格 |
 | [02C-OceanAI分散式時間架構與時間可靠性工程規格書](02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) | OceanAI 分散式時間架構與時間可靠性工程規格 | L2 工程 · 二級 | 候選規格 | v0.1 | 01、02、02A | Hub、Gate、Sync 工程草案 | OAI-RUNTIME-ENG-004；尚未批准，不取代既有規格，也不改 HUB-G1／HUB-G1-PRO |
 | [02D-OceanAI深海計算運維與診斷視覺引擎工程規格書](02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md) | OceanAI 深海計算運維與診斷視覺引擎工程規格 | L2 工程 · 二級 | 審閱稿 | v1.1 | 現行 emqxMP `/ops/board` | — | OAI-VIS-ENG-001；僅增量整合，尚未批准，不改 emqxMP 程式或線上看板 |
 | [02E-OceanAI智能系統架構規格書](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md) | OceanAI 智能系統架構規格書 | L2 工程 · 二級 | 架構草案 | v0.2 | 01、02、02A | Operations Agent、Cloud Runtime | OAI-AI-ARCH-001；Figure 1 為智能系統總體架構圖，Figure 2 為現有正式環境與增量整合圖。尚未批准，不改現網程式，也不取代既有規格 |
+| [02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書](02-OceanAI系統工程規格書/02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md) | OceanAI 雲端運行服務架構與可觀測性整合工程規格 | L2 工程 · 二級 | 工程草案 | v1.0 | 01、02、02A、02E | Operations Agent、Cloud Runtime | OAI-RUNTIME-CLOUD-001；尚未批准，不改現網程式，也不取代既有規格 |
 | [03-Artibird產品工程規格書](03-Artibird產品工程規格書/README.md) | Artibird 產品工程規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列、Gate 與 Sync 草案 v0.1 | L1、L2 | 型錄、商業規格 | 單品硬體／韌體／連接／測試。三份草案不取代 A01，也不改 HUB-G1／HUB-G1-PRO／GATE-G1-STD／SYNC-G1-IRRF |
 | [04-Artibird產品商業規格書](04-Artibird產品商業規格書/README.md) | Artibird 產品商業規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列草案 v2.0、v2.3 | L2、L3 工程 | 型錄、對外文案 | 面向客戶語言（受宣稱邊界約束）。v2.3 不取代 v1.0-Final 或 v2.0，價格與 SKU 未核准 |
 | [05-Artibird產品型錄](05-Artibird產品型錄/README.md) | Artibird 產品型錄 | L3 產品 | 型錄 | v1.0 | L3 工程／商業 | 銷售、渠道 | 產品組合與應用場景 |
@@ -202,7 +205,7 @@ L4  敘事書稿        07   OceanAI系統架構、08  OceanAI系統、09  智�
 | 02 OceanAI系統工程規格書 | 08 OceanAI系統 | 工程規格 v1.0，與敘事整合版分開 |
 | 01 OceanAI系統架構規格書 v1.1 | 02 OceanAI系統工程規格書 v1.0 | 架構層在上；工程層展開整合與 Runtime |
 | 02 第六章、01 第六章 | 02A OceanAI Runtime系統規格書 | 正式規格 v1.0 繼承這兩章；不取代原文，D01 尚未採用 |
-| iot-docs | 01、02、02A、02B、02C、02D、02E、03–06 | 現網軟體概覽。硬體編號以 artibird-engineering 為準，未確認的現網設備不對上編號。02B v0.2 的盤點固定於 2026-11-09 提交，正式 Diff 與硬體尚未核對。02C 尚未與現網程式核對。02D 不改 emqxMP。02E 不改現網程式 |
+| iot-docs | 01、02、02A、02B、02C、02D、02E、02F、03–06 | 現網軟體概覽。硬體編號以 artibird-engineering 為準，未確認的現網設備不對上編號。02B v0.2 的盤點固定於 2026-11-09 提交，正式 Diff 與硬體尚未核對。02C 尚未與現網程式核對。02D 不改 emqxMP。02E 不改現網程式。02F 不改現網程式 |
 | Artibird | 系統規格書 | Artibird 的規格在 03–06，屬產品規格 |
 
 <br>
