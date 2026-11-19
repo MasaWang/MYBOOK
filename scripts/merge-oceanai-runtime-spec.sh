@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SPEC="$ROOT/02A-OceanAI Runtime系統規格書"
+SPEC="$ROOT/02-OceanAI系統工程規格書/02A-OceanAI Runtime系統規格書"
 
 merge_one() {
   local dir="$1"
