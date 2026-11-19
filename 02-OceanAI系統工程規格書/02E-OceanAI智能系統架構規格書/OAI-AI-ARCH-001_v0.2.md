@@ -36,7 +36,7 @@ Runtime 資料契約、權限控制、事件與狀態查詢、診斷資料接入
 
 ### 1.2 Executive Architecture Diagram｜總體架構圖
 
-![Figure 1 — OceanAI AI Executive Architecture｜OceanAI 智能系統總體架構](figure-1-oceanai-ai-executive-architecture.jpg)
+![Figure 1 — OceanAI AI Executive Architecture｜OceanAI 智能系統總體架構](figure-1-oceanai-ai-executive-architecture.png)
 
 **Figure 1 — OceanAI AI Executive Architecture｜OceanAI 智能系統總體架構**
 
