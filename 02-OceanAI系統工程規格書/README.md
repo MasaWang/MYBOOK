@@ -25,6 +25,8 @@ Runtime 正式規格（不取代本書各章）：[OceanAI Runtime 系統規格�
 
 雲端運行服務與可觀測性整合工程草案（不取代本書各章，也不改現網程式）：[OAI-RUNTIME-CLOUD-001 v1.0](02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md)
 
+運行智能體工程草案（不取代本書各章，也不改現網程式）：[OAI-AI-ENG-002 v1.0](02G-OceanAI運行智能體工程規格書/README.md)
+
 ## 章節目錄
 
 - [封面](chapters/00_封面.md)
