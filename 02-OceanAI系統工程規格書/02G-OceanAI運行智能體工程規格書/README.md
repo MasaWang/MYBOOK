@@ -19,7 +19,7 @@ Implementation｜實施：Incremental Integration｜增量整合
 
 封面狀態是 Engineering Draft｜待審閱。正文狀態是 Engineering Draft｜工程草案。P0–P5 尚未執行。本版不改 `iot-backend`、`emqxMP`、EMQX、IOTControl 或設備韌體。Recovery Planner 在 MVP 沒有恢復執行工具。`execution_enabled` 固定為 false。
 
-Figure 1 的 Mermaid 原文沒有附上，只留下畫面樣式。規格第一章保留當時圖上的名稱與說明。設備列中的 Gate、Sync、Switch、Plug、Sense、Flow 依原文保留；Plug 與 Act 仍是不同產品線，Flow 尚未在此分配產品編號。
+Figure 1 依提交圖上的名稱重繪。Mermaid 原文沒有附上。設備列中的 Gate、Sync、Switch、Plug、Sense、Flow 依原文保留；Plug 與 Act 仍是不同產品線，Flow 尚未在此分配產品編號。
 
 第五節的完整 Codex 任務指令沒有附在這次提交裡，沒有另寫，也沒有執行。第六節的審閱表留在規格正文，沒有另建 REVIEW.md。
 

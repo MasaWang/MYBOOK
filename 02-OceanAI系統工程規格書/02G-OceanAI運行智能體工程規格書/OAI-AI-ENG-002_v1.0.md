@@ -55,40 +55,7 @@ Recovery Recommendation
 
 ## 一、Operations Agent 系統架構圖
 
-**Existing Cloud Production｜現有正式環境**
-
-- iot-backend｜業務 API
-- emqxMP｜MQTT Runtime Processing
-- EMQX MQTT Broker
-- MySQL
-
-**Runtime Observability｜可觀測資料層**
-
-- Diagnostic Query API
-- Events · Metrics · Traces
-- Incidents · Evidence
-
-**OceanAI AI System｜智能系統**
-
-- Operations Agent
-- Operations Manager｜運維管理者
-- Log Analyst｜日誌分析員
-- Diagnostic Agent｜診斷員
-- Recovery Planner｜恢復規劃員
-- AI Gateway｜身分驗證 · 模型路由
-- Agent Orchestration｜工作流程 · 任務調度
-- Context Engine｜證據組裝 · 時序關聯
-- Runtime Interface｜授權唯讀資料介面
-
-**Operations Console｜運維控制台**
-
-- Dashboard · Incidents · Reports
-
-**Artibird Devices**
-
-- Gate · Sync · Switch · Plug · Sense · Flow
-
-圖上另有：Diagnosis · Reports、非阻塞遙測、授權業務上下文。
+![Figure 1 — Operations Agent Architecture｜Operations Agent 工程架構](figure-1-operations-agent-architecture.png)
 
 Figure 1 — Operations Agent Architecture｜Operations Agent 工程架構。此為邏輯資料流，實際報告應經受保護的服務 API 返回 Console；不要求每個 Agent 或模組單獨部署。
 
