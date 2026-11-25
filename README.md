@@ -119,7 +119,7 @@ iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面�
 |------|------|------|------|
 | 02A | **OceanAI Runtime系統規格書** | 工程規格與商業規格各一份，中英對照。繼承 [01 第六章](01-OceanAI系統架構規格書/A01-1%20OceanAI%20系統架構規格書%20v1.1/章節/chapter%206%20Runtime%20架構.md) 與 [02 第六章](02-OceanAI系統工程規格書/chapters/06_Runtime架構.md)。不取代這兩章，也不修改 Gate 套件。D01 尚未採用。實作與商業供應尚未驗證 | [02-OceanAI系統工程規格書/02A-OceanAI Runtime系統規格書/README.md](02-OceanAI系統工程規格書/02A-OceanAI%20Runtime系統規格書/README.md) |
 | 02B | **OceanAI 雲端共用基礎服務工程規格** | 16 項共用基礎服務。v0.2 是目前候選，v0.1 保留。尚未批准、尚未鎖定。只讀盤點固定於 2026-11-09 的提交；正式 Diff 與硬體驗收未完成。不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02B-OceanAI雲端共用基礎服務規格書/README.md](02-OceanAI系統工程規格書/02B-OceanAI雲端共用基礎服務規格書/README.md) |
-| 02C | **OceanAI 分散式時間架構與時間可靠性工程規格** | Cloud、Hub、Gate 與設備的時間契約。候選 v0.1，OAI-RUNTIME-ENG-004。尚未批准，也尚未與現有程式碼核對。不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md](02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) |
+| 02C | **OceanAI 分散式時間架構與時間可靠性工程規格** | Cloud、Hub、Gate 與設備的時間契約。工程審閱稿 v1.0，v0.1 保留，OAI-RUNTIME-ENG-004。暫定指標尚未實測，尚未批准，也尚未與現有程式碼核對。不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md](02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) |
 | 02D | **OceanAI 深海計算運維與診斷視覺引擎工程規格** | 在現行 emqxMP 運維看板上增量加入視覺模組。審閱稿 v1.1，OAI-VIS-ENG-001。尚未批准，不改 emqxMP 程式或線上看板。不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md](02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md) |
 | 02E | **OceanAI 智能系統架構規格書** | 架構草案 v0.2，OAI-AI-ARCH-001。四個核心模組、Figure 1 總體架構圖，以及 Figure 2 現有正式環境與增量整合圖。候選 API 尚未與現網核對。不改現網程式，也不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md) |
 | 02F | **OceanAI 雲端運行服務架構與可觀測性整合工程規格** | 工程草案 v1.0，OAI-RUNTIME-CLOUD-001。以現有 Cloud Production 為起點，增量、唯讀優先。P0–P5 尚未執行。不改現網程式，也不取代 01、02、02A 或 02E | [02-OceanAI系統工程規格書/02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md](02-OceanAI系統工程規格書/02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md) |
@@ -159,7 +159,7 @@ L1  架構規格        01   OceanAI系統架構規格書 v1.1
 L2  工程規格 一級   02   OceanAI系統工程規格書 v1.0
     工程規格 二級   02A  OceanAI Runtime 系統工程／商業規格書 v1.0
     工程規格 二級   02B  OceanAI 雲端共用基礎服務工程規格 v0.2（v0.1 保留）
-    工程規格 二級   02C  OceanAI 分散式時間架構與時間可靠性工程規格 v0.1
+    工程規格 二級   02C  OceanAI 分散式時間架構與時間可靠性工程規格 v1.0（v0.1 保留）
     工程規格 二級   02D  OceanAI 深海計算運維與診斷視覺引擎工程規格 v1.1
     工程規格 二級   02E  OceanAI 智能系統架構規格書 v0.2
     工程規格 二級   02F  OceanAI 雲端運行服務架構與可觀測性整合工程規格 v1.0
@@ -185,7 +185,7 @@ L4  敘事書稿        07   OceanAI系統架構、08  OceanAI系統、09  智�
 | [02-OceanAI系統工程規格書](02-OceanAI系統工程規格書/README.md) | OceanAI 系統工程規格書（正式標題含 Artibird 整合語意） | L2 工程 · 一級 | 規格書 | v1.0 | L1 v1.1 | L3 產品工程規格、02A–02G | 系統—產品整合、Runtime、設備模型、測試 |
 | [02A-OceanAI Runtime系統規格書](02-OceanAI系統工程規格書/02A-OceanAI%20Runtime系統規格書/README.md) | OceanAI Runtime 系統規格書 | L2 工程 · 二級 | 規格書 | v1.0 | 01 第六章、02 第六章 | 商業規格同夾 | Cloud 與 Hub／ArtiOS 部署的運行契約；不取代 01／02 原章 |
 | [02B-OceanAI雲端共用基礎服務規格書](02-OceanAI系統工程規格書/02B-OceanAI雲端共用基礎服務規格書/README.md) | OceanAI 雲端共用基礎服務工程規格 | L2 工程 · 二級 | 候選規格 | v0.2；v0.1 保留 | 01、02、02A | — | 16 項共用服務的候選契約。v0.2 含 2026-11-09 靜態盤點；尚未批准，不取代既有規格 |
-| [02C-OceanAI分散式時間架構與時間可靠性工程規格書](02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) | OceanAI 分散式時間架構與時間可靠性工程規格 | L2 工程 · 二級 | 候選規格 | v0.1 | 01、02、02A | Hub、Gate、Sync 工程草案 | OAI-RUNTIME-ENG-004；尚未批准，不取代既有規格，也不改 HUB-G1／HUB-G1-PRO |
+| [02C-OceanAI分散式時間架構與時間可靠性工程規格書](02-OceanAI系統工程規格書/02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md) | OceanAI 分散式時間架構與時間可靠性工程規格 | L2 工程 · 二級 | 工程審閱稿 | v1.0；v0.1 保留 | 01、02、02A | Hub、Gate、Sync 工程草案 | OAI-RUNTIME-ENG-004；尚未批准，不取代既有規格，也不改 HUB-G1／HUB-G1-PRO |
 | [02D-OceanAI深海計算運維與診斷視覺引擎工程規格書](02-OceanAI系統工程規格書/02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md) | OceanAI 深海計算運維與診斷視覺引擎工程規格 | L2 工程 · 二級 | 審閱稿 | v1.1 | 現行 emqxMP `/ops/board` | — | OAI-VIS-ENG-001；僅增量整合，尚未批准，不改 emqxMP 程式或線上看板 |
 | [02E-OceanAI智能系統架構規格書](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md) | OceanAI 智能系統架構規格書 | L2 工程 · 二級 | 架構草案 | v0.2 | 01、02、02A | Operations Agent、Cloud Runtime | OAI-AI-ARCH-001；Figure 1 為智能系統總體架構圖，Figure 2 為現有正式環境與增量整合圖。尚未批准，不改現網程式，也不取代既有規格 |
 | [02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書](02-OceanAI系統工程規格書/02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md) | OceanAI 雲端運行服務架構與可觀測性整合工程規格 | L2 工程 · 二級 | 工程草案 | v1.0 | 01、02、02A、02E | Operations Agent、Cloud Runtime | OAI-RUNTIME-CLOUD-001；尚未批准，不改現網程式，也不取代既有規格 |

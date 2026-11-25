@@ -17,7 +17,7 @@ Runtime 正式規格（不取代本書各章）：[OceanAI Runtime 系統規格�
 
 雲端共用基礎服務候選（不取代本書各章）：[OceanAI 雲端共用基礎服務工程規格 v0.2](02B-OceanAI雲端共用基礎服務規格書/README.md)；v0.1 保留。
 
-分散式時間架構候選（不取代本書各章）：[OAI-RUNTIME-ENG-004 v0.1](02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md)
+分散式時間架構工程審閱稿（不取代本書各章）：[OAI-RUNTIME-ENG-004 v1.0](02C-OceanAI分散式時間架構與時間可靠性工程規格書/README.md)；v0.1 保留。
 
 深海計算視覺引擎審閱稿（不取代本書各章，也不改 emqxMP）：[OAI-VIS-ENG-001 v1.1](02D-OceanAI深海計算運維與診斷視覺引擎工程規格書/README.md)
 
