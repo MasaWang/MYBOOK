@@ -27,6 +27,8 @@ Runtime 正式規格（不取代本書各章）：[OceanAI Runtime 系統規格�
 
 運行智能體工程草案（不取代本書各章，也不改現網程式）：[OAI-AI-ENG-002 v1.0](02G-OceanAI運行智能體工程規格書/README.md)
 
+運行可靠性智能研究計劃（不取代本書各章，也不改現網程式）：[OAI-RES-001 v0.1](02H-OceanAI運行可靠性智能研究計劃/README.md)
+
 ## 章節目錄
 
 - [封面](chapters/00_封面.md)
