@@ -10,7 +10,7 @@ Approval｜批准：Author Review Required｜須經負責人審閱
 
 |Document｜文件|Purpose｜用途|
 |---|---|
-|[Research program｜研究計劃](OAI-RES-001_v0.1.md)|六條研究主線、兩個尚未確認根因的真實案例，以及 OAI-RES-TASK-001。|
+|[Research program｜研究計劃](OAI-RES-001_v0.1.md)|六條研究主線、兩個尚未確認根因的真實案例，以及 OAI-RES-TASK-001。Figure 1 為第 6 節研究與工程架構。|
 
 本文件放在 [工程規格書](../README.md) 內，作為二級研究計劃。它不取代 [架構規格書 v1.1](../../01-OceanAI系統架構規格書/README.md)、[工程規格書 v1.0](../README.md)、[Runtime 規格 v1.0](../02A-OceanAI%20Runtime系統規格書/README.md) 或 [運行智能體工程草案 v1.0](../02G-OceanAI運行智能體工程規格書/README.md)。
 

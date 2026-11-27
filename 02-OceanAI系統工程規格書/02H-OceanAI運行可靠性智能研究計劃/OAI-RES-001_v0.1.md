@@ -128,6 +128,10 @@ Root Cause：UNKNOWN｜根因尚未確認
 
 ## 6. Engineering Architecture｜研究與工程架構
 
+![Figure 1 — Runtime Reliability Intelligence｜運行可靠性智能研究體系](figure-1-runtime-reliability-intelligence.png)
+
+Figure 1 — Runtime Reliability Intelligence｜運行可靠性智能研究體系
+
 OceanAI
 
 **Runtime Reliability Intelligence**
