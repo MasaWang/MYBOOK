@@ -124,7 +124,7 @@ iot-docs 的系統總覽採用架構規格書第 4.2 節：OceanAI 是一套面�
 | 02E | **OceanAI 智能系統架構規格書** | 架構草案 v0.2，OAI-AI-ARCH-001。四個核心模組、Figure 1 總體架構圖，以及 Figure 2 現有正式環境與增量整合圖。候選 API 尚未與現網核對。不改現網程式，也不取代 01、02 或 02A | [02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md) |
 | 02F | **OceanAI 雲端運行服務架構與可觀測性整合工程規格** | 工程草案 v1.0，OAI-RUNTIME-CLOUD-001。以現有 Cloud Production 為起點，增量、唯讀優先。P0–P5 尚未執行。不改現網程式，也不取代 01、02、02A 或 02E | [02-OceanAI系統工程規格書/02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md](02-OceanAI系統工程規格書/02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md) |
 | 02G | **OceanAI 運行智能體工程規格** | 工程草案 v1.0，OAI-AI-ENG-002。繼承 02E 與 02F。MVP 只讀診斷與恢復建議。P0–P5 尚未執行。不改現網程式 | [02-OceanAI系統工程規格書/02G-OceanAI運行智能體工程規格書/README.md](02-OceanAI系統工程規格書/02G-OceanAI運行智能體工程規格書/README.md) |
-| 02H | **OceanAI 運行可靠性智能研究計劃** | 研究提案 v0.2，OAI-RES-001。六個研究方向，優先知識圖譜、故障傳播與因果分析。兩個案例根因仍是 UNKNOWN。不改 Operations Agent MVP 順序，也不改現網程式 | [02-OceanAI系統工程規格書/02H-OceanAI運行可靠性智能研究計劃/README.md](02-OceanAI系統工程規格書/02H-OceanAI運行可靠性智能研究計劃/README.md) |
+| 02H | **OceanAI 運行可靠性智能研究計劃** | 研究提案 v0.2，OAI-RES-001。工程草案 v0.1，OAI-RES-ENG-001，尚未執行。六個研究方向，優先知識圖譜、故障傳播與因果分析。兩個案例根因仍是 UNKNOWN。不改 Operations Agent MVP 順序，也不改現網程式 | [02-OceanAI系統工程規格書/02H-OceanAI運行可靠性智能研究計劃/README.md](02-OceanAI系統工程規格書/02H-OceanAI運行可靠性智能研究計劃/README.md) |
 
 <br>
 
@@ -165,7 +165,7 @@ L2  工程規格 一級   02   OceanAI系統工程規格書 v1.0
     工程規格 二級   02E  OceanAI 智能系統架構規格書 v0.2
     工程規格 二級   02F  OceanAI 雲端運行服務架構與可觀測性整合工程規格 v1.0
     工程規格 二級   02G  OceanAI 運行智能體工程規格 v1.0
-    研究計劃 二級   02H  OceanAI 運行可靠性智能研究計劃 v0.2
+    研究計劃 二級   02H  OceanAI 運行可靠性智能研究計劃 v0.2；工程草案 v0.1
 L3  產品規格        03–06  Artibird 產品工程／商業規格書、型錄、SKU 規範
 L4  敘事書稿        07   OceanAI系統架構、08  OceanAI系統、09  智慧之海
 ```
@@ -176,7 +176,7 @@ L4  敘事書稿        07   OceanAI系統架構、08  OceanAI系統、09  智�
 
 | 名稱 | 定位 | 系統規格書 | 產品規格書 |
 |------|------|-----------|-----------|
-| **OceanAI** | 系統名 | 架構規格書 v1.1、工程規格書 v1.0、Runtime 規格書 v1.0、雲端共用服務候選 v0.1 與 v0.2、時間架構工程審閱稿 v1.0、深海計算視覺引擎審閱稿 v1.1、智能系統架構草案 v0.2、雲端運行可觀測性整合工程草案 v1.0、運行智能體工程草案 v1.0、運行可靠性智能研究計劃 v0.2 | — |
+| **OceanAI** | 系統名 | 架構規格書 v1.1、工程規格書 v1.0、Runtime 規格書 v1.0、雲端共用服務候選 v0.1 與 v0.2、時間架構工程審閱稿 v1.0、深海計算視覺引擎審閱稿 v1.1、智能系統架構草案 v0.2、雲端運行可觀測性整合工程草案 v1.0、運行智能體工程草案 v1.0、運行可靠性智能研究計劃 v0.2、運行可靠性智能工程草案 v0.1 | — |
 | **Artibird** | 硬體產品名 | 無 | 產品工程規格書、產品商業規格書、型錄、SKU 規範 |
 
 <br>
@@ -192,7 +192,7 @@ L4  敘事書稿        07   OceanAI系統架構、08  OceanAI系統、09  智�
 | [02E-OceanAI智能系統架構規格書](02-OceanAI系統工程規格書/02E-OceanAI智能系統架構規格書/README.md) | OceanAI 智能系統架構規格書 | L2 工程 · 二級 | 架構草案 | v0.2 | 01、02、02A | Operations Agent、Cloud Runtime | OAI-AI-ARCH-001；Figure 1 為智能系統總體架構圖，Figure 2 為現有正式環境與增量整合圖。尚未批准，不改現網程式，也不取代既有規格 |
 | [02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書](02-OceanAI系統工程規格書/02F-OceanAI雲端運行服務架構與可觀測性整合工程規格書/README.md) | OceanAI 雲端運行服務架構與可觀測性整合工程規格 | L2 工程 · 二級 | 工程草案 | v1.0 | 01、02、02A、02E | Operations Agent、Cloud Runtime | OAI-RUNTIME-CLOUD-001；尚未批准，不改現網程式，也不取代既有規格 |
 | [02G-OceanAI運行智能體工程規格書](02-OceanAI系統工程規格書/02G-OceanAI運行智能體工程規格書/README.md) | OceanAI 運行智能體工程規格 | L2 工程 · 二級 | 工程草案 | v1.0 | 02E、02F | Operations Console | OAI-AI-ENG-002；尚未批准，不改現網程式，也不取代既有規格 |
-| [02H-OceanAI運行可靠性智能研究計劃](02-OceanAI系統工程規格書/02H-OceanAI運行可靠性智能研究計劃/README.md) | OceanAI 運行可靠性智能研究計劃 | L2 研究 · 二級 | 研究提案 | v0.2 | 02G | Operations Agent、ORT、ART | OAI-RES-001；根因仍是 UNKNOWN，尚未執行，不改現網程式 |
+| [02H-OceanAI運行可靠性智能研究計劃](02-OceanAI系統工程規格書/02H-OceanAI運行可靠性智能研究計劃/README.md) | OceanAI 運行可靠性智能研究計劃 | L2 研究 · 二級 | 研究提案；工程草案 | v0.2；v0.1 | 02G | Operations Agent、ORT、ART | OAI-RES-001 與 OAI-RES-ENG-001；根因仍是 UNKNOWN，尚未執行，不改現網程式 |
 | [03-Artibird產品工程規格書](03-Artibird產品工程規格書/README.md) | Artibird 產品工程規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列、Gate 與 Sync 草案 v0.1 | L1、L2 | 型錄、商業規格 | 單品硬體／韌體／連接／測試。三份草案不取代 A01，也不改 HUB-G1／HUB-G1-PRO／GATE-G1-STD／SYNC-G1-IRRF |
 | [04-Artibird產品商業規格書](04-Artibird產品商業規格書/README.md) | Artibird 產品商業規格書 | L3 產品 | 規格書 | 各產品 v1.0；Hub 系列草案 v2.0、v2.3 | L2、L3 工程 | 型錄、對外文案 | 面向客戶語言（受宣稱邊界約束）。v2.3 不取代 v1.0-Final 或 v2.0，價格與 SKU 未核准 |
 | [05-Artibird產品型錄](05-Artibird產品型錄/README.md) | Artibird 產品型錄 | L3 產品 | 型錄 | v1.0 | L3 工程／商業 | 銷售、渠道 | 產品組合與應用場景 |
